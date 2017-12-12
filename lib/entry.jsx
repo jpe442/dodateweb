@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from "./store/store";
 import Root from './components/root';
 // import Modal from 'react-modal';
-import {login} from './actions/session_actions'
+import {login} from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Modal.setAppElement(document.body);

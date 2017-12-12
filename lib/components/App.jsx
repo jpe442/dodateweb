@@ -3,9 +3,11 @@ import { Route } from 'react-router-dom';
 // import NavBarContainer from './navbar/nav_bar_container';
 // import { HomePage } from './homepage/homepage'
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Splash from './splash/splash';
 
 const App = () => (
   <div>
+    <Route path="/" component={Splash} />
     {/* <Route path="/" component={NavBarContainer} />
     <Route exact path="/" component={Home} />
     <ProtectedRoute exact_path="/homepage" component={HomePage} />

@@ -34,7 +34,7 @@ module.exports = {
   context: __dirname,
   entry: "./lib/entry.jsx",
   output: {
-    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+    path: path.resolve(__dirname, 'lib'),
     filename: "bundle.js"
   },
   module: {

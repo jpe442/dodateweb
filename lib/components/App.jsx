@@ -25,15 +25,21 @@ const muiTheme = getMuiTheme({
   },
 });
 
-const App = () => (
-  <MuiThemeProvider muiTheme={muiTheme}>
-    <div>
-      {/* <Route path="/" component={NavBarContainer} /> */}
-      <Route exact path="/" component={Splash} />
-      {/* <Route exact path="/" component={Home} />
-      <ProtectedRoute exact_path="/homepage" component={HomePage} /> */}
-    </div>
-  </MuiThemeProvider>
-);
+const App = () => {
+  let drag = document.getElementById('draggable-test');
+  console.log(drag);
+  $(drag).draggable();
+
+  return (
+    <MuiThemeProvider muiTheme={muiTheme}>
+      <div>
+        {/* <Route path="/" component={NavBarContainer} /> */}
+        <Route exact path="/" component={Splash} />
+        {/* <Route exact path="/" component={Home} />
+        <ProtectedRoute exact_path="/homepage" component={HomePage} /> */}
+      </div>
+    </MuiThemeProvider>
+  );
+};
 
 export default App;

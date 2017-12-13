@@ -1,18 +1,19 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-// import NavBarContainer from './navbar/nav_bar_container';
-// import { HomePage } from './homepage/homepage'
+// import NavBarContainer from './navbar/navbar_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Splash from './splash/splash';
 
 const App = () => (
-  <div>
-    <Route path="/" component={Splash} />
-    {/* <Route path="/" component={NavBarContainer} />
-    <Route exact path="/" component={Home} />
-    <ProtectedRoute exact_path="/homepage" component={HomePage} />
-    <ProtectedRoute exact_path="/questions/:questionId" component={QuestionDetailContainer} /> */}
-  </div>
+  <MuiThemeProvider>
+    <div>
+      {/* <Route path="/" component={NavBarContainer} /> */}
+      <Route exact path="/" component={Splash} />
+      {/* <Route exact path="/" component={Home} />
+      <ProtectedRoute exact_path="/homepage" component={HomePage} /> */}
+    </div>
+  </MuiThemeProvider>
 );
 
 export default App;

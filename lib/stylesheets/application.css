@@ -56,11 +56,85 @@ body {
     font-weight: 400;
 }
 
+/* splash  */
+
 .AppNavBar {
     /* display: flex;
     justify-content: space-between;
     align-items: center; */
 }
+
+.logout-btn {
+    margin-top: 5px;
+    margin-right: 15px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    /* position: fixed; */
+}
+
+.splash-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    background-color: #512DA8;
+}
+
+.splash-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 75%;
+    height: 75%;
+    border: 10px solid #FFB74D  ;
+    border-radius: 3em;
+    color: whitesmoke;
+}
+
+.splash-signup h1 {
+    font-size: 1.5em;
+}
+
+.splash-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: #757de8;
+    width: 100%;
+    height: 100%;
+}
+
+.gif-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.gif-section > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 70%;
+    border: 5px solid #002984;
+    border-radius: 1em;
+}
+
 /*
 primary - storm
 #6642bf
@@ -85,4 +159,14 @@ Light
 Dark
 #c56000
 #c77800
+
+grey100 = #F5F5F5
+grey400 = #BDBDBD
+
+orange400 = #FFA726
+orange700 = #F57C00
+
+deepPurple400 = #7E57C2
+deepPurple700 = #512DA8
+
 */

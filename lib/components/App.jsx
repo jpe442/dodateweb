@@ -2,11 +2,31 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 // import NavBarContainer from './navbar/navbar_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import {deepPurple400, deepPurple700,
+   orange400, orange700,
+   grey100, grey400,
+   white, darkBlack, fullBlack,
+} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Splash from './splash/splash';
 
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: deepPurple400,
+    primary2Color: deepPurple700,
+    primary3Color: grey400,
+    accent1Color: orange400,
+    accent2Color: orange700,
+    accent3Color: grey100,
+    textColor: darkBlack,
+    alternateTextColor: white,
+    shadowColor: fullBlack,
+  },
+});
+
 const App = () => (
-  <MuiThemeProvider>
+  <MuiThemeProvider muiTheme={muiTheme}>
     <div>
       {/* <Route path="/" component={NavBarContainer} /> */}
       <Route exact path="/" component={Splash} />

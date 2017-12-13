@@ -5,18 +5,39 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 
 export default () => (
-    <AppBar
-        className="AppNavBar"
-        title={<span>DoDate</span>}
-        iconElementRight={
-            <RaisedButton
-                className="logout"
-                label="Logout"
-                secondary={true}
-                // onClick={logout}
-            />
-        }
-    />
+    <div className="main-container">
+        <AppBar
+            className="AppNavBar"
+            title={<span>DoDate</span>}
+            iconElementRight={
+                <RaisedButton
+                    className="logout-btn"
+                    label="Logout"
+                    secondary={true}
+                    // onClick={logout}
+                />
+            }
+        />
+        {/* AppBar will be imported through its own container
+        Only here now for testing frontend design */}
+        <div className="splash-container">
+            <div className="splash-signup">
+                <h1>DO ALL OF YOUR DUE DATES IN ONE PLACE</h1>
+                <br />
+                <p>Designed by freelancers. Inspired by Kanban.</p>
+                <br />
+                <p>Envision your week with style and ease.</p>
+            </div>
+        </div>
+        <div className="splash-footer">
+            <div className="gif-section">
+                <div>gif1</div>
+                <div>gif2</div>
+                <div>gif3</div>
+                <div>gif4</div>
+            </div>
+        </div>
+    </div>
     // <div className="splash-background">
     //     <h1>STuff</h1>
     //     <RaisedButton label="Default" primary={true} />

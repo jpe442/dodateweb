@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 // import NavBarContainer from './navbar/navbar_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {cyan200, cyan400,
-   lightGreen400, orange700,
+   lightGreen400, lightGreen200,
    grey100, grey300,
    white, darkBlack, fullBlack,
 } from 'material-ui/styles/colors';
@@ -17,7 +17,7 @@ const muiTheme = getMuiTheme({
     primary2Color: cyan400,
     primary3Color: grey300,
     accent1Color: lightGreen400,
-    accent2Color: orange700,
+    accent2Color: lightGreen200,
     accent3Color: grey100,
     textColor: darkBlack,
     alternateTextColor: white,

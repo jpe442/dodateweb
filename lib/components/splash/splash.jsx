@@ -45,9 +45,26 @@ export default () => (
                 <div>gif4</div>
             </div>
         </div>
+        
     </div>
     // <div className="splash-background">
     //     <h1>STuff</h1>
     //     <RaisedButton label="Default" primary={true} />
     // </div>
 );
+
+{/* <Dialog open={this.state.open} onRequestClose={this.handleRequestClose}>
+  <DialogTitle>{"Sign Up"}</DialogTitle>
+  <form onSubmit={this.handleSubmit}> 
+    <DialogContent>
+      <TextField hintText="EMAIL" fullWidth={true} />
+    </DialogContent>
+    <DialogContent>
+      <TextField type="password" hintText="PASSWORD" fullWidth={true} />
+    </DialogContent>
+    <DialogActions>
+      <Button onClick={this.handleRequestClose} primary>Disagree</Button>
+      <Button onClick={this.handleRequestClose} primary>Agree</Button>
+    </DialogActions>
+  </form>
+</Dialog> */}

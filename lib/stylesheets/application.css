@@ -87,7 +87,17 @@ body {
     top: 80px;
     width: 100%;
     height: 100%;
-    background-color: #512DA8;
+    background-color: #B2EBF2;
+}
+
+.splash-transparent-background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* background: rgba(224, 224, 224, 0.9); */
 }
 
 .splash-signup {
@@ -97,8 +107,9 @@ body {
     flex-direction: column;
     width: 75%;
     height: 75%;
-    border: 10px solid #FFA726  ;
-    border-radius: 3em;
+    border: 10px solid #9CCC65;
+    /* background: rgba(224, 224, 224, 0.705); */
+    /* border-radius: 1em; */
     color: whitesmoke;
 }
 
@@ -120,7 +131,7 @@ body {
     align-items: center;
     justify-content: center;
     flex: 1;
-    background-color: #0288D1;
+    background-color: #26C6DA;
     width: 100%;
     height: 100%;
 }
@@ -140,8 +151,8 @@ body {
     justify-content: center;
     width: 15%;
     height: 70%;
-    border: 3px solid #F57C00;
-    border-radius: 1em;
+    border: 3px solid #C5E1A5;
+    /* border-radius: 1em; */
 }
 
 /*
@@ -154,5 +165,13 @@ orange700 = #F57C00
 
 lightBlue400 = #29B6F6
 lightBlue700 = #0288D1
+
+lightGreen100 = #DCEDC8
+lightGreen200 = #C5E1A5
+lightGreen400 = #9CCC65
+
+cyan100 = #B2EBF2
+cyan200 = #80DEEA
+cyan400 = #26C6DA
 
 */

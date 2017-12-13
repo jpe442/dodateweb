@@ -2,9 +2,9 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 // import NavBarContainer from './navbar/navbar_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import {lightBlue400, lightBlue700,
-   orange400, orange700,
-   grey100, grey400,
+import {cyan200, cyan400,
+   lightGreen400, orange700,
+   grey100, grey300,
    white, darkBlack, fullBlack,
 } from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -13,10 +13,10 @@ import Splash from './splash/splash';
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: lightBlue400,
-    primary2Color: lightBlue700,
-    primary3Color: grey400,
-    accent1Color: orange400,
+    primary1Color: cyan200,
+    primary2Color: cyan400,
+    primary3Color: grey300,
+    accent1Color: lightGreen400,
     accent2Color: orange700,
     accent3Color: grey100,
     textColor: darkBlack,

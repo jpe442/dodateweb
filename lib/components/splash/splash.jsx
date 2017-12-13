@@ -21,18 +21,20 @@ export default () => (
         {/* AppBar will be imported through its own container
         Only here now for testing frontend design */}
         <div className="splash-container">
-            <div className="splash-signup">
-                <div className="signup-text">
-                    <h1>ALL OF YOUR DUE DATES IN ONE PLACE</h1>
-                    <p>Designed by freelancers. Inspired by Kanban.</p>
-                    <p>Envision your week with style and ease.</p>
+            <div className="splash-transparent-background">
+                <div className="splash-signup">
+                    <div className="signup-text">
+                        <h1>ALL OF YOUR DUE DATES IN ONE PLACE</h1>
+                        <p>Designed by freelancers. Inspired by Kanban.</p>
+                        <p>Envision your week with style and ease.</p>
+                    </div>
+                    <RaisedButton
+                        className="signup-btn"
+                        label="Signup"
+                        secondary={true}
+                        // onClick={logout}
+                        />
                 </div>
-                <RaisedButton
-                    className="signup-btn"
-                    label="Signup"
-                    primary={true}
-                    // onClick={logout}
-                />
             </div>
         </div>
         <div className="splash-footer">

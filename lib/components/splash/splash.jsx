@@ -22,11 +22,17 @@ export default () => (
         Only here now for testing frontend design */}
         <div className="splash-container">
             <div className="splash-signup">
-                <h1>DO ALL OF YOUR DUE DATES IN ONE PLACE</h1>
-                <br />
-                <p>Designed by freelancers. Inspired by Kanban.</p>
-                <br />
-                <p>Envision your week with style and ease.</p>
+                <div className="signup-text">
+                    <h1>ALL OF YOUR DUE DATES IN ONE PLACE</h1>
+                    <p>Designed by freelancers. Inspired by Kanban.</p>
+                    <p>Envision your week with style and ease.</p>
+                </div>
+                <RaisedButton
+                    className="signup-btn"
+                    label="Signup"
+                    primary={true}
+                    // onClick={logout}
+                />
             </div>
         </div>
         <div className="splash-footer">

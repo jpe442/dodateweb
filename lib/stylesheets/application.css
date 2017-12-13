@@ -93,13 +93,22 @@ body {
 .splash-signup {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     width: 75%;
     height: 75%;
-    border: 10px solid #FFB74D  ;
+    border: 10px solid #FFA726  ;
     border-radius: 3em;
     color: whitesmoke;
+}
+
+.signup-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
 }
 
 .splash-signup h1 {
@@ -111,7 +120,7 @@ body {
     align-items: center;
     justify-content: center;
     flex: 1;
-    background-color: #757de8;
+    background-color: #0288D1;
     width: 100%;
     height: 100%;
 }
@@ -131,34 +140,11 @@ body {
     justify-content: center;
     width: 15%;
     height: 70%;
-    border: 5px solid #002984;
+    border: 3px solid #F57C00;
     border-radius: 1em;
 }
 
 /*
-primary - storm
-#6642bf
-#5c6bc0
-
-Light
-#996ff2
-#8e99f3
-
-Dark
-#30168e
-#26418f
-
-secondary - sun
-#ff8f00
-#ffa726
-
-Light
-#ffc046
-#ffd95b
-
-Dark
-#c56000
-#c77800
 
 grey100 = #F5F5F5
 grey400 = #BDBDBD
@@ -166,7 +152,7 @@ grey400 = #BDBDBD
 orange400 = #FFA726
 orange700 = #F57C00
 
-deepPurple400 = #7E57C2
-deepPurple700 = #512DA8
+lightBlue400 = #29B6F6
+lightBlue700 = #0288D1
 
 */

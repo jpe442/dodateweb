@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 // import NavBarContainer from './navbar/navbar_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import {deepPurple400, deepPurple700,
+import {lightBlue400, lightBlue700,
    orange400, orange700,
    grey100, grey400,
    white, darkBlack, fullBlack,
@@ -13,8 +13,8 @@ import Splash from './splash/splash';
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: deepPurple400,
-    primary2Color: deepPurple700,
+    primary1Color: lightBlue400,
+    primary2Color: lightBlue700,
     primary3Color: grey400,
     accent1Color: orange400,
     accent2Color: orange700,

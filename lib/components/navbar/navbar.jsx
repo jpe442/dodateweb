@@ -11,7 +11,12 @@ class NavBar extends React.Component {
         this.state = {
             email: '',
             password: '',
+            
         };
+        this.openLoginModal = this.openLoginModal.bind(this);
+        console.log(this.props);
+        console.log("above is props in NavBar constructor");
+
         // this.handleSubmit = this.handleSubmit.bind(this);
 
     }
@@ -19,6 +24,17 @@ class NavBar extends React.Component {
     // handleRequestClose
 
     // handleSubmit
+
+    openLoginModal() {
+        console.log("in openlogin modal");
+        console.log(this.props);
+        return (
+            <LoginModal
+            login={this.props.login}
+            NavBarState={this.state}
+            />
+        );
+    }
 
     render() {
         const { currentUser, logout, login } = this.props;
@@ -44,12 +60,7 @@ class NavBar extends React.Component {
                         className="logout-btn"
                         label="Log In"
                         secondary={true}
-                        onClick={
-                            <LoginModal
-                                login={login}
-                                state={this.state}
-                            />
-                        }
+                        onClick={this.openLoginModal}
                     />
                 // </Link> add links once routes are set
                 }

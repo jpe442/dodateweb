@@ -32,11 +32,12 @@ class LoginModal extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.props.state);
+        this.props.login(this.props.NavBarState);
             // .then(() => this.props.history.push('/'));
     }
 
     render() {
+        console.log("attempt open modal");
         return (
             <Dialog open={this.handleOpen} onRequestClose={this.handleClose}>
                 <DialogTitle>{"Log In"}</DialogTitle>

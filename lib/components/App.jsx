@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-// import NavBarContainer from './navbar/navbar_container';
+import NavBarContainer from './navbar/navbar_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {cyan200, cyan400,
    lightGreen400, lightGreen200,
@@ -33,7 +33,7 @@ const App = () => {
   return (
     <MuiThemeProvider muiTheme={muiTheme}>
       <div>
-        {/* <Route path="/" component={NavBarContainer} /> */}
+        <Route path="/" component={NavBarContainer} />
         <Route exact path="/" component={Splash} />
         {/* <Route exact path="/" component={Home} />
         <ProtectedRoute exact_path="/homepage" component={HomePage} /> */}

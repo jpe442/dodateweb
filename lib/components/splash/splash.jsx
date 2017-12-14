@@ -6,7 +6,7 @@ import FlatButton from 'material-ui/FlatButton';
 
 export default () => (
     <div className="main-container">
-        <AppBar
+        {/* <AppBar
             className="AppNavBar"
             title={<span>DoDate</span>}
             iconElementRight={
@@ -17,7 +17,7 @@ export default () => (
                     // onClick={logout}
                 />
             }
-        />
+        /> */}
         {/* AppBar will be imported through its own container
         Only here now for testing frontend design */}
         <div className="splash-container">

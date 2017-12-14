@@ -56,36 +56,36 @@ import RaisedButton from 'material-ui/RaisedButton';
   
 // export default AppBarComposition;
 
-// export default ({ currentUser, logout }) => {
-//     const AppNavBar = currentUser ? (
-//         <AppBar
-//             className="AppNavBar"
-//             title={<span>DoDate</span>}
-//             iconElementRight={
-//                 <RaisedButton
-//                     className="logout-btn"
-//                     label="Logout"
-//                     secondary={true}
-//                     // onClick={logout}
-//                 />
-//             }
-//         />
-//     ) : (
-//         <AppBar
-//             className="AppNavBar"
-//             title={<span>DoDate</span>}
-//             iconElementRight={ // <Link to="/login">
-//                 <RaisedButton
-//                     className="logout-btn"
-//                     label="Log In"
-//                     secondary={true}
-//                 />
-//             // </Link> add links once routes are set
-//             }
-//         />
-//     );
+export default ({ currentUser, login, logout }) => {
+    const AppNavBar = currentUser ? (
+        <AppBar
+            className="AppNavBar"
+            title={<span>DoDate</span>}
+            iconElementRight={
+                <RaisedButton
+                    className="logout-btn"
+                    label="Logout"
+                    secondary={true}
+                    onClick={logout}
+                />
+            }
+        />
+    ) : (
+        <AppBar
+            className="AppNavBar"
+            title={<span>DoDate</span>}
+            iconElementRight={ // <Link to="/login">
+                <RaisedButton
+                    className="logout-btn"
+                    label="Log In"
+                    secondary={true}
+                />
+            // </Link> add links once routes are set
+            }
+        />
+    );
 
-//     return (
-//         {AppNavBar}
-//     );
-// };
+    return (
+        AppNavBar
+    );
+};

@@ -2,18 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
 import Dialog from 'material-ui/Dialog';
-import LoginModal from './login_modal';
+import DialogTitle from 'material-ui/Dialog';
+import DialogContent from 'material-ui/Dialog';
+import TextField from 'material-ui/Dialog';
+import DialogActions from 'material-ui/Dialog'
+import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
+
+
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
-            password: '',
-            
+          open: false,
         };
-        this.openLoginModal = this.openLoginModal.bind(this);
+        this.openLoginModal = this.openLoginModal.bind(this)
+        this.handleClose = this.handleClose.bind(this)
+        // this.toggleLoginModal = this.toggleLoginModal.bind(this);
         console.log(this.props);
         console.log("above is props in NavBar constructor");
 
@@ -26,18 +33,45 @@ class NavBar extends React.Component {
     // handleSubmit
 
     openLoginModal() {
-        console.log("in openlogin modal");
-        console.log(this.props);
-        return (
-            <LoginModal
-            login={this.props.login}
-            NavBarState={this.state}
-            />
-        );
+      console.log("yo yo")
+      this.setState({open: true})
+      
     }
+    // openLoginModal() {
+    //     console.log("in openlogin modal");
+    //     console.log(this.props);
+    //     // this.render() (
+    //     //     <LoginModal
+    //     //     login={this.props.login}
+    //     //     NavBarState={this.state}
+    //     //     />
+    //     // );
+    // }
+
+  handleClose() {
+    this.setState({ open: false });
+  };
 
     render() {
+      console.log("navbar render")
         const { currentUser, logout, login } = this.props;
+        const customContentStyle = {
+          width: '50%',
+          height: '60%',
+          maxWidth: 'none',
+        };
+        const actions = [
+          <FlatButton
+            label="Cancel"
+            primary={true}
+            onClick={this.handleClose}
+          />,
+          <FlatButton
+            label="Submit"
+            primary={true}
+            onClick={this.handleClose}
+          />,
+        ];
         const AppNavBar = currentUser ? (
             <AppBar
                 className="AppNavBar"
@@ -52,6 +86,7 @@ class NavBar extends React.Component {
                 }
             />
         ) : (
+            <div>
             <AppBar
                 className="AppNavBar"
                 title={<span>DoDate</span>}
@@ -61,13 +96,43 @@ class NavBar extends React.Component {
                         label="Log In"
                         secondary={true}
                         onClick={this.openLoginModal}
-                    />
+                  />
                 // </Link> add links once routes are set
                 }
             />
+              <Dialog
+                title="Login"
+                actions={actions}
+                modal={true}
+                onRequestClose={this.handleClose}
+                contentStyle={customContentStyle}
+                open={this.state.open}
+              >
+                This is a test.
+        </Dialog>
+
+            </div>
+
         );
         return (
-            AppNavBar
+         
+          AppNavBar
+
+        // < Dialog open={this.state.openModal} onRequestClose = { this.handleClose } >
+        //   <DialogTitle>{"Log In"}</DialogTitle>
+        //   <form onSubmit={this.handleSubmit}>
+        //     <DialogContent>
+        //       <TextField hintText="EMAIL" fullWidth={true} />
+        //     </DialogContent> 
+        //     <DialogContent>
+        //       <TextField hintText="PASSWORD" type="password" fullWidth={true} />
+        //     </DialogContent>
+        //     <DialogActions>
+        //       <Button onClick={this.handleClose} primary>Disagree</Button>
+        //       <Button onClick={this.handleClose} primary>Agree</Button>
+        //     </DialogActions>
+        //   </form>
+        //     </Dialog >
         );
     }
 }

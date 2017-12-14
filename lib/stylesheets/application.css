@@ -1,0 +1,177 @@
+/* CSS reset  */
+
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* main */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* splash  */
+
+.AppNavBar {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+.logout-btn {
+    margin-top: 5px;
+    margin-right: 15px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    /* position: fixed; */
+}
+
+.splash-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    background-color: #B2EBF2;
+}
+
+.splash-transparent-background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* background: rgba(224, 224, 224, 0.9); */
+}
+
+.splash-signup {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 75%;
+    height: 75%;
+    border: 10px solid #9CCC65;
+    /* background: rgba(224, 224, 224, 0.705); */
+    border-radius: .4em;
+    color: whitesmoke;
+}
+
+.signup-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+}
+
+.splash-signup h1 {
+    font-size: 1.5em;
+}
+
+.splash-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: #26C6DA;
+    width: 100%;
+    height: 100%;
+}
+
+.gif-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.gif-section > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 70%;
+    border: 3px solid #C5E1A5;
+    /* border-radius: 1em; */
+}
+
+/*
+
+grey100 = #F5F5F5
+grey400 = #BDBDBD
+
+orange400 = #FFA726
+orange700 = #F57C00
+
+lightBlue400 = #29B6F6
+lightBlue700 = #0288D1
+
+lightGreen100 = #DCEDC8
+lightGreen200 = #C5E1A5
+lightGreen400 = #9CCC65
+
+cyan100 = #B2EBF2
+cyan200 = #80DEEA
+cyan400 = #26C6DA
+
+*/

@@ -109,7 +109,7 @@ body {
     height: 75%;
     border: 10px solid #9CCC65;
     /* background: rgba(224, 224, 224, 0.705); */
-    /* border-radius: 1em; */
+    border-radius: .4em;
     color: whitesmoke;
 }
 

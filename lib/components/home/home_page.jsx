@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskItem from './task_item';
+import HomeTaskItem from './home_task_item';
 
 class HomePage extends React.Component {
     constructor(props) {

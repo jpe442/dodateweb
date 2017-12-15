@@ -11,10 +11,23 @@ class HomePage extends React.Component {
     }
 
     render () {
-        // const books = this.props.books;
+        // const tasks = this.props.tasks;
         return (
-            <div >
-                <h1>STUFF</h1>
+            <div className="homepage-background">
+                <div className="weekday-titles">
+                    <div>Monday</div>
+                    <div>Tuesday</div>
+                    <div>Wednesday</div>
+                    <div>Thursday</div>
+                    <div>Friday</div>
+                </div>
+                <div className="weekday-columns">
+                    <div className="monday">Monday</div>
+                    <div className="tuesday">Tuesday</div>
+                    <div className="wednesday">Wednesday</div>
+                    <div className="thursday">Thursday</div>
+                    <div className="friday">Friday</div>
+                </div>
             </div>
         );
     }

@@ -170,7 +170,7 @@ body {
     justify-content: center;
     flex-direction: column;
     padding-top: 10px;
-    position: fixed;
+    /* position: fixed; */
 }
 
 .weekday-titles {
@@ -220,6 +220,10 @@ body {
     display: flex;
     flex-direction: row-reverse;
 }
+
+/* .material-icons { 
+    font-size: 36px; 
+} */
 
 /*
 

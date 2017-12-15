@@ -13,7 +13,6 @@ import NavBarContainer from './navbar/navbar_container';
 import HomePageContainer from './home/home_page_container';
 import Splash from './splash/splash';
 import SplashContainer from './splash/splash_container';
-// import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const muiTheme = getMuiTheme({
   palette: {

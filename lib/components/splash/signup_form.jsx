@@ -1,6 +1,6 @@
 import React from 'react';
 import TextField from 'material-ui/Dialog';
-import DialogActions from 'material-ui/Dialog'
+import DialogActions from 'material-ui/Dialog';
 import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -20,16 +20,16 @@ class Signup extends React.Component {
   handleInput(type) {
     return (e) => {
       this.setState({ [type]: e.target.value });
-    }
+    };
   }
 
   handleSubmit(e) {
     e.preventDefault(e);
     this.props.signup(this.state);
-    this.props.handleClose()
-    this.props.ownProps.history.push('/homepage')
+    this.props.closeSignupModal();
+    this.props.ownProps.history.push('/homepage');
     // .then(() => this.props.clearSessionErrors())
-  };
+  }
 
   // handleGuest(e) {
   //   e.preventDefault(e);
@@ -48,7 +48,7 @@ class Signup extends React.Component {
       <FlatButton
         label="Cancel"
         primary={true}
-        onClick={this.props.handleClose}
+        onClick={this.props.closeSignupModal}
       />,
       <FlatButton
         label="Submit"
@@ -88,7 +88,7 @@ class Signup extends React.Component {
           }
         </ul> */}
       </div>
-    )
+    );
   }
 }
 

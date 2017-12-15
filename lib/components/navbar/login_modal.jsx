@@ -3,11 +3,14 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
-class LoginModal extends React.Component {
+class LoginForm extends React.Component {
     constructor(props) {
         super(props);
+        console.log("in loginmodal constructor")
+        
         this.state = {
-            open: false,
+            email: '',
+            password: '',
         };
     }
     // state = {
@@ -39,7 +42,7 @@ class LoginModal extends React.Component {
     render() {
         console.log("attempt open modal");
         return (
-            <Dialog open={this.handleOpen} onRequestClose={this.handleClose}>
+            <Dialog open={this.openModal} onRequestClose={this.handleClose}>
                 <DialogTitle>{"Log In"}</DialogTitle>
                 <form onSubmit={this.handleSubmit}> 
                     <DialogContent>
@@ -82,4 +85,4 @@ class LoginModal extends React.Component {
     }
 }
 
-export default LoginModal;
+export default LoginForm;

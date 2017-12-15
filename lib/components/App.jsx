@@ -12,6 +12,8 @@ import {cyan200, cyan400,
 import NavBarContainer from './navbar/navbar_container';
 import HomePageContainer from './home/home_page_container';
 import Splash from './splash/splash';
+import SplashContainer from './splash/splash_container';
+// import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -36,10 +38,10 @@ const App = () => {
     <MuiThemeProvider muiTheme={muiTheme}>
       <div>
         <Route path="/" component={NavBarContainer} />
-        {/* <AuthRoute exact path="/" component={Splash} /> */}
         <Route exact_path="/" component={HomePageContainer} />
         {/* testing for homepage design, will revert line 40 to protected */}
         <ProtectedRoute exact_path="/homepage" component={HomePageContainer} />
+        {/* <Route exact path="/" component={SplashContainer} /> */}
       </div>
     </MuiThemeProvider>
   );

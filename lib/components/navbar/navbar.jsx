@@ -9,8 +9,7 @@ import DialogActions from 'material-ui/Dialog'
 import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-
-
+import Login from './login_form'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -54,24 +53,13 @@ class NavBar extends React.Component {
 
     render() {
       console.log("navbar render")
-        const { currentUser, logout, login } = this.props;
-        const customContentStyle = {
-          width: '50%',
-          height: '60%',
-          maxWidth: 'none',
-        };
-        const actions = [
-          <FlatButton
-            label="Cancel"
-            primary={true}
-            onClick={this.handleClose}
-          />,
-          <FlatButton
-            label="Submit"
-            primary={true}
-            onClick={this.handleClose}
-          />,
-        ];
+        const { currentUser, logout, login} = this.props;
+        // const customContentStyle = {
+        //   width: '50%',
+        //   height: '60%',
+        //   maxWidth: 'none',
+        // };
+
         const AppNavBar = currentUser ? (
             <AppBar
                 className="AppNavBar"
@@ -102,13 +90,19 @@ class NavBar extends React.Component {
             />
               <Dialog
                 title="Login"
-                actions={actions}
+                // actions={actions}
                 modal={true}
                 onRequestClose={this.handleClose}
-                contentStyle={customContentStyle}
+                // contentStyle={customContentStyle}
                 open={this.state.open}
               >
-                This is a test.
+             
+                  <Login 
+                  ownProps={this.props.ownProps}
+                  login={login}
+                  handleClose={this.handleClose}
+                  />
+                
         </Dialog>
 
             </div>

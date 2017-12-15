@@ -1,15 +1,18 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import NavBarContainer from './navbar/navbar_container';
-import SplashContainer from './splash/splash_container';
-// import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import {cyan200, cyan400,
-   lightGreen400, lightGreen200,
-   grey100, grey300,
-   white, darkBlack, fullBlack,
-} from 'material-ui/styles/colors';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {cyan200, cyan400,
+  lightGreen400, lightGreen200,
+  grey100, grey300,
+  white, darkBlack, fullBlack,
+} from 'material-ui/styles/colors';
+
+import NavBarContainer from './navbar/navbar_container';
+import HomePageContainer from './home/home_page_container';
+import Splash from './splash/splash';
+import SplashContainer from './splash/splash_container';
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -34,9 +37,10 @@ const App = () => {
     <MuiThemeProvider muiTheme={muiTheme}>
       <div>
         <Route path="/" component={NavBarContainer} />
-        <Route exact path="/" component={SplashContainer} />
-        {/* <Route exact path="/" component={Home} />
-        <ProtectedRoute exact_path="/homepage" component={HomePage} /> */}
+        <Route exact_path="/" component={HomePageContainer} />
+        {/* testing for homepage design, will revert line 40 to protected */}
+        <ProtectedRoute exact_path="/homepage" component={HomePageContainer} />
+        {/* <Route exact path="/" component={SplashContainer} /> */}
       </div>
     </MuiThemeProvider>
   );

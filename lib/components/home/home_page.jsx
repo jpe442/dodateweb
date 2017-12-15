@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeTaskItem from './home_task_item';
 import LeftSideBarContainer from '../do_left_container/left_sidebar_container';
+import RightSideBarContainer from '../done_right_container/right_sidebar_container';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -30,6 +31,7 @@ class HomePage extends React.Component {
                     <div className="friday">Friday</div>
                 </div>
                 <LeftSideBarContainer />
+                <RightSideBarContainer />
             </div>
         );
     }

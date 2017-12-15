@@ -6,14 +6,15 @@ import IconButton from 'material-ui/IconButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
-class LeftSideBar extends React.Component {
+
+class RightSideBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             open: false
         };
         this.handleToggle = this.handleToggle.bind(this);
-        this.closeLeftSidebar = this.closeLeftSidebar.bind(this);
+        this.closeRightSideBar = this.closeRightSideBar.bind(this);
     }
 
     handleToggle() {
@@ -21,41 +22,48 @@ class LeftSideBar extends React.Component {
         this.setState({open: !this.state.open});
     }
 
-    closeLeftSidebar() {
+    closeRightSideBar() {
         this.setState({open: false});
     }
 
     render() {
         const styles = {
             smallIcon: {
-                width: 36,
-                height: 36,
-              },
+              width: 36,
+              height: 36,
+            },
             mediumIcon: {
               width: 48,
               height: 48,
             },
+            largeIcon: {
+              width: 60,
+              height: 60,
+            },
             small: {
-                width: 72,
-                height: 72,
-                padding: 16,
-              },
+              width: 72,
+              height: 72,
+              padding: 16,
+            },
             medium: {
               width: 96,
               height: 96,
               padding: 24,
             },
-        };
+            large: {
+              width: 120,
+              height: 120,
+              padding: 30,
+            },
+        }; 
         
         return (
             <div>
                 <IconButton
-                // className="material-icons"
-                iconStyle={{width: '72px', height: '72px', padding: '24px'}}
-                style={{width: '36px', height: '36px'
-            }}
+                iconStyle={styles.mediumIcon}
+                style={styles.medium}                
                 iconClassName="material-icons"
-                tooltip="Create New Tasks"
+                tooltip="Completed Tasks"
                 onClick={this.handleToggle}
                 >
                     cloud_circle
@@ -63,15 +71,16 @@ class LeftSideBar extends React.Component {
                 <Drawer
                 docked={false}
                 width={400}
+                openSecondary={true}
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
                 >
-                    <MenuItem onClick={this.closeLeftSidebar}>Menu Item</MenuItem>
-                    <MenuItem onClick={this.closeLeftSidebar}>Menu Item 2</MenuItem>
+                    <MenuItem onClick={this.closeRightSideBar}>Menu Item</MenuItem>
+                    <MenuItem onClick={this.closeRightSideBar}>Menu Item 2</MenuItem>
                 </Drawer>
             </div>
         );
     }
 }
 
-export default LeftSideBar;
+export default RightSideBar;

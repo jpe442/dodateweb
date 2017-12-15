@@ -221,6 +221,16 @@ body {
     flex-direction: row-reverse;
 }
 
+.left-hidden-trigger {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    height: 100vh;
+    max-width: 2px;
+    width: 5px;
+
+}
 /* .material-icons { 
     font-size: 36px; 
 } */

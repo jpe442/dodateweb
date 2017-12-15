@@ -10,7 +10,7 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 class LeftSideBar extends React.Component {
 
     constructor(props) {
-        super(props);
+        super(props);   
         this.state = {
             open: false
         };
@@ -19,7 +19,6 @@ class LeftSideBar extends React.Component {
     }
 
     handleToggle() {
-        console.log("toggling");
         this.setState({open: !this.state.open});
     }
 
@@ -60,12 +59,17 @@ class LeftSideBar extends React.Component {
         
         return (
             <div>
+                <div 
+                className="left-hidden-trigger"
+                onMouseOver={this.handleToggle}>left hidden
+                
+                </div>
                 <IconButton
                 iconStyle={styles.mediumIcon}
                 style={styles.medium}                
                 iconClassName="material-icons"
                 tooltip="Create New Tasks"
-                onClick={this.handleToggle}
+                onMouseOver={this.handleToggle}
                 >
                     cloud_circle
                 </IconButton>

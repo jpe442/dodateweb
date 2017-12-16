@@ -25,26 +25,6 @@ class LeftSideBar extends React.Component {
     }
 
     render() {
-        const styles = {
-            smallIcon: {
-                width: 36,
-                height: 36,
-              },
-            mediumIcon: {
-              width: 48,
-              height: 48,
-            },
-            small: {
-                width: 72,
-                height: 72,
-                padding: 16,
-              },
-            medium: {
-              width: 96,
-              height: 96,
-              padding: 24,
-            },
-        };
         
         return (
             <div>
@@ -55,9 +35,8 @@ class LeftSideBar extends React.Component {
                 </div>
                 <IconButton
                 // className="material-icons"
-                iconStyle={{width: '72px', height: '72px', padding: '24px'}}
-                style={{width: '36px', height: '36px'
-            }}
+                // iconStyle={styles.mediumIcon}
+                // style={styles.medium}
                 iconClassName="material-icons"
                 tooltip="Create New Tasks"
                 onMouseOver={this.handleToggle}

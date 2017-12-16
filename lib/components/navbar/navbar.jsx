@@ -5,11 +5,11 @@ import Dialog from 'material-ui/Dialog';
 import DialogTitle from 'material-ui/Dialog';
 import DialogContent from 'material-ui/Dialog';
 import TextField from 'material-ui/Dialog';
-import DialogActions from 'material-ui/Dialog'
+import DialogActions from 'material-ui/Dialog';
 import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import Login from './login_form'
+import Login from './login_form';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -17,23 +17,17 @@ class NavBar extends React.Component {
         this.state = {
           open: false,
         };
-        this.openLoginModal = this.openLoginModal.bind(this)
-        this.handleClose = this.handleClose.bind(this)
+        this.openLoginModal = this.openLoginModal.bind(this);
+        this.handleClose = this.handleClose.bind(this);
         // this.toggleLoginModal = this.toggleLoginModal.bind(this);
         console.log(this.props);
         console.log("above is props in NavBar constructor");
-
         // this.handleSubmit = this.handleSubmit.bind(this);
-
     }
 
-    // handleRequestClose
-
-    // handleSubmit
-
     openLoginModal() {
-      console.log("yo yo")
-      this.setState({open: true})
+      console.log("yo yo");
+      this.setState({open: true});
       
     }
     // openLoginModal() {
@@ -49,17 +43,11 @@ class NavBar extends React.Component {
 
   handleClose() {
     this.setState({ open: false });
-  };
+  }
 
     render() {
-      console.log("navbar render")
+      console.log("navbar render");
         const { currentUser, logout, login} = this.props;
-        // const customContentStyle = {
-        //   width: '50%',
-        //   height: '60%',
-        //   maxWidth: 'none',
-        // };
-
         const AppNavBar = currentUser ? (
             <AppBar
                 className="AppNavBar"
@@ -75,58 +63,38 @@ class NavBar extends React.Component {
             />
         ) : (
             <div>
-            <AppBar
-                className="AppNavBar"
-                title={<span>DoDate</span>}
-                iconElementRight={ // <Link to="/login">
-                    <RaisedButton
-                        className="logout-btn"
-                        label="Log In"
-                        secondary={true}
-                        onClick={this.openLoginModal}
-                  />
-                // </Link> add links once routes are set
-                }
-            />
-              <Dialog
-                title="Login"
-                // actions={actions}
-                modal={true}
-                onRequestClose={this.handleClose}
-                // contentStyle={customContentStyle}
-                open={this.state.open}
-              >
-             
-                  <Login 
-                  ownProps={this.props.ownProps}
-                  login={login}
-                  handleClose={this.handleClose}
-                  />
-                
-        </Dialog>
-
+                <AppBar
+                    className="AppNavBar"
+                    title={<span>DoDate</span>}
+                    iconElementRight={ // <Link to="/login">
+                        <RaisedButton
+                            className="logout-btn"
+                            label="Log In"
+                            secondary={true}
+                            onClick={this.openLoginModal}
+                    />
+                    // </Link> add links once routes are set
+                    }
+                />
+                <Dialog
+                    title="Login"
+                    // actions={actions}
+                    modal={true}
+                    onRequestClose={this.handleClose}
+                    // contentStyle={customContentStyle}
+                    open={this.state.open}
+                >
+                    <Login 
+                    ownProps={this.props.ownProps}
+                    login={login}
+                    handleClose={this.handleClose}
+                    />
+                    
+                </Dialog>
             </div>
-
         );
         return (
-         
           AppNavBar
-
-        // < Dialog open={this.state.openModal} onRequestClose = { this.handleClose } >
-        //   <DialogTitle>{"Log In"}</DialogTitle>
-        //   <form onSubmit={this.handleSubmit}>
-        //     <DialogContent>
-        //       <TextField hintText="EMAIL" fullWidth={true} />
-        //     </DialogContent> 
-        //     <DialogContent>
-        //       <TextField hintText="PASSWORD" type="password" fullWidth={true} />
-        //     </DialogContent>
-        //     <DialogActions>
-        //       <Button onClick={this.handleClose} primary>Disagree</Button>
-        //       <Button onClick={this.handleClose} primary>Agree</Button>
-        //     </DialogActions>
-        //   </form>
-        //     </Dialog >
         );
     }
 }

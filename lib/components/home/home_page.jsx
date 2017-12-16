@@ -24,11 +24,11 @@ class HomePage extends React.Component {
                     <div>Friday</div>
                 </div>
                 <div className="weekday-columns">
-                    <div className="monday">Monday</div>
-                    <div className="tuesday">Tuesday</div>
-                    <div className="wednesday">Wednesday</div>
-                    <div className="thursday">Thursday</div>
-                    <div className="friday">Friday</div>
+                    <div className="monday">M</div>
+                    <div className="tuesday">T</div>
+                    <div className="wednesday">W</div>
+                    <div className="thursday">T</div>
+                    <div className="friday">F</div>
                 </div>
                 <LeftSideBarContainer />
                 <RightSideBarContainer />

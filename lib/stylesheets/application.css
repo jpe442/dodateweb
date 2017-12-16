@@ -174,13 +174,14 @@ body {
 }
 
 .weekday-titles {
+    color: darkslategray;
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
     width: 100%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgba(47, 79, 79, 0.3);
 }
 
 .weekday-titles > div {
@@ -192,11 +193,14 @@ body {
 }
 
 .weekday-titles :not(:last-child) {
-    border-right: 1px solid black;
+    border-right: 1px solid rgba(47, 79, 79, 0.3);
 }
 
 .weekday-columns {
+    color: rgba(211, 211, 211, 0.3);
+    font-weight: 700;
     flex: 13;
+    font-size: 120px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -213,12 +217,23 @@ body {
 }
 
 .weekday-columns :not(:last-child) {
-    border-right: 1px solid black;
+    border-right: 1px solid rgba(47, 79, 79, 0.3);
 }
 
 .session-form {
     display: flex;
     flex-direction: row-reverse;
+}
+
+.right-hidden-trigger {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+
+    height: 100vh;
+    max-width: 2px;
+    width: 5px;
+
 }
 
 .left-hidden-trigger {
@@ -229,7 +244,6 @@ body {
     height: 100vh;
     max-width: 2px;
     width: 5px;
-
 }
 /* .material-icons { 
     font-size: 36px; 

@@ -78,7 +78,7 @@ body {
     height: 100%;
     width: 100%;
     /* position: fixed; */
-}
+} 
 
 .splash-container {
     display: flex;
@@ -157,8 +157,6 @@ body {
     border: 3px solid #C5E1A5;
     /* border-radius: 1em; */
 }
-
-
 
 /* homepage */
 

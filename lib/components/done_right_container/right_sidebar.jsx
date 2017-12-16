@@ -27,51 +27,21 @@ class RightSideBar extends React.Component {
     }
 
     render() {
-        const styles = {
-            smallIcon: {
-              width: 36,
-              height: 36,
-            },
-            mediumIcon: {
-              width: 48,
-              height: 48,
-            },
-            largeIcon: {
-              width: 60,
-              height: 60,
-            },
-            small: {
-              width: 72,
-              height: 72,
-              padding: 16,
-            },
-            medium: {
-              width: 96,
-              height: 96,
-              padding: 24,
-            },
-            large: {
-              width: 120,
-              height: 120,
-              padding: 30,
-            },
-        }; 
-        
         return (
             <div>
                 <div
                     className="right-hidden-trigger"
-                    onMouseOver={this.handleToggle}>right hidden
+                    onMouseOver={this.handleToggle}>
                 </div>
-                <IconButton
-                iconStyle={styles.mediumIcon}
-                style={styles.medium}                
+                {/* <IconButton
+                // iconStyle={styles.mediumIcon}
+                // style={styles.medium}                
                 iconClassName="material-icons"
                 tooltip="Completed Tasks"
                 onClick={this.handleToggle}
                 >
                     cloud_circle
-                </IconButton>
+                </IconButton> */}
                 <Drawer
                 docked={false}
                 width={400}

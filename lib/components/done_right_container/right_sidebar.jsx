@@ -31,9 +31,9 @@ class RightSideBar extends React.Component {
             <div>
                 <div
                     className="right-hidden-trigger"
-                    onMouseOver={this.handleToggle}>right hidden
+                    onMouseOver={this.handleToggle}>
                 </div>
-                <IconButton
+                {/* <IconButton
                 // iconStyle={styles.mediumIcon}
                 // style={styles.medium}                
                 iconClassName="material-icons"
@@ -41,7 +41,7 @@ class RightSideBar extends React.Component {
                 onClick={this.handleToggle}
                 >
                     cloud_circle
-                </IconButton>
+                </IconButton> */}
                 <Drawer
                 docked={false}
                 width={400}

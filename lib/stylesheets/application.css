@@ -161,7 +161,7 @@ body {
 /* homepage */
 
 .homepage-background {
-    height: 100%;
+    height: 90%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -204,11 +204,12 @@ body {
     justify-content: space-around;
     flex-direction: row;
     width: 100%;
+    /* height: 100%; */
 }
 
 .weekday-columns > div {
     width: 20%;
-    height: 90%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -227,22 +228,42 @@ body {
     position: absolute;
     right: 0px;
     top: 0px;
-
     height: 100vh;
     max-width: 2px;
     width: 5px;
-
 }
 
 .left-hidden-trigger {
     position: absolute;
     left: 0px;
     top: 0px;
-
     height: 100vh;
     max-width: 2px;
     width: 5px;
 }
+.bottom-bar {
+    width: 100%;
+    bottom: 0%;
+    height: 2px;
+}
+.weekend-button {
+    position: absolute;
+    top: 5%;
+}
+
+.bottom-trigger {
+    width: 100%;
+}
+
+.bottom-sheet {
+    display: flex;
+    height: 40px;
+    max-width: 50px;
+}
+
+/* .bottom-sheet MenuItem{
+    width: 50%;
+} */
 /* .material-icons { 
     font-size: 36px; 
 } */

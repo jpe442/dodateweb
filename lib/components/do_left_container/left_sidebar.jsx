@@ -33,7 +33,7 @@ class LeftSideBar extends React.Component {
                 onMouseOver={this.handleToggle}>left hidden
                 
                 </div>
-                <IconButton
+                {/* <IconButton
                 // className="material-icons"
                 // iconStyle={styles.mediumIcon}
                 // style={styles.medium}
@@ -42,15 +42,15 @@ class LeftSideBar extends React.Component {
                 onMouseOver={this.handleToggle}
                 >
                     cloud_circle
-                </IconButton>
+                </IconButton> */}
                 <Drawer
                 docked={false}
                 width={400}
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
                 >
-                    <MenuItem onClick={this.closeLeftSidebar}>Menu Item</MenuItem>
-                    <MenuItem onClick={this.closeLeftSidebar}>Menu Item 2</MenuItem>
+                    <MenuItem onClick={this.closeLeftSidebar}>Todo 1</MenuItem>
+                    <MenuItem onClick={this.closeLeftSidebar}>Todo 2</MenuItem>
                 </Drawer>
             </div>
         );

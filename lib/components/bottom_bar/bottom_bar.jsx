@@ -1,6 +1,7 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import Subheader from 'material-ui/Subheader';
 import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
@@ -27,6 +28,20 @@ class BottomBar extends React.Component {
     }
 
     render() {
+        const saturday = {
+            width: '50%',
+        }
+
+        const sunday = {
+            width: '50%',
+            right: 0,
+        }
+
+        const noFade = {
+            width: 0,
+        }
+
+
         const styles = {
             smallIcon: {
                 width: 36,
@@ -49,26 +64,50 @@ class BottomBar extends React.Component {
         };
         
         return (
-            <div>
+            <div 
+            // className="bottom-bar"
+            // onMouseOver={this.handleToggle}
+            >
+                {/* <div className="bottom-trigger"></div> */}
                 <IconButton
-                    // className="material-icons"
+                    className="weekend-button"
                     // iconStyle={{width: '72px', height: '72px', padding: '24px'}}
                     // style={{width: '36px', height: '36px'}}
                     iconClassName="material-icons"
-                    tooltip="Weekend Bottom Bar"
+                    tooltip="Weekend"
                     onClick={this.handleToggle} 
                 >
                     cloud_circle
                 </IconButton>
                 <BottomSheet
+                    // className="bottom-sheet"
                     docked={false}
-                    height={400}
+                    // height={500}]
+                    bodyStyle={saturday}
+                    // onMouseOver={   }
                     open={this.state.open}
                     onRequestClose={() => this.handleToggle()}
                     onRequestChange={(open) => this.setState({open})} 
                 >
-                    <MenuItem onClick={this.closeBottomBar}>Menu Item</MenuItem>
-                    <MenuItem onClick={this.closeBottomBar}>Menu Item 2</MenuItem>
+                    <Subheader onClick={this.closeBottomBar}>Saturday</Subheader>
+                    <MenuItem onClick={this.closeBottomBar}>Todo 1</MenuItem>
+                    <MenuItem onClick={this.closeBottomBar}>Todo 2</MenuItem>
+
+                </BottomSheet>
+                <BottomSheet
+                    // className="bottom-sheet"
+                    docked={false}
+                    // height={500}]
+                    style={noFade}
+                    bodyStyle={sunday}
+                    open={this.state.open}
+                    onRequestClose={() => this.handleToggle()}
+                    onRequestChange={(open) => this.setState({ open })}
+                >
+                    <Subheader onClick={this.closeBottomBar}>Sunday</Subheader>
+                    <MenuItem onClick={this.closeBottomBar}>Todo 1</MenuItem>
+                    <MenuItem onClick={this.closeBottomBar}>Todo 2</MenuItem>
+
                 </BottomSheet>
             </div>
         );

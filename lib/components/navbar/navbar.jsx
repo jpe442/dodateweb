@@ -48,6 +48,7 @@ class NavBar extends React.Component {
     render() {
       console.log("navbar render");
         const { currentUser, logout, login} = this.props;
+
         const AppNavBar = currentUser ? (
             <AppBar
                 className="AppNavBar"
@@ -78,8 +79,11 @@ class NavBar extends React.Component {
                 />
                 <Dialog
                     title="Login"
+                    // bodyClassName="login-dialog"
+                    // style={sessionFade}
                     // actions={actions}
                     modal={true}
+
                     onRequestClose={this.handleClose}
                     // contentStyle={customContentStyle}
                     open={this.state.open}

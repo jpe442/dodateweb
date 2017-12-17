@@ -1,6 +1,6 @@
 import React from 'react';
-import TextField from 'material-ui/Dialog';
-import DialogActions from 'material-ui/Dialog'
+import TextField from 'material-ui/TextField';
+// import DialogActions from 'material-ui/Dialog'
 import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -25,10 +25,11 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault(e);
-    console.log("in handle submit")
-    this.props.login(this.state);
-    this.props.handleClose()
-    this.props.ownProps.history.push('/homepage')
+    console.log(this.props.ownProps)
+    this.props.login(this.state).then(
+      this.props.ownProps.history.push('/homepage'))
+      console.log("wtf").then(
+      this.props.handleClose())
       // .then(() => this.props.clearSessionErrors())
   };
 
@@ -46,22 +47,23 @@ class Login extends React.Component {
 
   render() {
     const actions = [
-      <FlatButton
-        label="Cancel"
-        primary={true}
-        onClick={this.props.handleClose}
-      />,
+  
       <FlatButton
         label="Submit"
         primary={true}
         onClick={this.handleSubmit}
       />,
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onClick={this.props.handleClose}
+      />
     ];
     return (
       <div className="session-form">
-        <h2 className="loginmsg">Do Date</h2>
-        <form onSubmit={this.handleSubmit}>
-        {actions}
+        {/* <h2 className="loginmsg">Do Date</h2> */}
+       
+        {/* <form onSubmit={this.handleSubmit}>
           <label className="username-session">Username:
           <input
               className="username-input"
@@ -69,7 +71,7 @@ class Login extends React.Component {
               onChange={this.handleInput('email')} /></label>
 
           <label className="password-login">Password:
-
+        
           <input
               className="signup-password-input"
               type="password"
@@ -79,7 +81,21 @@ class Login extends React.Component {
           {/* <div className="session-submit" onClick={this.handleSubmit}>Enter</div> */}
           {/* <div className="session-guest" onClick={this.handleGuest}>Guest</div> */}
 
-        </form>
+        {/* </form> */} 
+       
+        <TextField
+          hintText="please enter your email address..."
+          floatingLabelText="User Email"
+          onChange={this.handleInput('email')} />
+
+        <br />
+        <TextField
+          hintText="Password Field"
+          floatingLabelText="Password"
+          type="password"
+          onChange={this.handleInput('password')} 
+        /><br />
+        {actions}
         {/* <ul className="session-report">
           {
             this.props.autherrors.map((error, idx) => (

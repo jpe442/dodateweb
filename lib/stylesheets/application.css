@@ -221,7 +221,8 @@ body {
 
 .session-form {
     display: flex;
-    flex-direction: row-reverse;
+    /* flex-direction: row; */
+    justify-content: space-around;
 }
 
 .right-hidden-trigger {
@@ -259,6 +260,11 @@ body {
     display: flex;
     height: 40px;
     max-width: 50px;
+}
+
+.login-dialog {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* .bottom-sheet MenuItem{

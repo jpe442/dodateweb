@@ -7,8 +7,8 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
 class LeftSideBar extends React.Component {
-    constructor(props) {
-        super(props);   
+  constructor(props) {
+      super(props);   
         this.state = {
             open: false
         };

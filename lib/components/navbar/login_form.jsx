@@ -61,8 +61,8 @@ class Login extends React.Component {
         primary={true}
         onClick={this.handleSubmit}
         style={{position: 'absolute',
-                right: '23%',
-                bottom: '20%'
+                right: '26%',
+                bottom: '26%'
                 }}
       />,
       <RaisedButton
@@ -72,8 +72,8 @@ class Login extends React.Component {
         onClick={this.handleCancel}
         style={{
           position: 'absolute',
-          right: '7%',
-          bottom: '20%'
+          right: '10%',
+          bottom: '26%'
         }}
       />,
      

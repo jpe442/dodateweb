@@ -32,12 +32,11 @@ class Signup extends React.Component {
       // .then(this.props.handleClose())
         .then(() => this.props.ownProps.history.push('/homepage'))
 
-    // .then(() => this.props.clearSessionErrors())
+    // .then(() => this.props.clearSes  sionErrors())
   }
 
   handleCancel(e) {
-    console.log("here is clearSessionErrors")
-    console.log(this.props.clearSessionErrors)
+   
     // e.preventDefault(e);
       console.log(this.props.handleClose)
       this.props.handleClose();
@@ -67,8 +66,8 @@ class Signup extends React.Component {
         onClick={this.handleSubmit}
         style={{
           position: 'absolute',
-          right: '23%',
-          bottom: '20%'
+          right: '26%',
+          bottom: '26%'
         }}
       />,
 
@@ -78,8 +77,8 @@ class Signup extends React.Component {
         onClick={this.handleCancel}
         style={{
           position: 'absolute',
-          right: '7%',
-          bottom: '20%'
+          right: '10%',
+          bottom: '26%'
         }}
       />, 
       

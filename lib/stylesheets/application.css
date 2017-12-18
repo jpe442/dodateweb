@@ -221,9 +221,10 @@ body {
 
 .session-form {
     display: flex;
-    /* flex-direction: row; */
+    /* flex-direction:  row; */
     justify-content: space-around;
 }
+
 
 .right-hidden-trigger {
     position: absolute;
@@ -262,10 +263,49 @@ body {
     max-width: 50px;
 }
 
-.login-dialog {
+.login-text-fields {
+    display: inline-block;
+    position: relative;
+    right: 25%;
+    top: 38%;
+    /* position: absolute; */
+
+    /* vertical-align: middle; */
+}
+
+.session-form {
+    height: 280px;
+}
+
+.session-report {
+    position: absolute;
+    color: red;
+    font-size: 80%;
+    top: 28%;
+}
+
+.session-errors li{
+    padding: 3%;
+}
+/* 
+.login-session-btns {
+    position: absolute;
+    bottom: 5%;
+} */
+
+
+/* .loginmsg{
+    font-size: 120%;
+    position: absolute;
+    left: 5%;
+} */
+
+
+/* .login-dialog {
     display: flex;
     justify-content: space-around;
-}
+} */
+
 
 /* .bottom-sheet MenuItem{
     width: 50%;

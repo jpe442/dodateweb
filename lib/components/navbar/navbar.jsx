@@ -48,6 +48,11 @@ class NavBar extends React.Component {
     render() {
       console.log("navbar render");
         const { currentUser, logout, login} = this.props;
+        // const modalBtnsStyle = {
+        //   display: 'flex',
+        //   position: 'absolute',
+        //   bottom: '5%'
+        // }
 
         const AppNavBar = currentUser ? (
             <AppBar
@@ -78,20 +83,30 @@ class NavBar extends React.Component {
                     }
                 />
                 <Dialog
-                    title="Login"
+                    title="Login to DoDate"
                     // bodyClassName="login-dialog"
                     // style={sessionFade}
                     // actions={actions}
                     modal={true}
-
+                    // actionsContainerStyle={modalBtnsStyle}                
                     onRequestClose={this.handleClose}
                     // contentStyle={customContentStyle}
                     open={this.state.open}
+                  style={{height: '50%'}}
+                  titleStyle={{
+                    paddingBottom: '1%',
+                    fontSize: '120%',
+                    position: 'absolute',
+                    left: '31%'
+            
+                  }}
                 >
                     <Login 
                     ownProps={this.props.ownProps}
+                    autherrors={this.props.autherrors}
                     login={login}
                     handleClose={this.handleClose}
+                    clearSessionErrors={this.props.clearSessionErrors}
                     />
                     
                 </Dialog>

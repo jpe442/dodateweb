@@ -14,6 +14,7 @@ class Login extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
     // this.handleGuest = this.handleGuest.bind(this);
   }
 
@@ -25,13 +26,21 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault(e);
-    console.log(this.props.ownProps)
-    this.props.login(this.state).then(
-      this.props.ownProps.history.push('/homepage'))
-      console.log("wtf").then(
-      this.props.handleClose())
+    this.props.login(this.state)
+      .then(() => this.props.clearSessionErrors())
+        .then(this.props.ownProps.history.push('/homepage'))
+     
       // .then(() => this.props.clearSessionErrors())
   };
+
+  handleCancel(e) {
+    console.log("here is clearSessionErrors")
+    // console.log(this.props.clearSessionErrors)
+    // e.preventDefault(e);
+    console.log(this.props)
+    this.props.handleClose();
+    this.props.clearSessionErrors();
+  }
 
   // handleGuest(e) {
   //   e.preventDefault(e);
@@ -47,45 +56,37 @@ class Login extends React.Component {
 
   render() {
     const actions = [
-  
-      <FlatButton
+      <RaisedButton
         label="Submit"
         primary={true}
         onClick={this.handleSubmit}
+        style={{position: 'absolute',
+                right: '23%',
+                bottom: '20%'
+                }}
       />,
-      <FlatButton
+      <RaisedButton
+        // className="login-modal-cancel-btn"
         label="Cancel"
         primary={true}
-        onClick={this.props.handleClose}
-      />
+        onClick={this.handleCancel}
+        style={{
+          position: 'absolute',
+          right: '7%',
+          bottom: '20%'
+        }}
+      />,
+     
     ];
     return (
       <div className="session-form">
         {/* <h2 className="loginmsg">Do Date</h2> */}
-       
-        {/* <form onSubmit={this.handleSubmit}>
-          <label className="username-session">Username:
-          <input
-              className="username-input"
-              type="text"
-              onChange={this.handleInput('email')} /></label>
-
-          <label className="password-login">Password:
-        
-          <input
-              className="signup-password-input"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput('password')} />
-          </label>
-          {/* <div className="session-submit" onClick={this.handleSubmit}>Enter</div> */}
-          {/* <div className="session-guest" onClick={this.handleGuest}>Guest</div> */}
-
-        {/* </form> */} 
-       
+        <div
+        className="login-text-fields">
         <TextField
-          hintText="please enter your email address..."
+          hintText="Please enter an email address..."
           floatingLabelText="User Email"
+          // errorText="This field is required"
           onChange={this.handleInput('email')} />
 
         <br />
@@ -95,15 +96,16 @@ class Login extends React.Component {
           type="password"
           onChange={this.handleInput('password')} 
         /><br />
+        </div>
         {actions}
-        {/* <ul className="session-report">
+        <ul className="session-report">
           {
             this.props.autherrors.map((error, idx) => (
               <li key={idx} className="session-errors">{error}
               </li>
             ))
           }
-        </ul> */}
+        </ul>
       </div>
     )
   }

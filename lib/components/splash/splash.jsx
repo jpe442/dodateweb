@@ -52,7 +52,7 @@ export default class Splash extends React.Component {
                     </div>
                 </div>
                 <Dialog
-                    title="Sign up with DoDate"
+                    title="Sign Up with DoDate"
                     modal={true}
                     onRequestClose={this.handleClose}
                     // contentStyle={customContentStyle}
@@ -62,7 +62,8 @@ export default class Splash extends React.Component {
                                 paddingBottom: '1%',
                                 fontSize: '120%' ,
                                 position: 'absolute',
-                                left: '31%'
+                                left: '31%',
+                                top: '7%'
                                 }}
                 >
                     <Signup

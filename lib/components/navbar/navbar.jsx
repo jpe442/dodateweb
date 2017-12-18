@@ -97,7 +97,8 @@ class NavBar extends React.Component {
                     paddingBottom: '1%',
                     fontSize: '120%',
                     position: 'absolute',
-                    left: '31%'
+                    left: '35%',
+                    top: '7%'
             
                   }}
                 >

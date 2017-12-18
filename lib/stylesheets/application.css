@@ -272,6 +272,17 @@ body {
 
     /* vertical-align: middle; */
 }
+
+.session-form {
+    height: 280px;
+}
+
+.session-report {
+    position: absolute;
+    color: red;
+    font-size: 80%;
+    top: 28%;
+}
 /* 
 .login-session-btns {
     position: absolute;

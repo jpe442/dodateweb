@@ -83,7 +83,7 @@ class NavBar extends React.Component {
                     }
                 />
                 <Dialog
-                    title="Login"
+                    title="Login to DoDate"
                     // bodyClassName="login-dialog"
                     // style={sessionFade}
                     // actions={actions}
@@ -92,6 +92,10 @@ class NavBar extends React.Component {
                     onRequestClose={this.handleClose}
                     // contentStyle={customContentStyle}
                     open={this.state.open}
+                  titleStyle={{
+                    paddingBottom: '1%',
+                    fontSize: '120%'
+                  }}
                 >
                     <Login 
                     ownProps={this.props.ownProps}

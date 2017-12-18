@@ -44,7 +44,7 @@ class RightSideBar extends React.Component {
                 </IconButton> */}
                 <Drawer
                 docked={false}
-                width={400}
+                width={'20%'}
                 openSecondary={true}
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}

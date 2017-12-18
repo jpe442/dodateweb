@@ -47,13 +47,13 @@ class Login extends React.Component {
 
   render() {
     const actions = [
-  
+     
       <RaisedButton
         label="Submit"
         primary={true}
         onClick={this.handleSubmit}
         style={{position: 'absolute',
-                right: '7%',
+                right: '23%',
                 bottom: '20%'
                 }}
       />,
@@ -64,10 +64,11 @@ class Login extends React.Component {
         onClick={this.props.handleClose}
         style={{
           position: 'absolute',
-          right: '23%',
+          right: '7%',
           bottom: '20%'
         }}
-      />
+      />,
+     
     ];
     return (
       <div className="session-form">
@@ -75,7 +76,7 @@ class Login extends React.Component {
         <div
         className="login-text-fields">
         <TextField
-          hintText="please enter the email address..."
+          hintText="Please enter an email address..."
           floatingLabelText="User Email"
           // errorText="This field is required"
           onChange={this.handleInput('email')} />

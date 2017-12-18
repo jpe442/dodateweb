@@ -70,7 +70,6 @@ class Signup extends React.Component {
           bottom: '26%'
         }}
       />,
-
         <RaisedButton
         label="Cancel"
         primary={true}

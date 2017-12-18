@@ -69,16 +69,15 @@ class BottomBar extends React.Component {
             // onMouseOver={this.handleToggle}
             >
                 {/* <div className="bottom-trigger"></div> */}
-                <IconButton
+                <RaisedButton
                     className="weekend-button"
                     // iconStyle={{width: '72px', height: '72px', padding: '24px'}}
-                    // style={{width: '36px', height: '36px'}}
-                    iconClassName="material-icons"
-                    tooltip="Weekend"
+                    style={{position: "relative", marginBottom: '10%'}}
+                    secondary="true"
+                    label="Weekend"
                     onClick={this.handleToggle} 
                 >
-                    cloud_circle
-                </IconButton>
+                </RaisedButton>
                 <BottomSheet
                     // className="bottom-sheet"
                     docked={false}

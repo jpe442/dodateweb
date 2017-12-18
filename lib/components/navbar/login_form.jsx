@@ -26,10 +26,10 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault(e);
     console.log(this.props.ownProps)
-    this.props.login(this.state).then(
-      this.props.ownProps.history.push('/homepage'))
-      console.log("wtf").then(
-      this.props.handleClose())
+    this.props.login(this.state)
+      .then(this.props.handleClose())
+        .then(this.props.ownProps.history.push('/homepage'))
+     
       // .then(() => this.props.clearSessionErrors())
   };
 
@@ -48,16 +48,25 @@ class Login extends React.Component {
   render() {
     const actions = [
   
-      <FlatButton
+      <RaisedButton
         label="Submit"
         primary={true}
         onClick={this.handleSubmit}
+        style={{position: 'absolute',
+                right: '7%',
+                bottom: '20%'
+                }}
       />,
-      <FlatButton
-        className="login-modal-cancel-btn"
+      <RaisedButton
+        // className="login-modal-cancel-btn"
         label="Cancel"
         primary={true}
         onClick={this.props.handleClose}
+        style={{
+          position: 'absolute',
+          right: '23%',
+          bottom: '20%'
+        }}
       />
     ];
     return (
@@ -68,6 +77,7 @@ class Login extends React.Component {
         <TextField
           hintText="please enter the email address..."
           floatingLabelText="User Email"
+          // errorText="This field is required"
           onChange={this.handleInput('email')} />
 
         <br />

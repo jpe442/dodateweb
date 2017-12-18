@@ -46,15 +46,25 @@ class Signup extends React.Component {
   render() {
     const actions = [
       
-      <FlatButton
+      <RaisedButton
         label="Submit"
         primary={true}
         onClick={this.handleSubmit}
+        style={{
+          position: 'absolute',
+          right: '7%',
+          bottom: '20%'
+        }}
       />, 
-      <FlatButton
+      <RaisedButton
         label="Cancel"
         primary={true}
         onClick={this.props.closeSignupModal}
+        style={{
+          position: 'absolute',
+          right: '23%',
+          bottom: '20%'
+        }}
       />,
     ];
     return (

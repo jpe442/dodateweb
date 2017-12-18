@@ -264,14 +264,19 @@ body {
 }
 
 .login-text-fields {
-    display: inline;
+    display: inline-block;
+    position: relative;
+    right: 25%;
+    top: 40%;
+    /* position: absolute; */
+
     /* vertical-align: middle; */
 }
-
+/* 
 .login-session-btns {
     position: absolute;
     bottom: 5%;
-}
+} */
 
 
 /* .loginmsg{

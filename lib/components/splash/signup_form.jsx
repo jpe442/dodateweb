@@ -1,5 +1,5 @@
 import React from 'react';
-import TextField from 'material-ui/Dialog';
+import TextField from 'material-ui/TextField';
 import DialogActions from 'material-ui/Dialog';
 import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -25,9 +25,9 @@ class Signup extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault(e);
-    this.props.signup(this.state);
-    this.props.closeSignupModal();
-    this.props.ownProps.history.push('/homepage');
+    this.props.signup(this.state)
+    .then(this.props.ownProps.history.push('/homepage'))
+      .then(this.props.handleClose());
     // .then(() => this.props.clearSessionErrors())
   }
 
@@ -45,20 +45,38 @@ class Signup extends React.Component {
 
   render() {
     const actions = [
+      
+      <FlatButton
+        label="Submit"
+        primary={true}
+        onClick={this.handleSubmit}
+      />, 
       <FlatButton
         label="Cancel"
         primary={true}
         onClick={this.props.closeSignupModal}
       />,
-      <FlatButton
-        label="Submit"
-        primary={true}
-        onClick={this.handleSubmit}
-      />,
     ];
     return (
       <div className="session-form">
-        <h2 className="loginmsg">Do Date</h2>
+        <div
+          className="login-text-fields">
+        <TextField
+          hintText="please enter the email address..."
+          floatingLabelText="User Email"
+          onChange={this.handleInput('email')} />
+
+        <br />
+        <TextField
+          hintText="Password Field"
+          floatingLabelText="Password"
+          type="password"
+          onChange={this.handleInput('password')}
+        /><br />
+        </div>
+        {actions}
+
+        {/* <h2 className="loginmsg">Do Date</h2>
         <form onSubmit={this.handleSubmit}>
           {actions}
           <label className="username-session">Username:
@@ -78,7 +96,7 @@ class Signup extends React.Component {
           {/* <div className="session-submit" onClick={this.handleSubmit}>Enter</div> */}
           {/* <div className="session-guest" onClick={this.handleGuest}>Guest</div> */}
 
-        </form>
+        {/* </form> */}
         {/* <ul className="session-report">
           {
             this.props.autherrors.map((error, idx) => (

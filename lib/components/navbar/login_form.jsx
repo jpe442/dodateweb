@@ -54,6 +54,7 @@ class Login extends React.Component {
         onClick={this.handleSubmit}
       />,
       <FlatButton
+        className="login-modal-cancel-btn"
         label="Cancel"
         primary={true}
         onClick={this.props.handleClose}
@@ -62,29 +63,10 @@ class Login extends React.Component {
     return (
       <div className="session-form">
         {/* <h2 className="loginmsg">Do Date</h2> */}
-       
-        {/* <form onSubmit={this.handleSubmit}>
-          <label className="username-session">Username:
-          <input
-              className="username-input"
-              type="text"
-              onChange={this.handleInput('email')} /></label>
-
-          <label className="password-login">Password:
-        
-          <input
-              className="signup-password-input"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput('password')} />
-          </label>
-          {/* <div className="session-submit" onClick={this.handleSubmit}>Enter</div> */}
-          {/* <div className="session-guest" onClick={this.handleGuest}>Guest</div> */}
-
-        {/* </form> */} 
-       
+        <div
+        className="login-text-fields">
         <TextField
-          hintText="please enter your email address..."
+          hintText="please enter the email address..."
           floatingLabelText="User Email"
           onChange={this.handleInput('email')} />
 
@@ -95,6 +77,7 @@ class Login extends React.Component {
           type="password"
           onChange={this.handleInput('password')} 
         /><br />
+        </div>
         {actions}
         {/* <ul className="session-report">
           {

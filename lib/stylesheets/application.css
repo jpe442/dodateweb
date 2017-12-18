@@ -221,9 +221,10 @@ body {
 
 .session-form {
     display: flex;
-    /* flex-direction: row; */
+    /* flex-direction:  row; */
     justify-content: space-around;
 }
+
 
 .right-hidden-trigger {
     position: absolute;
@@ -262,10 +263,29 @@ body {
     max-width: 50px;
 }
 
-.login-dialog {
+.login-text-fields {
+    display: inline;
+    /* vertical-align: middle; */
+}
+
+.login-session-btns {
+    position: absolute;
+    bottom: 5%;
+}
+
+
+/* .loginmsg{
+    font-size: 120%;
+    position: absolute;
+    left: 5%;
+} */
+
+
+/* .login-dialog {
     display: flex;
     justify-content: space-around;
-}
+} */
+
 
 /* .bottom-sheet MenuItem{
     width: 50%;

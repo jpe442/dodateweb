@@ -2,7 +2,6 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import Signup from './signup_form';
 import Dialog from 'material-ui/Dialog';
-
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 
@@ -13,14 +12,14 @@ export default class Splash extends React.Component {
             open: false,
         };
         this.openSignupModal = this.openSignupModal.bind(this);
-        this.closeSignupModal = this.closeSignupModal.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     openSignupModal() {
         this.setState({ open: true });
     }
 
-    closeSignupModal() {
+    handleClose() {
         this.setState({ open: false });
     }
 
@@ -55,14 +54,14 @@ export default class Splash extends React.Component {
                 <Dialog
                     title="Signup"
                     modal={true}
-                    onRequestClose={this.closeSignupModal}
+                    onRequestClose={this.handleClose}
                     // contentStyle={customContentStyle}
                     open={this.state.open}
                 >
                     <Signup
                         ownProps={this.props.ownProps}
                         signup={this.props.signup}
-                        closeSignupModal={this.closeSignupModal}
+                        closeSignupModal={this.handleClose}
                     />
                 </Dialog>
             </div>

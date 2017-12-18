@@ -48,6 +48,11 @@ class NavBar extends React.Component {
     render() {
       console.log("navbar render");
         const { currentUser, logout, login} = this.props;
+        const modalBtnsStyle = {
+          display: 'flex',
+          position: 'absolute',
+          bottom: '5%'
+        }
 
         const AppNavBar = currentUser ? (
             <AppBar
@@ -83,7 +88,7 @@ class NavBar extends React.Component {
                     // style={sessionFade}
                     // actions={actions}
                     modal={true}
-
+                    actionsContainerStyle={modalBtnsStyle}                
                     onRequestClose={this.handleClose}
                     // contentStyle={customContentStyle}
                     open={this.state.open}

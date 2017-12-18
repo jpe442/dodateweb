@@ -267,7 +267,7 @@ body {
     display: inline-block;
     position: relative;
     right: 25%;
-    top: 40%;
+    top: 38%;
     /* position: absolute; */
 
     /* vertical-align: middle; */
@@ -282,6 +282,10 @@ body {
     color: red;
     font-size: 80%;
     top: 28%;
+}
+
+.session-errors li{
+    padding: 3%;
 }
 /* 
 .login-session-btns {

@@ -92,15 +92,21 @@ class NavBar extends React.Component {
                     onRequestClose={this.handleClose}
                     // contentStyle={customContentStyle}
                     open={this.state.open}
+                  style={{height: '50%'}}
                   titleStyle={{
                     paddingBottom: '1%',
-                    fontSize: '120%'
+                    fontSize: '120%',
+                    position: 'absolute',
+                    left: '31%'
+            
                   }}
                 >
                     <Login 
                     ownProps={this.props.ownProps}
+                    autherrors={this.props.autherrors}
                     login={login}
                     handleClose={this.handleClose}
+                    clearSessionErrors={this.props.clearSessionErrors}
                     />
                     
                 </Dialog>

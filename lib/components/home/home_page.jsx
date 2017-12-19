@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeTaskItem from './home_task_item';
+import MenuItem from 'material-ui/MenuItem';
 import LeftSideBarContainer from '../do_left_container/left_sidebar_container';
 import RightSideBarContainer from '../done_right_container/right_sidebar_container';
 import BottomBarContainer from '../bottom_bar/bottom_bar_container';
@@ -16,7 +16,8 @@ class HomePage extends React.Component {
 
 
     render () {
-        // const tasks = this.props.tasks;
+        let todosVals = Object.values(this.props.todos)
+        let todosMonday = todosVals.filter(todo => todo.workflow_pos === 'M')
         return (
             <div className="homepage-background">
                 <div className="weekday-titles">
@@ -27,7 +28,17 @@ class HomePage extends React.Component {
                     <div>Friday</div>
                 </div>
                 <div className="weekday-columns">
-                    <div className="monday">M</div>
+                    <div className="monday">
+                        <h2 className="column-back-shadow">
+                            M
+                        </h2>
+                        <div>{todosMonday.map(todo => (
+                            <MenuItem
+                                key={todo.id}
+                            >
+                                {todo.task}
+                            </MenuItem>))}</div>
+                    </div>
                     <div className="tuesday">T</div>
                     <div className="wednesday">W</div>
                     <div className="thursday">T</div>

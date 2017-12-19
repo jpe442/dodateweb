@@ -204,6 +204,7 @@ body {
     justify-content: space-around;
     flex-direction: row;
     width: 100%;
+
     /* height: 100%; */
 }
 
@@ -213,11 +214,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+        border-right: 1px solid rgba(47, 79, 79, 0.3);
+
 }
 
-.weekday-columns :not(:last-child) {
+/* .weekday-columns :not(:last-child) {
     border-right: 1px solid rgba(47, 79, 79, 0.3);
-}
+} */
 
 .session-form {
     display: flex;
@@ -290,7 +293,12 @@ body {
 
 .nav-base {
     width: 100%;
-    
+
+}
+
+.column-back-shadow {
+    position: absolute;
+    border-right-color: whitesmoke;
 }
 /* 
 .login-session-btns {

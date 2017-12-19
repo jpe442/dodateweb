@@ -48,7 +48,7 @@ class TodoForm extends React.Component {
         // className="login-modal-cancel-btn"
         label="Cancel"
         primary={true}
-        onClick={this.handleCancel}
+        onClick={this.props.toggleTodoCreateModal}
         style={{
           position: 'absolute',
           right: '10%',

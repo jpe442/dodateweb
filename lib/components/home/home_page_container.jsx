@@ -6,7 +6,7 @@ import HomePage from './home_page';
 // none of the commented out material has been implemented yet
 
 const mapStateToProps = state => ({
-    // // tasks: Object.values(state.entities.tasks)
+    todos: Object.values(state.todos)
 });
 
 const mapDispatchToProps = dispatch => ({

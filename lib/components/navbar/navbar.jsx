@@ -10,7 +10,7 @@ import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import Login from './login_form';
-import TodoForm from '../create_task/create_task_form'
+import TodoForm from '../tasks/create_task_form'
 
 class NavBar extends React.Component {
     constructor(props) {

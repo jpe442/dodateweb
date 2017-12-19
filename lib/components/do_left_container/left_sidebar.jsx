@@ -7,8 +7,8 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
 class LeftSideBar extends React.Component {
-    constructor(props) {
-        super(props);   
+  constructor(props) {
+      super(props);   
         this.state = {
             open: false
         };
@@ -25,26 +25,6 @@ class LeftSideBar extends React.Component {
     }
 
     render() {
-        const styles = {
-            smallIcon: {
-                width: 36,
-                height: 36,
-              },
-            mediumIcon: {
-              width: 48,
-              height: 48,
-            },
-            small: {
-                width: 72,
-                height: 72,
-                padding: 16,
-              },
-            medium: {
-              width: 96,
-              height: 96,
-              padding: 24,
-            },
-        };
         
         return (
             <div>
@@ -53,25 +33,28 @@ class LeftSideBar extends React.Component {
                 onMouseOver={this.handleToggle}>left hidden
                 
                 </div>
-                <IconButton
+                {/* <IconButton
                 // className="material-icons"
-                iconStyle={{width: '72px', height: '72px', padding: '24px'}}
-                style={{width: '36px', height: '36px'
-            }}
+                // iconStyle={styles.mediumIcon}
+                // style={styles.medium}
                 iconClassName="material-icons"
                 tooltip="Create New Tasks"
                 onMouseOver={this.handleToggle}
                 >
                     cloud_circle
-                </IconButton>
+                </IconButton> */}
                 <Drawer
                 docked={false}
-                width={400}
+                width={'20%'}
+                style={{textAlign: "center"}}
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
                 >
-                    <MenuItem onClick={this.closeLeftSidebar}>Menu Item</MenuItem>
-                    <MenuItem onClick={this.closeLeftSidebar}>Menu Item 2</MenuItem>
+                    <FloatingActionButton secondary={true} style={{margin: 20 }}>
+                        <ContentAdd />
+                    </FloatingActionButton>
+                    <MenuItem onClick={this.closeLeftSidebar}>Todo 1</MenuItem>
+                    <MenuItem onClick={this.closeLeftSidebar}>Todo 2</MenuItem>
                 </Drawer>
             </div>
         );

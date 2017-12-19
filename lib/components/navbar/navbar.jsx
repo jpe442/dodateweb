@@ -10,6 +10,7 @@ import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import Login from './login_form';
+import TodoForm from '../create_task/create_task_form'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -89,7 +90,12 @@ class NavBar extends React.Component {
                 onRequestClose={this.props.toggleTodoCreateModal}
                 open={this.props.openTodoCreateModal}
             >
-
+            <TodoForm
+                ownProps = {this.props.ownProps}
+                currentUser={this.props.currentUser}
+                createTodo={this.props.createTodo}
+                toggleTodoCreateModal={this.props.toggleTodoCreateModal}
+            />
             </Dialog>
             </div>
         ) : (

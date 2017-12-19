@@ -19,6 +19,10 @@ class LeftSideBar extends React.Component {
     componentDidMount() {
         this.props.fetchTodos(this.props.currentUser.id);
     }
+    
+    componentWillReceiveProps(newProps) {
+        this.setState(newProps.todos)
+    }
 
     handleToggle() {
         this.setState({open: !this.state.open});

@@ -32,12 +32,12 @@ class HomePage extends React.Component {
                         <h2 className="column-back-shadow">
                             M
                         </h2>
-                        <div>{todosMonday.map(todo => (
+                        <ul>{todosMonday.map(todo => (
                             <MenuItem
                                 key={todo.id}
                             >
                                 {todo.task}
-                            </MenuItem>))}</div>
+                            </MenuItem>))}</ul>
                     </div>
                     <div className="tuesday">T</div>
                     <div className="wednesday">W</div>

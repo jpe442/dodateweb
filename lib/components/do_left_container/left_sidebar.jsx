@@ -16,6 +16,10 @@ class LeftSideBar extends React.Component {
         this.closeLeftSidebar = this.closeLeftSidebar.bind(this);
     }
 
+    componentDidMount() {
+        this.props.fetchTodos(this.props.currentUser.id);
+    }
+
     handleToggle() {
         this.setState({open: !this.state.open});
     }
@@ -24,7 +28,14 @@ class LeftSideBar extends React.Component {
         this.setState({open: false});
     }
 
+    openNewTodo() {
+        
+    }
+
     render() {
+        let todosVals = Object.values(this.props.todos)
+        let todosUnscheduled = todosVals.filter(todo => todo.workflow_pos === 'unscheduled')
+
         
         return (
             <div>
@@ -33,29 +44,34 @@ class LeftSideBar extends React.Component {
                 onMouseOver={this.handleToggle}>left hidden
                 
                 </div>
-                {/* <IconButton
-                // className="material-icons"
-                // iconStyle={styles.mediumIcon}
-                // style={styles.medium}
-                iconClassName="material-icons"
-                tooltip="Create New Tasks"
-                onMouseOver={this.handleToggle}
-                >
-                    cloud_circle
-                </IconButton> */}
                 <Drawer
                 docked={false}
                 width={'20%'}
-                style={{textAlign: "center"}}
+                overlayStyle={{ zIndex: 10 }}
+                // zDepth={2}
+                style={{textAlign: "center", zIndex: 10}}
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
+                   
                 >
-                    <FloatingActionButton secondary={true} style={{margin: 20 }}>
+                    <FloatingActionButton 
+                    secondary={true} 
+                    style={{margin: 20, zIndex: 2500 }}
+                    onClick={this.props.toggleTodoCreateModal}
+                    >
                         <ContentAdd />
                     </FloatingActionButton>
-                    <MenuItem onClick={this.closeLeftSidebar}>Todo 1</MenuItem>
-                    <MenuItem onClick={this.closeLeftSidebar}>Todo 2</MenuItem>
+                    {todosUnscheduled.map(todo => (
+                    <MenuItem
+                    key={todo.id}
+                    >
+                    {todo.task}
+                    </MenuItem>
+        ))}
+                    {/* <MenuItem onClick={this.closeLeftSidebar}>Todo 1</MenuItem>
+                    <MenuItem onClick={this.closeLeftSidebar}>Todo 2</MenuItem> */}
                 </Drawer>
+                
             </div>
         );
     }

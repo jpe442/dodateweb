@@ -19,11 +19,16 @@ class NavBar extends React.Component {
         };
         this.openLoginModal = this.openLoginModal.bind(this);
         this.handleClose = this.handleClose.bind(this);
+ 
         // this.toggleLoginModal = this.toggleLoginModal.bind(this);
         console.log(this.props);
         console.log("above is props in NavBar constructor");
         // this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    // componentWillReceiveProps(newProps) {
+    //     this.setState(newProps.openTodoCreateModal)
+    // }
 
     openLoginModal() {
       console.log("yo yo");
@@ -55,6 +60,7 @@ class NavBar extends React.Component {
         // }
 
         const AppNavBar = currentUser ? (
+            <div className="nav-base">
             <AppBar
                 className="AppNavBar"
                 title={<span>DoDate</span>}
@@ -67,6 +73,25 @@ class NavBar extends React.Component {
                     />
                 }
             />
+            <Dialog
+                title="Create New Todo"
+                modal={false}
+                overlayStyle={{display: 'none'}}
+                style={{
+                   
+                    width: '100%',
+                    height: '100%',
+                    zIndex: 1500,
+                    // display: 'flex',
+                    // justifyContents: 'center'
+                }}
+
+                onRequestClose={this.props.toggleTodoCreateModal}
+                open={this.props.openTodoCreateModal}
+            >
+
+            </Dialog>
+            </div>
         ) : (
             <div>
                 <AppBar
@@ -92,15 +117,15 @@ class NavBar extends React.Component {
                     onRequestClose={this.handleClose}
                     // contentStyle={customContentStyle}
                     open={this.state.open}
-                  style={{height: '50%'}}
-                  titleStyle={{
-                    paddingBottom: '1%',
-                    fontSize: '120%',
-                    position: 'absolute',
-                    left: '35%',
-                    top: '7%'
-            
-                  }}
+                    style={{height: '50%'}}
+                    titleStyle={{
+                        paddingBottom: '1%',
+                        fontSize: '120%',
+                        position: 'absolute',
+                        left: '35%',
+                        top: '7%'
+                
+                    }}
                 >
                     <Login 
                     ownProps={this.props.ownProps}
@@ -111,6 +136,7 @@ class NavBar extends React.Component {
                     />
                     
                 </Dialog>
+               
             </div>
         );
         return (

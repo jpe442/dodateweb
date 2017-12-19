@@ -287,6 +287,11 @@ body {
 .session-errors li{
     padding: 3%;
 }
+
+.nav-base {
+    width: 100%;
+    
+}
 /* 
 .login-session-btns {
     position: absolute;

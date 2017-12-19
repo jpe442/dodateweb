@@ -73,7 +73,7 @@ class BottomBar extends React.Component {
                     className="weekend-button"
                     // iconStyle={{width: '72px', height: '72px', padding: '24px'}}
                     style={{position: "relative", marginBottom: '10%'}}
-                    secondary="true"
+                    secondary={true}
                     label="Weekend"
                     onClick={this.handleToggle} 
                 >

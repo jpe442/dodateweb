@@ -2,11 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { login, logout, clearSessionErrors } from '../../actions/session_actions';
 import NavBar from './navbar';
+import {toggleTodoCreateModal} from '../../actions/ui_actions'
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.session.currentUser,
     ownProps: ownProps,
-    autherrors: state.errors.session
+    autherrors: state.errors.session,
+    openTodoCreateModal: state.ui.openTodoCreateModal,
 });
 
 const mapDispatchToProps = (dispatch) => {
@@ -15,7 +17,8 @@ return ({
 
    logout: () => dispatch(logout()),
    login: (user) => dispatch(login(user)),
-   clearSessionErrors: () => dispatch(clearSessionErrors())
+   clearSessionErrors: () => dispatch(clearSessionErrors()),
+   toggleTodoCreateModal: () => dispatch(toggleTodoCreateModal())
 })};
 
 export default connect(

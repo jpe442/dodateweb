@@ -91,13 +91,14 @@ class NavBar extends React.Component {
                 }}
 
                 titleStyle={{
+                    paddingTop: '3%',
                     padding: '1%',
                     fontSize: '80%',
                     position: 'relative',
-                    left: '38%',
-                    top: '4%'
+                    left: '10%',
+                    top: '20%'
                 }}
-                // onRequestClose={this.props.toggleTodoCreateModal}
+                onRequestClose={this.props.toggleTodoCreateModal}
                 open={this.props.openTodoCreateModal}
             >
             <TodoForm

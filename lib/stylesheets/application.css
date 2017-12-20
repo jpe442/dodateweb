@@ -309,8 +309,29 @@ body {
     position: absolute;
     border-right-color: whitesmoke;
     top: 45%;
+    /* left: 5%; */
+}
+
+#M {
     left: 5%;
 }
+
+#T {
+    left: 27%;
+}
+
+#W {
+    left: 46%;
+}
+
+#Th {
+    left: 64%;
+}
+
+#F {
+    left: 87%;
+}
+
 
 /* todo form fields */
 

@@ -59,8 +59,8 @@ class TodoForm extends React.Component {
         onClick={this.handleSubmit}
         style={{
           position: 'absolute',
-          left: '5%',
-          bottom: '7%'
+          left: '10%',
+          bottom: '8%'
         }}
       />,
       <RaisedButton
@@ -70,8 +70,8 @@ class TodoForm extends React.Component {
         onClick={this.props.toggleTodoCreateModal}
         style={{
           position: 'absolute',
-          left: '23%',
-          bottom: '7%'
+          left: '28%',
+          bottom: '8%'
         }}
       />,
 
@@ -86,6 +86,10 @@ class TodoForm extends React.Component {
           onChange={this.handleInput('task')}
           hintText="Enter the primary task here..."
           floatingLabelText="Task"
+          style={{position: 'relative',
+                  top: '0%',
+                  left: '5%'
+          }}
         /><br />
         <TextField
           className="notes-field"
@@ -94,6 +98,11 @@ class TodoForm extends React.Component {
           floatingLabelText="Notes"
           multiLine={true}
           rows={2}
+          style={{
+            position: 'relative',
+            top: '30%',
+            left: '5%'
+          }}
         /><br />
         {/* <TextField
           className=""

@@ -18,6 +18,12 @@ class HomePage extends React.Component {
     render () {
         let todosVals = Object.values(this.props.todos)
         let todosMonday = todosVals.filter(todo => todo.workflow_pos === 'M')
+        let todosTuesday = todosVals.filter(todo => todo.workflow_pos === 'T')
+        let todosWednesday = todosVals.filter(todo => todo.workflow_pos === 'W')
+        let todosThursday = todosVals.filter(todo => todo.workflow_pos === 'TH')
+        let todosFriday = todosVals.filter(todo => todo.workflow_pos === 'F')
+
+
         return (
             <div className="homepage-background">
                 <div className="weekday-titles">
@@ -29,7 +35,7 @@ class HomePage extends React.Component {
                 </div>
                 <div className="weekday-columns">
                     <div className="monday">
-                        <h2 className="column-back-shadow">
+                        <h2 className="column-back-shadow" id="M">
                             M
                         </h2>
                         <ul className="menu-items">{todosMonday.map(todo => (
@@ -40,10 +46,53 @@ class HomePage extends React.Component {
                                 {todo.task}
                             </MenuItem>))}</ul>
                     </div>
-                    <div className="tuesday">T</div>
-                    <div className="wednesday">W</div>
-                    <div className="thursday">T</div>
-                    <div className="friday">F</div>
+                    <div className="tuesday">
+                    <h2 className="column-back-shadow" id="T">
+                            T
+                        </h2>
+                        <ul className="menu-items">{todosTuesday.map(todo => (
+                            <MenuItem
+
+                                key={todo.id}
+                            >
+                                {todo.task}
+                            </MenuItem>))}</ul>
+                    </div>
+                    <div className="wednesday">
+                        <h2 className="column-back-shadow" id="W">
+                            W
+                        </h2>
+                        <ul className="menu-items">{todosWednesday.map(todo => (
+                            <MenuItem
+
+                                key={todo.id}
+                            >
+                                {todo.task}
+                            </MenuItem>))}</ul>
+                    </div>
+                    <div className="thursday">
+                        <h2 className="column-back-shadow" id="Th">
+                            Th
+                        </h2>
+                        <ul className="menu-items">{todosThursday.map(todo => (
+                            <MenuItem
+
+                                key={todo.id}
+                            >
+                                {todo.task}
+                            </MenuItem>))}</ul></div>
+                    <div className="friday">
+                        <h2 className="column-back-shadow" id="F">
+                            F
+                        </h2>
+                        <ul className="menu-items">{todosFriday.map(todo => (
+                            <MenuItem
+
+                                key={todo.id}
+                            >
+                                {todo.task}
+                            </MenuItem>))}</ul>
+                    </div>
                 </div>
                 <LeftSideBarContainer />
                 <RightSideBarContainer />

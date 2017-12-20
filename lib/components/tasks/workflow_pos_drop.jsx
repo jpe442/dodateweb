@@ -40,6 +40,7 @@ export default class WorkFlowDropdown extends React.Component {
           <MenuItem value={'unscheduled'} primaryText="Unscheduled" />
           <MenuItem value={'M'} primaryText="Monday" />
           <MenuItem value={'T'} primaryText="Tuesday" />
+          <MenuItem value={'W'} primaryText="Wednesday" />
           <MenuItem value={'TH'} primaryText="Thursday" />
           <MenuItem value={'F'} primaryText="Friday" />
           <MenuItem value={'ST'} primaryText="Saturday" />

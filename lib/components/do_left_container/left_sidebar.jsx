@@ -53,7 +53,7 @@ class LeftSideBar extends React.Component {
                 width={'20%'}
                 overlayStyle={{ zIndex: 10 }}
                 // zDepth={2}
-                style={{textAlign: "center", zIndex: 10}}
+                style={{textAlign: "left", zIndex: 10}}
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
                    

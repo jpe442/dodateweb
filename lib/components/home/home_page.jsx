@@ -32,8 +32,9 @@ class HomePage extends React.Component {
                         <h2 className="column-back-shadow">
                             M
                         </h2>
-                        <ul>{todosMonday.map(todo => (
+                        <ul className="menu-items">{todosMonday.map(todo => (
                             <MenuItem
+                               
                                 key={todo.id}
                             >
                                 {todo.task}

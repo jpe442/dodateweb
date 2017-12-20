@@ -79,7 +79,6 @@ class NavBar extends React.Component {
                 modal={false}
                 overlayStyle={{display: 'none'}}
                 style={{
-                   
                     width: '100%',
                     height: '100%',
                     zIndex: 1500,
@@ -87,7 +86,18 @@ class NavBar extends React.Component {
                     // justifyContents: 'center'
                 }}
 
-                onRequestClose={this.props.toggleTodoCreateModal}
+                bodyStyle={{
+                    height: '100%'
+                }}
+
+                titleStyle={{
+                    padding: '1%',
+                    fontSize: '80%',
+                    position: 'relative',
+                    left: '38%',
+                    top: '4%'
+                }}
+                // onRequestClose={this.props.toggleTodoCreateModal}
                 open={this.props.openTodoCreateModal}
             >
             <TodoForm

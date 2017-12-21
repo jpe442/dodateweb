@@ -95,7 +95,7 @@ class NavBar extends React.Component {
                     padding: '1%',
                     fontSize: '80%',
                     position: 'relative',
-                    left: '10%',
+                    left: '7%',
                     top: '20%'
                 }}
                 onRequestClose={this.props.toggleTodoCreateModal}

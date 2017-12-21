@@ -38,7 +38,10 @@ export default class CategoryDropdown extends React.Component {
             top: '28%',
             left: '50%'
           }}>
-          <MenuItem value={this.state.value} primaryText="Misc." />
+          <MenuItem value={"Misc."} primaryText="Misc." />
+          <MenuItem value={"test"} primaryText="Test" />
+          <MenuItem value={"Home"} primaryText="Home" />
+          <MenuItem value={"Work"} primaryText="Work" />
           {/* <MenuItem value={} primaryText="" />
           <MenuItem value={} primaryText="" />
           <MenuItem value={} primaryText="" />

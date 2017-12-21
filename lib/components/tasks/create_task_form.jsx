@@ -100,7 +100,7 @@ class TodoForm extends React.Component {
           rows={2}
           style={{
             position: 'relative',
-            top: '30%',
+            top: '25%',
             left: '5%'
           }}
         /><br />

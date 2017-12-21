@@ -214,7 +214,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: scroll;
+    overflow: hidden;
     border-right: 1px solid rgba(47, 79, 79, 0.3);
 
 }
@@ -226,6 +226,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 
 /* .weekday-columns :not(:last-child) {
     border-right: 1px solid rgba(47, 79, 79, 0.3);
@@ -303,6 +304,10 @@ body {
 .nav-base {
     width: 100%;
 
+}
+
+.menu-items-left-drawer {
+    text-align: left;
 }
 
 .column-back-shadow {

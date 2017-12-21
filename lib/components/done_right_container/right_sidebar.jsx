@@ -6,7 +6,6 @@ import IconButton from 'material-ui/IconButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
-
 class RightSideBar extends React.Component {
     constructor(props) {
         super(props);
@@ -27,6 +26,10 @@ class RightSideBar extends React.Component {
     }
 
     render() {
+
+        let doneItems = Object.values(this.props.todos).filter(
+            todo => todo.workflow_pos === 'D'
+        )
         return (
             <div>
                 <div
@@ -49,8 +52,17 @@ class RightSideBar extends React.Component {
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
                 >
-                    <MenuItem onClick={this.closeRightSideBar}>Menu Item</MenuItem>
-                    <MenuItem onClick={this.closeRightSideBar}>Menu Item 2</MenuItem>
+                    <ul className="menu-items-left-drawer">
+                        {doneItems.map(todo => (
+                            <MenuItem
+                                key={todo.id}
+                                // style={this.categoryStyle(todo.tag)}
+                                // onClick={() => this.markComplete(todo)}
+                            >
+                                {todo.task}
+                            </MenuItem>
+                        ))}
+                    </ul>
                 </Drawer>
             </div>
         );

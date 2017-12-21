@@ -30,16 +30,31 @@ class LeftSideBar extends React.Component {
 
     closeLeftSidebar() {
         this.setState({open: false});
+    }  
+
+    markComplete(todo) {
+        todo.workflow_pos = 'D';
     }
 
-    openNewTodo() {
-        
+    categoryStyle(category) {
+        switch (category) {
+            case 'Misc.':
+                return { backgroundColor: 'lightpink', border: '1px solid lightgray', overflow: 'hidden'}
+            case 'Home':
+                return { backgroundColor: 'lightyellow', border: '1px solid lightgray', overflow: 'hidden'}
+            case 'test':    
+                return { backgroundColor: 'lightblue', border: '1px solid lightgray', overflow: 'hidden'}
+            default:
+                return { backgroundColor: 'whitesmoke', border: '1px solid lightgray', overflow: 'hidden'}
+        }
     }
+    
+
 
     render() {
         let todosVals = Object.values(this.props.todos)
         let todosUnscheduled = todosVals.filter(todo => todo.workflow_pos === 'unscheduled')
-
+        
         
         return (
             <div>
@@ -53,7 +68,7 @@ class LeftSideBar extends React.Component {
                 width={'20%'}
                 overlayStyle={{ zIndex: 10 }}
                 // zDepth={2}
-                style={{textAlign: "left", zIndex: 10}}
+                style={{textAlign: "center", zIndex: 10}}
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
                    
@@ -65,13 +80,18 @@ class LeftSideBar extends React.Component {
                     >
                         <ContentAdd />
                     </FloatingActionButton>
-                    {todosUnscheduled.map(todo => (
-                    <MenuItem
-                    key={todo.id}
-                    >
-                    {todo.task}
-                    </MenuItem>
-        ))}
+                    <ul className="menu-items-left-drawer">
+                        {todosUnscheduled.reverse().map(todo => (
+                            <MenuItem
+                                key={todo.id}
+                                style={this.categoryStyle(todo.tag)}
+                                onClick={()=>this.markComplete(todo)}
+                            >
+                                {todo.task}
+                            </MenuItem>
+                        ))}
+                    </ul>
+                  
                     {/* <MenuItem onClick={this.closeLeftSidebar}>Todo 1</MenuItem>
                     <MenuItem onClick={this.closeLeftSidebar}>Todo 2</MenuItem> */}
                 </Drawer>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import RightSideBar from './right_sidebar';
 
 const mapStateToProps = (state, ownProps) => ({
-  
+  todos: state.todos
 });
 
 const mapDispatchToProps = (dispatch) => ({

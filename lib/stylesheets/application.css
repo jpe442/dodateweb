@@ -353,8 +353,17 @@ body {
 }
 
 .menu-items div{
-    font-size: 10px;
+        font-size: 10px;
+
+    
     /* border: 1px solid rgba(169, 169, 169, 0.274); */
+}
+
+.todo-item {
+    font-size: 10px;
+    display: flex;
+    border-bottom: solid 1px lightgray; 
+    background-color: rgba(135, 210, 250, 0.15);
 }
 
 .workflow-drop-title {

@@ -65,7 +65,7 @@ class LeftSideBar extends React.Component {
                 </div>
                 <Drawer
                 docked={false}
-                width={'20%'}
+                width={'25%'}
                 overlayStyle={{ zIndex: 10 }}
                 // zDepth={2}
                 style={{textAlign: "center", zIndex: 10}}

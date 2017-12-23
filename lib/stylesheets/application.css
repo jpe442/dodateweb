@@ -362,8 +362,11 @@ body {
 .todo-item {
     font-size: 10px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     border-bottom: solid 1px lightgray; 
     background-color: rgba(135, 210, 250, 0.15);
+    width: 100%;
 }
 
 .workflow-drop-title {

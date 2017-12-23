@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuItem from 'material-ui/MenuItem';
+import TodoItem from '../tasks/todoitem'
 import Checkbox from 'material-ui/Checkbox';
 import LeftSideBarContainer from '../do_left_container/left_sidebar_container';
 import RightSideBarContainer from '../done_right_container/right_sidebar_container';
@@ -78,12 +79,13 @@ class HomePage extends React.Component {
                             W
                         </h2>
                         <ul className="menu-items">{todosWednesday.map(todo => (
-                            <MenuItem
-
-                                key={todo.id}
-                            >
-                                {todo.task}
-                            </MenuItem>))}</ul>
+                           <TodoItem 
+                           key={todo.id}
+                           todo={todo}
+                           
+                           />
+        
+                           ))}</ul>
                     </div>
                     <div className="thursday">
                         <h2 className="column-back-shadow" id="Th">

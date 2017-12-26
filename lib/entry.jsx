@@ -14,9 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.signup = signup;
   window.fetchTodos = fetchTodos
- 
+  
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });
+
 
 

@@ -15,8 +15,6 @@ class HomePage extends React.Component {
         console.log("componentDidMounted");
     }
 
-
-
     render () {
         let todosVals = Object.values(this.props.todos)
         let todosMonday = todosVals.filter(todo => todo.workflow_pos === 'M')
@@ -24,8 +22,12 @@ class HomePage extends React.Component {
         let todosWednesday = todosVals.filter(todo => todo.workflow_pos === 'W')
         let todosThursday = todosVals.filter(todo => todo.workflow_pos === 'TH')
         let todosFriday = todosVals.filter(todo => todo.workflow_pos === 'F')
-
-
+        
+        let todoItem = document.getElementsByClassName('todo-item')
+        $(function () {
+            $(todoItem).draggable();
+        });
+       
         return (
             <div className="homepage-background">
                 <div className="weekday-titles">
@@ -41,25 +43,10 @@ class HomePage extends React.Component {
                             M
                         </h2>
                         <ul className="menu-items">{todosMonday.map(todo => (
-                          <div
-                            className="todo-item"
-                            key={todo.id}
-                          >
-                            <MenuItem
+                            <TodoItem
                                 key={todo.id}
-                                // style={{display: 'flex'}}
-                            >
-                                {todo.task}
-                            </MenuItem>
-                            <Checkbox
-                                label=""
-                                style={{
-                                    position: 'fixed',
-                                    left: '16%',
-                                    width: '.5%'
-                                }}
-                                />
-                          </div>))}
+                                todo={todo}
+                            />))}
                         </ul>
                     </div>
                     <div className="tuesday">
@@ -67,12 +54,11 @@ class HomePage extends React.Component {
                             T
                         </h2>
                         <ul className="menu-items">{todosTuesday.map(todo => (
-                            <MenuItem
-
+                            <TodoItem
                                 key={todo.id}
-                            >
-                                {todo.task}
-                            </MenuItem>))}</ul>
+                                todo={todo}
+                            />))}
+                        </ul>
                     </div>
                     <div className="wednesday">
                         <h2 className="column-back-shadow" id="W">
@@ -82,33 +68,31 @@ class HomePage extends React.Component {
                            <TodoItem 
                            key={todo.id}
                            todo={todo}
-                           
                            />
-        
-                           ))}</ul>
+                           ))}
+                        </ul>
                     </div>
                     <div className="thursday">
                         <h2 className="column-back-shadow" id="Th">
                             Th
                         </h2>
                         <ul className="menu-items">{todosThursday.map(todo => (
-                            <MenuItem
-
+                            <TodoItem
                                 key={todo.id}
-                            >
-                                {todo.task}
-                            </MenuItem>))}</ul></div>
+                                todo={todo}
+                            />))}
+                        </ul>
+                    </div>
                     <div className="friday">
                         <h2 className="column-back-shadow" id="F">
                             F
                         </h2>
                         <ul className="menu-items">{todosFriday.map(todo => (
-                            <MenuItem
-
+                            <TodoItem
                                 key={todo.id}
-                            >
-                                {todo.task}
-                            </MenuItem>))}</ul>
+                                todo={todo}
+                            />))}
+                        </ul>
                     </div>
                 </div>
                 <LeftSideBarContainer />

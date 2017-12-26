@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+import TodoItem from '../tasks/todoitem'
 
 class LeftSideBar extends React.Component {
   constructor(props) {
@@ -68,7 +69,7 @@ class LeftSideBar extends React.Component {
                 width={'25%'}
                 overlayStyle={{ zIndex: 10 }}
                 // zDepth={2}
-                style={{textAlign: "center", zIndex: 10}}
+                style={{textAlign: "center", zIndex: 10, overflow: 'hidden'}}
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
                    
@@ -82,13 +83,12 @@ class LeftSideBar extends React.Component {
                     </FloatingActionButton>
                     <ul className="menu-items-left-drawer">
                         {todosUnscheduled.reverse().map(todo => (
-                            <MenuItem
+                            <TodoItem
                                 key={todo.id}
-                                style={this.categoryStyle(todo.tag)}
-                                onClick={()=>this.markComplete(todo)}
+                                todo={todo}
+                                // onClick={()=>this.markComplete(todo)}
                             >
-                                {todo.task}
-                            </MenuItem>
+                            </TodoItem>
                         ))}
                     </ul>
                   

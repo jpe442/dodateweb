@@ -1,50 +1,81 @@
 import React from 'react';
 import MenuItem from 'material-ui/MenuItem';
 import Checkbox from 'material-ui/Checkbox';
+import { ItemTypes } from '../../util/dnd';
+import { DragSource } from 'react-dnd';
+import PropTypes from 'prop-types'
 
-export default class TodoItem extends React.Component {
+const taskSource = {
+  beginDrag(props) {
+    return {};
+  }
+}
+
+const collect = (connect, monitor) => ({
+  connectDragSource: connect.dragSource(),
+  isDragging: monitor.isDragging()
+})
+
+class TodoItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       completed: false  
     };
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
-    this.style = {zIndex: 1400}
+    this.style = {zIndex: 2000}
   }
 
   categoryStyle(category) {
     switch (category) {
       case 'Misc.':
         return {
-          backgroundColor: 'rgba(135, 210, 250, .15)', 
+                backgroundColor: 'rgba(135, 210, 250, .15)', 
                 border: '1px solid lightgray', 
-                overflow: 'hidden' 
+                overflow: 'hidden',
+                fontSize: 10,
               }
       case 'Home':
-        return { backgroundColor: 'rgba(255, 255, 224, 0.3)', border: '1px solid lightgray', overflow: 'hidden' }
+        return { 
+                backgroundColor: 'rgba(255, 255, 224, 0.3)', 
+                border: '1px solid lightgray', 
+                overflow: 'hidden',
+                fontSize: 10,
+              }
       case 'test':  
-        return { backgroundColor: 'rgba(255, 182, 194, 0.4)', border: '1px solid lightgray', overflow: 'hidden' }
+        return { 
+                backgroundColor: 'rgba(255, 182, 194, 0.4)', 
+                border: '1px solid lightgray', 
+                overflow: 'hidden',
+                fontSize: 10,
+              }
       default:
-        return { backgroundColor: 'rgba(245, 245, 245, 0.7)', border: '1px solid lightgray', overflow: 'hidden' }
+        return { 
+                backgroundColor: 'rgba(245, 245, 245, 0.7)', 
+                border: '1px solid lightgray', 
+                overflow: 'hidden',
+                fontSize: 10,
+              }
     }
   }
 
 
   render() {
 
-    let todoItem = document.getElementsByClassName('todo-item')
-    $(function () {
-      $(todoItem).draggable();
-    });
+    // let todoItem = document.getElementsByClassName('todo-item')
+    // $(function () {
+    //   $(todoItem).draggable();
+    // });
+    const { connectDragSource, isDragging } = this.props; 
 
 
-
-    return (
+    return connectDragSource(
         <div
           className="todo-item"
-          onClick={this.handleClick}
+          // ondrag={this.handleClick}
           style={this.categoryStyle(this.props.todo.tag)}
         >
           <MenuItem
@@ -76,3 +107,15 @@ export default class TodoItem extends React.Component {
     )
   }
 }
+
+TodoItem.propTypes = {
+  connectDragSource: PropTypes.func.isRequired,
+  isDragging: PropTypes.bool.isRequired
+};
+
+console.log("hello!!!")
+console.log(collect)
+console.log(taskSource)
+console.log(ItemTypes.TASK)
+
+export default DragSource(ItemTypes.TASK, taskSource, collect)(TodoItem);

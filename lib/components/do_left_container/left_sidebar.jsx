@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-import TodoItem from '../tasks/todoitem'
+import TodoItem from '../tasks/todoitem'    
 
 class LeftSideBar extends React.Component {
   constructor(props) {
@@ -69,7 +69,7 @@ class LeftSideBar extends React.Component {
                 width={'25%'}
                 overlayStyle={{ zIndex: 10 }}
                 // zDepth={2}
-                style={{textAlign: "center", zIndex: 10, overflow: 'hidden'}}
+                style={{textAlign: "center", zIndex: 10, overflow: "visible"}}
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
                    

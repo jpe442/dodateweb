@@ -5,6 +5,8 @@ import Checkbox from 'material-ui/Checkbox';
 import LeftSideBarContainer from '../do_left_container/left_sidebar_container';
 import RightSideBarContainer from '../done_right_container/right_sidebar_container';
 import BottomBarContainer from '../bottom_bar/bottom_bar_container';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -15,6 +17,7 @@ class HomePage extends React.Component {
         console.log("componentDidMounted");
     }
 
+
     render () {
         let todosVals = Object.values(this.props.todos)
         let todosMonday = todosVals.filter(todo => todo.workflow_pos === 'M')
@@ -22,11 +25,16 @@ class HomePage extends React.Component {
         let todosWednesday = todosVals.filter(todo => todo.workflow_pos === 'W')
         let todosThursday = todosVals.filter(todo => todo.workflow_pos === 'TH')
         let todosFriday = todosVals.filter(todo => todo.workflow_pos === 'F')
-        
-        let todoItem = document.getElementsByClassName('todo-item')
-        $(function () {
-            $(todoItem).draggable();
-        });
+
+        // let todoItem = document.getElementsByClassName('todo-item')
+        // $(function () {
+        //     $(todoItem).draggable();
+        // });
+
+        const hours = []
+        for (let i = 1; i < 13; i++) {
+            hours.push({hour: i})
+        }
        
         return (
             <div className="homepage-background">
@@ -64,13 +72,19 @@ class HomePage extends React.Component {
                         <h2 className="column-back-shadow" id="W">
                             W
                         </h2>
-                        <ul className="menu-items">{todosWednesday.map(todo => (
+                        <ul className="hours-available">
+                            {hours.map(hour => (
+                                <div>{hour.hour}</div>
+                            ))}
+                        </ul>
+                        {/* <ul className="menu-items">{todosWednesday.map(todo => (
+                            <div></div>
                            <TodoItem 
                            key={todo.id}
                            todo={todo}
                            />
                            ))}
-                        </ul>
+                        </ul> */}
                     </div>
                     <div className="thursday">
                         <h2 className="column-back-shadow" id="Th">
@@ -103,4 +117,4 @@ class HomePage extends React.Component {
     }
 }
 
-export default HomePage;
+export default DragDropContext(HTML5Backend)(HomePage);

@@ -38,9 +38,10 @@ class HourSlot extends React.Component {
       <div style={{
         position: 'relative',
         width: '100%',
-        height: '8.333333%'
+        height: '8.333333%',
+        fontsize: 16
       }}>
-     <div>{itemHover}{this.props.children}</div>
+     <div>{this.props.children}</div>
         {isOver &&
           <div style={{
             position: 'absolute',

@@ -409,7 +409,18 @@ body {
 
 .hours-available div{
     /* height: 8.33333333333333%; */
-    font-size: 10px;
+    /* font-size: 10px; */
+}
+
+.hoursslot {
+
+}
+
+.hoursdisplay {
+    position: absolute;
+    font-size: 15px;
+    left: 1%;
+    top: 7%;
 }
 /* 
 .login-session-btns {

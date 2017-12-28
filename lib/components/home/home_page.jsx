@@ -48,8 +48,13 @@ class HomePage extends React.Component {
         // });
 
         const hours = []
-        for (let i = 1; i < 13; i++) {
-            hours.push({hour: i})
+        for (let i = 7; i < 19; i++) {
+            if (i > 12) {
+                let hourNum = i - 12
+                hours.push({ hour: hourNum, timeOfDay: "p" })
+            }else{
+                hours.push({ hour: i, timeOfDay: "a" })
+            }
         }
 
         const task = (workflowPos, timeSlot) => {
@@ -93,7 +98,11 @@ class HomePage extends React.Component {
                                         className="hourslot"
                                         workflowpos="M"
                                         timeslot={hour.hour}>
+                                        <div
+                                        className="hoursdisplay"
+                                        >{hour.hour}{hour.timeOfDay}</div>
                                         {task('M', hour.hour)}
+
                                     </HourSlot>
 
                                 </div>
@@ -114,7 +123,11 @@ class HomePage extends React.Component {
                                         className="hourslot"
                                         workflowpos="T"
                                         timeslot={hour.hour}>
+                                        <div
+                                        className="hoursdisplay"
+                                        >{hour.hour}{hour.timeOfDay}</div>
                                         {task('T', hour.hour)}
+                                        
                                     </HourSlot>
 
                                 </div>
@@ -135,20 +148,15 @@ class HomePage extends React.Component {
                                         className="hourslot"
                                         workflowpos="W"
                                         timeslot={hour.hour}>
+                                        <div
+                                        className="hoursdisplay"
+                                        >{hour.hour}{hour.timeOfDay}</div>
                                         {task('W', hour.hour)}
                                     </HourSlot>
 
                                 </div>
                             ))}
                         </ul>
-                        {/* <ul className="menu-items">{todosWednesday.map(todo => (
-                            <div></div>
-                           <TodoItem 
-                           key={todo.id}
-                           todo={todo}
-                           />
-                           ))}
-                        </ul> */}
                     </div>
                     <div className="thursday">
                         <h2 className="column-back-shadow" id="Th">
@@ -164,6 +172,9 @@ class HomePage extends React.Component {
                                         className="hourslot"
                                         workflowpos="TH"
                                         timeslot={hour.hour}>
+                                        <div
+                                        className="hoursdisplay"
+                                        >{hour.hour}{hour.timeOfDay}</div>
                                         {task('TH', hour.hour)}
                                     </HourSlot>
 
@@ -185,6 +196,9 @@ class HomePage extends React.Component {
                                         className="hourslot"
                                         workflowpos="F"
                                         timeslot={hour.hour}>
+                                        <div
+                                        className="hoursdisplay"
+                                        >{hour.hour}{hour.timeOfDay}</div>
                                         {task('F', hour.hour)}
                                     </HourSlot>
 

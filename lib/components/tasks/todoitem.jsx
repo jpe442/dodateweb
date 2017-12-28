@@ -7,7 +7,11 @@ import PropTypes from 'prop-types'
 
 const taskSource = {
   beginDrag(props) {
-    return {};
+    console.log("in taskSource")
+    console.log(props)
+    return {id: props.todo.id,
+            moveTask: props.moveTask
+    };
   }
 }
 
@@ -37,6 +41,7 @@ class TodoItem extends React.Component {
                 border: '1px solid lightgray', 
                 overflow: 'hidden',
                 fontSize: 10,
+                // position: 'absolute'
               }
       case 'Home':
         return { 
@@ -62,6 +67,9 @@ class TodoItem extends React.Component {
     }
   }
 
+  moveTask(workflowpos, timeslot) {
+    console.log("We're moving baby!!!!!")
+  }
 
   render() {
 

@@ -1,17 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import HomePage from './home_page';
-// import { fetchStuff ? } from '../../actions/homepage_actions';
+import { updateTodo } from '../../actions/todo_actions';
 
 // none of the commented out material has been implemented yet
 
 const mapStateToProps = state => ({
-    todos: Object.values(state.todos)
+    todos: state.todos,
+    currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-    // fetchTasks: () => dispatch(fetchTasks()),
-    // fetchTask: taskId => dispatch(fetchTask(taskId))
+    updateTodo: (userId, todo) => dispatch(updateTodo(userId, todo)),
 });
 
 export default connect(

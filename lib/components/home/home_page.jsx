@@ -1,22 +1,38 @@
 import React from 'react';
 import MenuItem from 'material-ui/MenuItem';
 import TodoItem from '../tasks/todoitem'
+import HourSlot from '../tasks/hourslot'
 import Checkbox from 'material-ui/Checkbox';
 import LeftSideBarContainer from '../do_left_container/left_sidebar_container';
 import RightSideBarContainer from '../done_right_container/right_sidebar_container';
 import BottomBarContainer from '../bottom_bar/bottom_bar_container';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
+// import 
 
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
+        this.moveTask = this.moveTask.bind(this)
     }
 
     componentDidMount() {
         console.log("componentDidMounted");
     }
 
+    moveTask(itemId, workflowPos, timeSlot) {
+        let moveTodo = {
+                        id: itemId,
+                        workflow_pos: workflowPos,
+                        time_slot: timeSlot,
+                        tag: this.props.todos[itemId].tag,
+                        notes: this.props.todos[itemId].notes,
+                        etc: this.props.todos[itemId].etc,
+                        user_id: this.props.currentUser.id
+                        }
+
+        this.props.updateTodo(this.props.currentUser.id, moveTodo)
+    }
 
     render () {
         let todosVals = Object.values(this.props.todos)
@@ -35,7 +51,24 @@ class HomePage extends React.Component {
         for (let i = 1; i < 13; i++) {
             hours.push({hour: i})
         }
-       
+
+        const task = (workflowPos, timeSlot) => {
+            let todosToday = todosVals.filter(todo => todo.workflow_pos === workflowPos)
+            console.log(workflowPos)
+            if (todosToday.some((todo) => (todo.time_slot === timeSlot))) {
+                let todosNow = todosToday.filter(todo => (todo.time_slot === timeSlot))
+                return (
+                    todosNow.map(todo => 
+                        <TodoItem
+                            key={todo.key}
+                            todo={todo}
+                            moveTask={this.moveTask}
+                            // style={{height: '100%'}}
+                        />
+                    )  
+                )
+            }
+        }
         return (
             <div className="homepage-background">
                 <div className="weekday-titles">
@@ -50,22 +83,42 @@ class HomePage extends React.Component {
                         <h2 className="column-back-shadow" id="M">
                             M
                         </h2>
-                        <ul className="menu-items">{todosMonday.map(todo => (
-                            <TodoItem
-                                key={todo.id}
-                                todo={todo}
-                            />))}
+                        <ul className="hours-available">
+                            {hours.map(hour => (
+                                <div
+                                    workflowpos="M"
+                                    timeslot={hour.hour}
+                                >
+                                    <HourSlot
+                                        className="hourslot"
+                                        workflowpos="M"
+                                        timeslot={hour.hour}>
+                                        {task('M', hour.hour)}
+                                    </HourSlot>
+
+                                </div>
+                            ))}
                         </ul>
                     </div>
                     <div className="tuesday">
                     <h2 className="column-back-shadow" id="T">
                             T
                         </h2>
-                        <ul className="menu-items">{todosTuesday.map(todo => (
-                            <TodoItem
-                                key={todo.id}
-                                todo={todo}
-                            />))}
+                        <ul className="hours-available">
+                            {hours.map(hour => (
+                                <div
+                                    workflowpos="T"
+                                    timeslot={hour.hour}
+                                >
+                                    <HourSlot
+                                        className="hourslot"
+                                        workflowpos="T"
+                                        timeslot={hour.hour}>
+                                        {task('T', hour.hour)}
+                                    </HourSlot>
+
+                                </div>
+                            ))}
                         </ul>
                     </div>
                     <div className="wednesday">
@@ -74,7 +127,18 @@ class HomePage extends React.Component {
                         </h2>
                         <ul className="hours-available">
                             {hours.map(hour => (
-                                <div>{hour.hour}</div>
+                                <div
+                                    workflowpos="W"
+                                    timeslot={hour.hour}
+                                >
+                                    <HourSlot
+                                        className="hourslot"
+                                        workflowpos="W"
+                                        timeslot={hour.hour}>
+                                        {task('W', hour.hour)}
+                                    </HourSlot>
+
+                                </div>
                             ))}
                         </ul>
                         {/* <ul className="menu-items">{todosWednesday.map(todo => (
@@ -90,22 +154,42 @@ class HomePage extends React.Component {
                         <h2 className="column-back-shadow" id="Th">
                             Th
                         </h2>
-                        <ul className="menu-items">{todosThursday.map(todo => (
-                            <TodoItem
-                                key={todo.id}
-                                todo={todo}
-                            />))}
+                        <ul className="hours-available">
+                            {hours.map(hour => (
+                                <div
+                                    workflowpos="TH"
+                                    timeslot={hour.hour}
+                                >
+                                    <HourSlot
+                                        className="hourslot"
+                                        workflowpos="TH"
+                                        timeslot={hour.hour}>
+                                        {task('TH', hour.hour)}
+                                    </HourSlot>
+
+                                </div>
+                            ))}
                         </ul>
                     </div>
                     <div className="friday">
                         <h2 className="column-back-shadow" id="F">
                             F
                         </h2>
-                        <ul className="menu-items">{todosFriday.map(todo => (
-                            <TodoItem
-                                key={todo.id}
-                                todo={todo}
-                            />))}
+                        <ul className="hours-available">
+                            {hours.map(hour => (
+                                <div
+                                    workflowpos="F"
+                                    timeslot={hour.hour}
+                                >
+                                    <HourSlot
+                                        className="hourslot"
+                                        workflowpos="F"
+                                        timeslot={hour.hour}>
+                                        {task('F', hour.hour)}
+                                    </HourSlot>
+
+                                </div>
+                            ))}
                         </ul>
                     </div>
                 </div>

@@ -34,6 +34,7 @@ class LeftSideBar extends React.Component {
     }  
 
     markComplete(todo) {
+        console.log("WTF")
         todo.workflow_pos = 'D';
     }
 
@@ -42,7 +43,7 @@ class LeftSideBar extends React.Component {
             case 'Misc.':
                 return { backgroundColor: 'lightpink', border: '1px solid lightgray', overflow: 'hidden'}
             case 'Home':
-                return { backgroundColor: 'lightyellow', border: '1px solid lightgray', overflow: 'hidden'}
+                return { backgroundColor: 'lightyellow', border: '1px solid lightgray', overflow: 'hidden', fontsize: 10}
             case 'test':    
                 return { backgroundColor: 'lightblue', border: '1px solid lightgray', overflow: 'hidden'}
             default:
@@ -66,10 +67,10 @@ class LeftSideBar extends React.Component {
                 </div>
                 <Drawer
                 docked={false}
-                width={'25%'}
+                width={'20%'}
                 overlayStyle={{ zIndex: 10 }}
                 // zDepth={2}
-                style={{textAlign: "center", zIndex: 10, overflow: "visible"}}
+                style={{textAlign: "center", zIndex: 10, overflow: "visible", fontSize: 10}}
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
                    
@@ -86,7 +87,10 @@ class LeftSideBar extends React.Component {
                             <TodoItem
                                 key={todo.id}
                                 todo={todo}
+                                closeLeftSidebar={this.closeLeftSidebar}
                                 // onClick={()=>this.markComplete(todo)}
+                                // onClick={()=>console.log("getting clicked")}
+                                moveTask={this.props.moveTask}
                             >
                             </TodoItem>
                         ))}

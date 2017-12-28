@@ -77,17 +77,19 @@ class TodoItem extends React.Component {
     // $(function () {
     //   $(todoItem).draggable();
     // });
-    const { connectDragSource, isDragging } = this.props; 
+    const { connectDragSource, isDragging, closeLeftSidebar } = this.props; 
 
 
     return connectDragSource(
         <div
           className="todo-item"
+          onDragStart={closeLeftSidebar}
+          onDoubleClick={()=>console.log("what what")}
           // ondrag={this.handleClick}
           style={this.categoryStyle(this.props.todo.tag)}
         >
           <MenuItem
-          // style={{display: 'flex', flexDirection: 'row'}}
+          style={{fontSize: 10}}
           >
             {this.props.todo.task}
           </MenuItem>

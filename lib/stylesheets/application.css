@@ -376,6 +376,10 @@ body {
     /* z-index: 2000; */
 }
 
+.todo-item span{
+    font-size: 10px;
+}
+
 .workflow-drop-title {
     font-size: 80%;
     position: absolute;

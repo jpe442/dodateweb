@@ -2,6 +2,7 @@ import React from 'react';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
+import TodoItem from '../tasks/todoitem'    
 import IconButton from 'material-ui/IconButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
@@ -53,14 +54,16 @@ class RightSideBar extends React.Component {
                 onRequestChange={(open) => this.setState({open})}
                 >
                     <ul className="menu-items-left-drawer">
-                        {doneItems.map(todo => (
-                            <MenuItem
+                        {doneItems.reverse().map(todo => (
+                            <TodoItem
                                 key={todo.id}
-                                // style={this.categoryStyle(todo.tag)}
-                                // onClick={() => this.markComplete(todo)}
+                                todo={todo}
+                                closeRightSideBar={this.closeRightSideBar}
+                                // onClick={()=>this.markComplete(todo)}
+                                // onClick={()=>console.log("getting clicked")}
+                                moveTask={this.props.moveTask}
                             >
-                                {todo.task}
-                            </MenuItem>
+                            </TodoItem>
                         ))}
                     </ul>
                 </Drawer>

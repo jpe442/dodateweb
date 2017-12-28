@@ -24,9 +24,11 @@ class TodoItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      completed: false  
+      checked: false  
     };
     this.handleClick = this.handleClick.bind(this)
+    this.handleCheck = this.handleCheck.bind(this)
+    this.handleDrag = this.handleDrag.bind(this)
   }
 
   handleClick() {
@@ -67,33 +69,46 @@ class TodoItem extends React.Component {
     }
   }
 
-  moveTask(workflowpos, timeslot) {
-    console.log("We're moving baby!!!!!")
+  handleCheck() {
+    this.props.moveTask(this.props.todo.id, "D")
   }
+  
+  handleDrag() {
+    if (this.props.closeRightSideBar) { this.props.closeRightSideBar() }
+    if (this.props.closeLeftSidebar) {this.props.closeLeftSidebar()};
+    console.log("dragging")
+  }
+
+  // moveTask(workflowpos, timeslot) {
+  //   console.log("We're moving baby!!!!!")
+  // }
 
   render() {
 
-    // let todoItem = document.getElementsByClassName('todo-item')
+    // let todoItem = document.ge tElementsByClassName('todo-item')
     // $(function () {
     //   $(todoItem).draggable();
     // });
-    const { connectDragSource, isDragging, closeLeftSidebar } = this.props; 
+    const { connectDragSource, isDragging, closeLeftSidebar, moveTask } = this.props; 
 
-
+    const completed = this.props.todo.workflow_pos === "D"
     return connectDragSource(
         <div
           className="todo-item"
-          onDragStart={closeLeftSidebar}
+          onDragStart={this.handleDrag}
           onDoubleClick={()=>console.log("what what")}
           // ondrag={this.handleClick}
           style={this.categoryStyle(this.props.todo.tag)}
         >
           <MenuItem
           style={{fontSize: 10}}
+
           >
             {this.props.todo.task}
           </MenuItem>
         <Checkbox
+          checked={completed}
+          onCheck={this.handleCheck}
           label=""
           inputStyle={{
             width: 24,

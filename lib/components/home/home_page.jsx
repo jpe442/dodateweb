@@ -194,7 +194,7 @@ class HomePage extends React.Component {
                     </div>
                 </div>
                 <LeftSideBarContainer moveTask={this.moveTask}/>
-                <RightSideBarContainer />
+                <RightSideBarContainer moveTask={this.moveTask} />
                 <BottomBarContainer />
             </div>
         );

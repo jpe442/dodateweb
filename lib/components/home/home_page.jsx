@@ -48,12 +48,16 @@ class HomePage extends React.Component {
         // });
 
         const hours = []
-        for (let i = 7; i < 19; i++) {
+        for (let i = 8; i < 20; i++) {
             if (i > 12) {
                 let hourNum = i - 12
                 hours.push({ hour: hourNum, timeOfDay: "p" })
             }else{
+                if (i === 12) {
+                hours.push({ hour: i, timeOfDay: "p" })
+                }else{
                 hours.push({ hour: i, timeOfDay: "a" })
+                }
             }
         }
 

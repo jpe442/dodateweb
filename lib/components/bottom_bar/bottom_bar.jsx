@@ -76,6 +76,7 @@ class BottomBar extends React.Component {
                     secondary={true}
                     label="Weekend"
                     onClick={this.handleToggle} 
+                    onDragOver={this.handleToggle}
                 >
                 </RaisedButton>
                 <BottomSheet
@@ -89,7 +90,6 @@ class BottomBar extends React.Component {
                     onRequestChange={(open) => this.setState({open})} 
                 >
                     <Subheader onClick={this.closeBottomBar}>Saturday</Subheader>
-                    <MenuItem onClick={this.closeBottomBar}>Todo 1</MenuItem>
                     <MenuItem onClick={this.closeBottomBar}>Todo 2</MenuItem>
 
                 </BottomSheet>

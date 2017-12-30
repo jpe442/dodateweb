@@ -35,7 +35,8 @@ class RightSideBar extends React.Component {
             <div>
                 <div
                     className="right-hidden-trigger"
-                    onMouseOver={this.handleToggle}>
+                    onMouseOver={this.handleToggle}
+                    onDragOver={this.handleToggle}>
                 </div>
                 {/* <IconButton
                 // iconStyle={styles.mediumIcon}

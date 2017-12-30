@@ -213,7 +213,7 @@ class HomePage extends React.Component {
                 </div>
                 <LeftSideBarContainer moveTask={this.moveTask}/>
                 <RightSideBarContainer moveTask={this.moveTask} />
-                <BottomBarContainer />
+                <BottomBarContainer moveTask={this.moveTask} hours={hours} task={task} />
             </div>
         );
     }

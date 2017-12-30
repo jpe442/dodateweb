@@ -7,6 +7,8 @@ import IconButton from 'material-ui/IconButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import { BottomSheet } from 'material-ui-bottom-sheet';
+import HourSlot from '../tasks/hourslot'
+
 
 class BottomBar extends React.Component {
     constructor(props) {
@@ -14,13 +16,13 @@ class BottomBar extends React.Component {
         this.state = {
             open: false
         };
-        this.handleToggle = this.handleToggle.bind(this);
+        this.openBottomBar = this.openBottomBar.bind(this);
         this.closeBottomBar = this.closeBottomBar.bind(this);
     }
 
-    handleToggle() {
+    openBottomBar() {
         console.log("toggling");
-        this.setState({open: !this.state.open});
+        this.setState({open: true});
     }
 
     closeBottomBar() {
@@ -30,17 +32,24 @@ class BottomBar extends React.Component {
     render() {
         const saturday = {
             width: '50%',
+            height: '80%'
         }
 
         const sunday = {
             width: '50%',
             right: 0,
+            height: '80%'
         }
 
         const noFade = {
             width: 0,
         }
 
+        const toWeek = <RaisedButton 
+                            onClick={this.closeBottomBar}
+                            onDragOver={this.closeBottomBar}>
+                            To Work Week
+                        </RaisedButton>
 
         const styles = {
             smallIcon: {
@@ -75,22 +84,48 @@ class BottomBar extends React.Component {
                     style={{position: "relative", marginBottom: '10%'}}
                     secondary={true}
                     label="Weekend"
-                    onClick={this.handleToggle} 
-                    onDragOver={this.handleToggle}
+                    onClick={this.openBottomBar} 
+                    onDragOver={this.openBottomBar}
                 >
                 </RaisedButton>
                 <BottomSheet
                     // className="bottom-sheet"
                     docked={false}
-                    // height={500}]
+                    action={toWeek}
+                    // height={500}
                     bodyStyle={saturday}
                     // onMouseOver={   }
+                    onDragExit={()=>this.closeBottomBar()}
                     open={this.state.open}
-                    onRequestClose={() => this.handleToggle()}
-                    onRequestChange={(open) => this.setState({open})} 
+                    onRequestClose={() => this.closeBottomBar()}
+                    onRequestChange={(open) => this.setState({open})}
                 >
-                    <Subheader onClick={this.closeBottomBar}>Saturday</Subheader>
-                    <MenuItem onClick={this.closeBottomBar}>Todo 2</MenuItem>
+                    <Subheader 
+                    onClick={this.closeBottomBar}
+                    // onDragOver={this.closeBottomBar}
+                    >Saturday</Subheader>
+
+                    <ul className="hours-available">
+                        {this.props.hours.map(hour => (
+                            <div
+                                workflowpos="ST"
+                                timeslot={hour.hour}
+                            >
+                                <HourSlot
+                                    className="hourslot"
+                                    workflowpos="ST"
+                                    timeslot={hour.hour}>
+                                    <div
+                                        className="hoursdisplay"
+                                    >{hour.hour}{hour.timeOfDay}</div>
+                                    {this.props.task('ST', hour.hour)}
+
+                                </HourSlot>
+
+                            </div>
+                        ))}
+                    </ul>
+                    {/* <MenuItem onClick={this.closeBottomBar}>Todo 2</MenuItem> */}
 
                 </BottomSheet>
                 <BottomSheet
@@ -100,12 +135,36 @@ class BottomBar extends React.Component {
                     style={noFade}
                     bodyStyle={sunday}
                     open={this.state.open}
-                    onRequestClose={() => this.handleToggle()}
+                    onDragExit={this.closeBottomBar}
+
+                    onRequestClose={() => this.closeBottomBar()}
                     onRequestChange={(open) => this.setState({ open })}
                 >
-                    <Subheader onClick={this.closeBottomBar}>Sunday</Subheader>
-                    <MenuItem onClick={this.closeBottomBar}>Todo 1</MenuItem>
-                    <MenuItem onClick={this.closeBottomBar}>Todo 2</MenuItem>
+                    <Subheader 
+                        onClick={this.closeBottomBar} 
+                        // onDragOver={this.closeBottomBar}
+                    >Sunday</Subheader>
+
+                    <ul className="hours-available">
+                        {this.props.hours.map(hour => (
+                            <div
+                                workflowpos="SN"
+                                timeslot={hour.hour}
+                            >
+                                <HourSlot
+                                    className="hourslot"
+                                    workflowpos="SN"
+                                    timeslot={hour.hour}>
+                                    <div
+                                        className="hoursdisplay"
+                                    >{hour.hour}{hour.timeOfDay}</div>
+                                    {this.props.task('SN', hour.hour)}
+
+                                </HourSlot>
+
+                            </div>
+                        ))}
+                    </ul>
 
                 </BottomSheet>
             </div>

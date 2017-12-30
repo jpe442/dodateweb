@@ -62,8 +62,8 @@ class LeftSideBar extends React.Component {
             <div>
                 <div 
                 className="left-hidden-trigger"
-                onMouseOver={this.handleToggle}>left hidden
-                
+                onMouseOver={this.handleToggle}
+                onDragOver={this.handleToggle}>
                 </div>
                 <Drawer
                 docked={false}

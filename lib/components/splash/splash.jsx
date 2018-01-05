@@ -45,10 +45,18 @@ export default class Splash extends React.Component {
                 </div>
                 <div className="splash-footer">
                     <div className="gif-section">
-                        <div>gif1</div>
-                        <div>gif2</div>
-                        <div>gif3</div>
-                        <div>gif4</div>
+                        <div>
+                          <img src="https://imgur.com/opJJt6C.gif"></img>
+                        </div>
+                        <div>
+                          <img src="https://imgur.com/YoYyU0J.gif"></img>
+                        </div>
+                        <div>
+                          <img src="https://imgur.com/3KPHW3t.gif"></img>
+                        </div>
+                        <div>
+                          <img src="https://imgur.com/yoNBR7r.gif"></img>
+                        </div>
                     </div>
                 </div>
                 <Dialog

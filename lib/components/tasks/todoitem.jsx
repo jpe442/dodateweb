@@ -96,8 +96,8 @@ class TodoItem extends React.Component {
         <div
           className="todo-item"
           onDragStart={this.handleDrag}
-          onRightClick={()=>console.log("Right clicking")}
           onDoubleClick={()=>console.log("what what")}
+          
           // ondrag={this.handleClick}
           style={this.categoryStyle(this.props.todo.tag)}
         >

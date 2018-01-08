@@ -373,15 +373,16 @@ body {
     background-color: rgba(135, 210, 250, 0.15);
     width: 100%;
 
-   &hover{
-       
-   }
+   &:hover {
+    cursor: pointer;
+  }
 
     /* z-index: 2000; */
 }
 
-.todo-item span{
+.todo-item div{
     font-size: 10px;
+    width: 100%;
 }
 
 .workflow-drop-title {

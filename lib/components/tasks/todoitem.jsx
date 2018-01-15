@@ -139,9 +139,5 @@ TodoItem.propTypes = {
   isDragging: PropTypes.bool.isRequired
 };
 
-console.log("hello!!!")
-console.log(collect)
-console.log(taskSource)
-console.log(ItemTypes.TASK)
 
 export default DragSource(ItemTypes.TASK, taskSource, collect)(TodoItem);

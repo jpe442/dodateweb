@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuItem from 'material-ui/MenuItem';
-import TodoItem from '../tasks/todoitem'
+import TodoItemContainer from '../tasks/todoitem_container';
 import HourSlot from '../tasks/hourslot'
 import Checkbox from 'material-ui/Checkbox';
 import LeftSideBarContainer from '../do_left_container/left_sidebar_container';
@@ -15,9 +15,11 @@ class HomePage extends React.Component {
         super(props);
         this.moveTask = this.moveTask.bind(this)
     }
-
+    componentWillReceiveProps(newProps) {
+        this.setState(newProps.todos)
+    }
     componentDidMount() {
-        console.log("componentDidMounted");
+        this.props.fetchTodos();
     }
 
     moveTask(itemId, workflowPos, timeSlot) {
@@ -68,9 +70,9 @@ class HomePage extends React.Component {
                 let todosNow = todosToday.filter(todo => (todo.time_slot === timeSlot))
                 return (
                     todosNow.map(todo => 
-                        <TodoItem
-                            key={todo.key}
-                            todo={todo}
+                        <TodoItemContainer
+                            key={todo.id}
+                            todo={this.props.todos[todo.id]}
                             moveTask={this.moveTask}
                             // style={{height: '100%'}}
                         />

@@ -3,11 +3,14 @@ import MenuItem from 'material-ui/MenuItem';
 import Checkbox from 'material-ui/Checkbox';
 import { ItemTypes } from '../../util/dnd';
 import { DragSource } from 'react-dnd';
-import PropTypes from 'prop-types'
 import Dialog from 'material-ui/Dialog';
 import DialogTitle from 'material-ui/Dialog';
 import DialogContent from 'material-ui/Dialog';
 import TextField from 'material-ui/Dialog';
+// tooltips
+// import { withStyles } from 'material-ui/styles';
+// import Tooltip from 'material-ui/Tooltip';
+import PropTypes from 'prop-types';
 import DialogActions from 'material-ui/Dialog';
 import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -21,6 +24,7 @@ const taskSource = {
     };
   }
 }
+
 
 const collect = (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
@@ -37,14 +41,25 @@ class TodoItem extends React.Component {
     this.handleCheck = this.handleCheck.bind(this)
     this.handleDrag = this.handleDrag.bind(this)
     this.handleDoubleClick = this.handleDoubleClick.bind(this)
+
   }
+
+  // componentDidMount() {
+  //   this.props.fetchTodos(this.state.user_id)
+  // }
+
+  // componentWillReceiveProps(newProps) {
+  //   // console.log("in will receive in todoitem")
+  //   this.setState(newProps.todos)
+  // }
 
   handleClick() {
     this.style = {zIndex: 2000}
   }
 
   handleDoubleClick() {
-    this.props.toggleTodoEditModal()
+    console.log(this.props.todo)
+    this.props.toggleTodoEditModal(this.props.todo)
   }
 
   categoryStyle(category) {
@@ -88,7 +103,7 @@ class TodoItem extends React.Component {
   handleDrag() {
     if (this.props.closeRightSideBar) { this.props.closeRightSideBar() }
     if (this.props.closeLeftSidebar) {this.props.closeLeftSidebar()};
-    console.log("dragging")
+    // console.log("dragging")
   }
 
   // moveTask(workflowpos, timeslot) {
@@ -97,13 +112,14 @@ class TodoItem extends React.Component {
 
   render() {
 
-    // let todoItem = document.ge tElementsByClassName('todo-item')
+    // let todoItem = document.getElementsByClassName('todo-item')
     // $(function () {
     //   $(todoItem).draggable();
     // });
-    const { connectDragSource, isDragging, closeLeftSidebar, moveTask } = this.props; 
-
-    const completed = this.props.todo.workflow_pos === "D"
+    const { connectDragSource, isDragging, closeLeftSidebar, moveTask, key, todo, todos} = this.props; 
+    // console.log("here are the todos")
+    // console.log(todos)
+    const completed = todo.workflow_pos === "D"
     return connectDragSource(
         <div
           className="todo-item"
@@ -113,11 +129,15 @@ class TodoItem extends React.Component {
           // ondrag={this.handleClick}
           style={this.categoryStyle(this.props.todo.tag)}
         >
+        {/* <Tooltip id="task-item-tooltip" title={this.props.todo.task}> */}
+   
           <MenuItem
           style={{fontSize: 10}}
+          // tooltip="hello"
           >
             {this.props.todo.task}
           </MenuItem>
+        {/* </Tooltip> */}
         <Checkbox
           checked={completed}
           onCheck={this.handleCheck}
@@ -164,11 +184,15 @@ class TodoItem extends React.Component {
         open = { this.props.openTodoEditModal }
       >
         <EditTodoForm
+          todo={this.props.todoInEdit}
+          // key={todos[todo.id]}
           currentUser={this.props.currentUser}
+          // fetchTodos={this.props.fetchTodos}
           updateTodo={this.props.updateTodo}
           toggleTodoEditModal={this.props.toggleTodoEditModal} />
       </Dialog >
-      </div>)
+      </div>
+      )
   }
 }
     

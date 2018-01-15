@@ -12,7 +12,7 @@ export default class CategoryDropdown extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { value: "Misc." };
+    this.state = { value: this.props.value};
     this.handleChange = this.handleChange.bind(this)
     this.handleInput = this.props.handleInput.bind(this)
 

@@ -55,6 +55,7 @@ body {
     font-size: 20px;
     font-weight: 400;
     letter-spacing: .5px;
+    overflow: hidden;
 }
 
 /* splash  */
@@ -303,7 +304,6 @@ body {
 
 .nav-base {
     width: 100%;
-
 }
 
 .menu-items-left-drawer {

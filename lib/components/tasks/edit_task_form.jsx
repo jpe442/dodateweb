@@ -10,21 +10,29 @@ import ETCDropdown from './etc_drop'
 class EditTodoForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      task: this.props.task,
-      notes: this.props.notes,
-      etc: this.props.etc,
-      workflow_pos: this.props.workflow_pos,
-      tag: this.props.tag,
+      id: this.props.todo.id,
+      task: this.props.todo.task,
+      notes: this.props.todo.notes,
+      etc: this.props.todo.etc,
+      workflow_pos: this.props.todo.workflow_pos,
+      tag: this.props.todo.tag,
       user_id: this.props.currentUser.id,
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
   };
 
+  componentWillReceiveProps(newProps) {
+    console.log("yo yo yo")
+    this.setState(newProps.todo, newProps.key)
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props.updateTodo)
+    console.log(this.props.todo.task)
     const todo = Object.assign({}, this.state);
     this.props.updateTodo(this.state.user_id, todo);
     this.props.toggleTodoEditModal();

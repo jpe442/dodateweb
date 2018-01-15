@@ -15,8 +15,8 @@ const slotTarget = {
 };
 
 function collect(connect, monitor) {
-  console.log("here in hourslot collect")
-  console.log(monitor.getItem())
+  // console.log("here in hourslot collect")
+  // console.log(monitor.getItem())
   return {
     connectDropTarget: connect.dropTarget(),
     isOver: monitor.isOver(),
@@ -25,6 +25,8 @@ function collect(connect, monitor) {
 }
 
 class HourSlot extends React.Component {
+
+  
   render() {
     const { workflowpos, timeslot, connectDropTarget, isOver, item} = this.props;
     // const black = (x + y) % 2 === 1;

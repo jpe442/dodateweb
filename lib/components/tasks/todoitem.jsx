@@ -4,11 +4,18 @@ import Checkbox from 'material-ui/Checkbox';
 import { ItemTypes } from '../../util/dnd';
 import { DragSource } from 'react-dnd';
 import PropTypes from 'prop-types'
+import Dialog from 'material-ui/Dialog';
+import DialogTitle from 'material-ui/Dialog';
+import DialogContent from 'material-ui/Dialog';
+import TextField from 'material-ui/Dialog';
+import DialogActions from 'material-ui/Dialog';
+import Button from 'material-ui/Dialog';
+import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
+import EditTodoForm from './edit_task_form'
 
 const taskSource = {
   beginDrag(props) {
-    console.log("in taskSource")
-    console.log(props)
     return {id: props.todo.id,
             moveTask: props.moveTask
     };
@@ -29,10 +36,15 @@ class TodoItem extends React.Component {
     this.handleClick = this.handleClick.bind(this)
     this.handleCheck = this.handleCheck.bind(this)
     this.handleDrag = this.handleDrag.bind(this)
+    this.handleDoubleClick = this.handleDoubleClick.bind(this)
   }
 
   handleClick() {
     this.style = {zIndex: 2000}
+  }
+
+  handleDoubleClick() {
+    this.props.toggleTodoEditModal()
   }
 
   categoryStyle(category) {
@@ -97,13 +109,12 @@ class TodoItem extends React.Component {
           className="todo-item"
           onDragStart={this.handleDrag}
           onRightClick={()=>console.log("Right clicking")}
-          onDoubleClick={()=>console.log("what what")}
+          onDoubleClick={this.handleDoubleClick}
           // ondrag={this.handleClick}
           style={this.categoryStyle(this.props.todo.tag)}
         >
           <MenuItem
           style={{fontSize: 10}}
-
           >
             {this.props.todo.task}
           </MenuItem>
@@ -129,11 +140,38 @@ class TodoItem extends React.Component {
             cursor: 'default'
           }}
         />
-      </div>
-    )
+      <Dialog
+        title="View/Update Todo"
+        modal={false}
+        overlayStyle={{ display: 'none' }}
+        style = {{
+          width: '100%',
+          height: '100%',
+          zIndex: 1500,
+          // display: 'flex',
+          // justifyContents: 'center'
+        }}
+        bodyStyle = {{height: '100%'}}
+        titleStyle = {{
+          paddingTop: '3%',
+          padding: '1%',
+          fontSize: '80%',
+          position: 'relative',
+          left: '7%',
+          top: '20%'
+        }}
+        onRequestClose = { this.props.toggleTodoEditModal }
+        open = { this.props.openTodoEditModal }
+      >
+        <EditTodoForm
+          currentUser={this.props.currentUser}
+          updateTodo={this.props.updateTodo}
+          toggleTodoEditModal={this.props.toggleTodoEditModal} />
+      </Dialog >
+      </div>)
   }
 }
-
+    
 TodoItem.propTypes = {
   connectDragSource: PropTypes.func.isRequired,
   isDragging: PropTypes.bool.isRequired

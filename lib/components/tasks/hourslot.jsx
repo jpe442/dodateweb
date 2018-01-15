@@ -5,16 +5,11 @@ import { DropTarget } from 'react-dnd';
 // import { moveTask } from ''
 
 const moveTask = (item, workflowPos, timeSlot) => {
-  console.log("in move task")
-  console.log(item)
   item.moveTask(item.id, workflowPos, timeSlot)
 }
 
 const slotTarget = {
   drop(props, monitor) {
-    console.log("here in slotTarget")
-    console.log(this)
-    console.log(props)
     moveTask(monitor.getItem(), props.workflowpos, props.timeslot)
   }
 };

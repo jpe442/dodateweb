@@ -5,7 +5,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-import TodoItem from '../tasks/todoitem'    
+import TodoItem from '../tasks/todoitem' 
+import TodoItemContainer from '../tasks/todoitem_container'   
 
 class LeftSideBar extends React.Component {
   constructor(props) {
@@ -84,7 +85,7 @@ class LeftSideBar extends React.Component {
                     </FloatingActionButton>
                     <ul className="menu-items-left-drawer">
                         {todosUnscheduled.reverse().map(todo => (
-                            <TodoItem
+                            <TodoItemContainer
                                 key={todo.id}
                                 todo={todo}
                                 closeLeftSidebar={this.closeLeftSidebar}
@@ -92,7 +93,7 @@ class LeftSideBar extends React.Component {
                                 // onClick={()=>console.log("getting clicked")}
                                 moveTask={this.props.moveTask}
                             >
-                            </TodoItem>
+                            </TodoItemContainer>
                         ))}
                     </ul>
                   

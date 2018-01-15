@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(clearSessionErrors)
   return ({
     updateTodo: (userId, todo) => dispatch(updateTodo(userId, todo)),
     toggleTodoEditModal: () => dispatch(toggleTodoEditModal())

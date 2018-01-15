@@ -24,6 +24,7 @@ class EditTodoForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.props.updateTodo)
     const todo = Object.assign({}, this.state);
     this.props.updateTodo(this.state.user_id, todo);
     this.props.toggleTodoEditModal();
@@ -44,7 +45,7 @@ class EditTodoForm extends React.Component {
   render() {
     const actions = [
       <RaisedButton
-        label="Submit"
+        label="Update"
         primary={true}
         onClick={this.handleSubmit}
         style={{
@@ -73,6 +74,7 @@ class EditTodoForm extends React.Component {
       <div className="todo-create">
         <TextField
           className="task-field"
+          value={task}
           onChange={this.handleInput('task')}
           hintText="Enter the primary task here..."
           floatingLabelText="Task"
@@ -84,7 +86,9 @@ class EditTodoForm extends React.Component {
         /><br />
         <TextField
           className="notes-field"
+          value={notes}
           onChange={this.handleInput('notes')}
+
           hintText="Enter any necessary notes here... (optional)"
           floatingLabelText="Notes"
           multiLine={true}
@@ -105,17 +109,17 @@ class EditTodoForm extends React.Component {
         <h3 className="category-drop-title">Category</h3>
         <CategoryDropdown
           handleInput={this.handleInput}
-          value={this.state.tag}
+          value={tag}
         />
         <h3 className="etc-drop-title">Duration</h3>
         <ETCDropdown
           handleInput={this.handleInput}
-          value={this.state.etc}
+          value={etc}
         />
         <h3 className="workflow-drop-title">Workflow Status</h3>
         <WorkFlowDropdown
           handleInput={this.handleInput}
-          value={this.state.workflow_pos}
+          value={workflow_pos}
         />
         {/* <TextField
           onChange={this.handleInput('workflow_pos')}

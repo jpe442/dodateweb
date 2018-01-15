@@ -50,7 +50,7 @@ class TodoItem extends React.Component {
 
   // componentWillReceiveProps(newProps) {
   //   // console.log("in will receive in todoitem")
-  //   this.setState(newProps.todos)
+  //   // this.setState(newProps.todos)
   // }
 
   handleClick() {

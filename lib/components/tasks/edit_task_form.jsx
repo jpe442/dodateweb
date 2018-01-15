@@ -26,8 +26,8 @@ class EditTodoForm extends React.Component {
   };
 
   componentWillReceiveProps(newProps) {
-    console.log("yo yo yo")
-    this.setState(newProps.todo, newProps.key)
+    // console.log("yo yo yo")
+    // this.setState(newProps.todo, newProps.key)
   }
 
   handleSubmit(e) {

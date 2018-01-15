@@ -48,10 +48,10 @@ class TodoItem extends React.Component {
   //   this.props.fetchTodos(this.state.user_id)
   // }
 
-  // componentWillReceiveProps(newProps) {
-  //   // console.log("in will receive in todoitem")
-  //   // this.setState(newProps.todos)
-  // }
+  componentWillReceiveProps(newProps) {
+    // console.log("in will receive in todoitem")
+    this.setState(newProps.todos)
+  }
 
   handleClick() {
     this.style = {zIndex: 2000}

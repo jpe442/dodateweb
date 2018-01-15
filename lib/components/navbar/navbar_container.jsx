@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { login, logout, clearSessionErrors } from '../../actions/session_actions';
 import NavBar from './navbar';
-import {toggleTodoCreateModal} from '../../actions/ui_actions'
-import {createTodo} from '../../actions/todo_actions'
+import { toggleTodoCreateModal } from '../../actions/ui_actions'
+import { createTodo } from '../../actions/todo_actions'
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.session.currentUser,

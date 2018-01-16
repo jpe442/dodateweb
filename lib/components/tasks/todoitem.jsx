@@ -43,13 +43,10 @@ class TodoItem extends React.Component {
     this.handleCheck = this.handleCheck.bind(this)
     this.handleDrag = this.handleDrag.bind(this)
     this.handleDoubleClick = this.handleDoubleClick.bind(this)
-
   }
 
-  
-
   componentWillReceiveProps(newProps) {
-    console.log("in will receive in todoitem")
+    // console.log("in will receive in todoitem")
     this.setState(newProps.todos)
   }
 
@@ -72,17 +69,31 @@ class TodoItem extends React.Component {
                 fontSize: 10,
                 // position: 'absolute'
               }
-      case 'Home':
+      case 'Home: General':
         return { 
                 backgroundColor: 'rgba(255, 255, 224, 0.3)', 
                 border: '1px solid lightgray', 
                 overflow: 'hidden',
                 fontSize: 10,
               }
-      case 'test':  
+      case 'Home: Organization':
+        return {
+                backgroundColor: 'rgba(252, 80, 186, 0.466)',
+                border: '1px solid lightgray',
+                overflow: 'hidden',
+                fontSize: 10,
+              }
+      case 'Work: General':  
         return { 
                 backgroundColor: 'rgba(255, 182, 194, 0.4)', 
                 border: '1px solid lightgray', 
+                overflow: 'hidden',
+                fontSize: 10,
+              }
+      case 'Work: Organization':
+        return {
+          backgroundColor: 'rgba(172, 255, 47, 0.466)',
+                border: '1px solid lightgray',
                 overflow: 'hidden',
                 fontSize: 10,
               }

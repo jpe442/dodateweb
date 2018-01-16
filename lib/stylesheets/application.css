@@ -300,6 +300,7 @@ body {
 
 .session-errors li{
     padding: 3%;
+    color: rgba(252, 80, 186, 0.466);
 }
 
 .nav-base {

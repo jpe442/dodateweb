@@ -19,8 +19,6 @@ export default class CategoryDropdown extends React.Component {
   }
 
   handleChange(event, index, value) {
-    console.log()
-    console.log(value)
     this.setState({ value });
     this.props.handleInput('tag', value)
   }
@@ -39,16 +37,10 @@ export default class CategoryDropdown extends React.Component {
             left: '50%'
           }}>
           <MenuItem value={"Misc."} primaryText="Misc." />
-          <MenuItem value={"test"} primaryText="Test" />
-          <MenuItem value={"Home"} primaryText="Home" />
-          <MenuItem value={"Work"} primaryText="Work" />
-          {/* <MenuItem value={} primaryText="" />
-          <MenuItem value={} primaryText="" />
-          <MenuItem value={} primaryText="" />
-          <MenuItem value={} primaryText="" />
-          <MenuItem value={} primaryText="" />
-          <MenuItem value={} primaryText="" />
-          <MenuItem value={} primaryText="" /> */}
+          <MenuItem value={"Home: General"} primaryText="Home: General" />
+          <MenuItem value={"Home: Organization"} primaryText="Home: Organization"/>
+          <MenuItem value={"Work: General"} primaryText="Work: General" />
+          <MenuItem value={"Work: Organization"} primaryText="Work: Organization" />
         </DropDownMenu>
         <br />
       </div>

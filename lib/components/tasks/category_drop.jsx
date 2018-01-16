@@ -34,7 +34,7 @@ export default class CategoryDropdown extends React.Component {
           style={{
             position: 'absolute',
             top: '28%',
-            left: '50%'
+            left: '44%'
           }}>
           <MenuItem value={"Misc."} primaryText="Misc." />
           <MenuItem value={"Home: General"} primaryText="Home: General" />

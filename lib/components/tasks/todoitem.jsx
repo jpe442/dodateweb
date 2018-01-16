@@ -16,6 +16,9 @@ import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import EditTodoForm from './edit_task_form'
+import IconButton from 'material-ui/IconButton';
+// import Tooltip from './tooltip'
+
 
 
 
@@ -135,7 +138,8 @@ class TodoItem extends React.Component {
         <div
           className="todo-item"
           onDragStart={this.handleDrag}
-          onRightClick={()=>console.log("Right clicking")}
+          
+          // onRightClick={()=>console.log("Right clicking")}
           onDoubleClick={this.handleDoubleClick}
           // ondrag={this.handleClick}
           style={this.categoryStyle(this.props.todo.tag)}
@@ -144,33 +148,34 @@ class TodoItem extends React.Component {
    
           <MenuItem
           style={{fontSize: 10}}
-          // tooltip="hello"
           >
             {this.props.todo.task}
           </MenuItem>
         {/* </Tooltip> */}
-        <Checkbox
-          checked={completed}
-          onCheck={this.handleCheck}
-          label=""
-          inputStyle={{
-            width: 24,
-            height: 24,
-            left: '20%',
-            // position: 'relative',
-            cursor: 'pointer',
-            padding: "inherit"
-          }}
-          style={{
-            // position: 'relative',
-            // left: '16%',
-            width: 24,
-            height: 24,
-            display: 'flex',
-            padding: 10,
-            cursor: 'default'
-          }}
-        />
+       
+          <Checkbox
+            checked={completed}
+            onCheck={this.handleCheck}
+            label=""
+            inputStyle={{
+              width: 24,
+              height: 24,
+              left: '20%',
+              // position: 'relative',
+              cursor: 'pointer',
+              padding: "inherit"
+            }}
+            style={{
+              // position: 'relative',
+              // left: '16%',
+              width: 24,
+              height: 24,
+              display: 'flex',
+              padding: 10,
+              cursor: 'default'
+            }}
+          />
+
       <Dialog
         title="View/Update Todo"
         modal={false}

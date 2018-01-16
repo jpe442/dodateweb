@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-import TodoItem from '../tasks/todoitem' 
+// import TodoItem from '../tasks/todoitem' 
 import TodoItemContainer from '../tasks/todoitem_container'   
 
 class LeftSideBar extends React.Component {
@@ -52,8 +52,6 @@ class LeftSideBar extends React.Component {
         }
     }
     
-
-
     render() {
         let todosVals = Object.values(this.props.todos)
         let todosUnscheduled = todosVals.filter(todo => todo.workflow_pos === 'unscheduled')
@@ -74,12 +72,11 @@ class LeftSideBar extends React.Component {
                 style={{textAlign: "center", zIndex: 10, overflow: "visible", fontSize: 10}}
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
-                   
                 >
                     <FloatingActionButton 
-                    secondary={true} 
-                    style={{margin: 20, zIndex: 2500 }}
-                    onClick={this.props.toggleTodoCreateModal}
+                        secondary={true} 
+                        style={{margin: 20, zIndex: 2500 }}
+                        onClick={this.props.toggleTodoCreateModal}
                     >
                         <ContentAdd />
                     </FloatingActionButton>

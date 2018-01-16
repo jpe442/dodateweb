@@ -35,7 +35,7 @@ export default class ETCDropdown extends React.Component {
           style={{
             position: 'absolute',
             top: '65%',
-            left: '50%'
+            left: '44%'
           }}>
           <MenuItem value={this.state.value} primaryText="60" />
           {/* <MenuItem value={} primaryText="" />

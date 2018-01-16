@@ -61,6 +61,11 @@ class EditTodoForm extends React.Component {
   }
 
   render() {
+    const smallIcon = {
+      width: 36,
+      height: 36,
+    }
+
     const actions = [
       <RaisedButton
         label="Update"
@@ -75,6 +80,7 @@ class EditTodoForm extends React.Component {
       <RaisedButton
         // className="login-modal-cancel-btn"
         label="Cancel"
+
         primary={true}
         onClick={this.props.toggleTodoEditModal}
         style={{
@@ -84,12 +90,18 @@ class EditTodoForm extends React.Component {
         }}
       />,
       <IconButton 
-        touch={true}
+        tooltip="Delete Todo"
+        tooltipPosition="top-center"
         onClick={this.handleDelete}
+        iconStyle={smallIcon}
+        touch={false}
+       
         style={{
             position: 'absolute',
-            right: '3%',
-            bottom: '4%'
+            display: 'flex',
+            justifyContents: 'center',
+            right: '4%',
+            bottom: '8%',
           }}
       >
         <Delete />

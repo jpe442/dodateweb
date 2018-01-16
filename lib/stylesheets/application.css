@@ -377,9 +377,25 @@ body {
     /* z-index: 2000; */
 }
 
+.todo-item > div {
+    width: 100%;
+    overflow: hidden;
+}
+/* 
+.todo-item > div > span {
+    width: 60%;
+    overflow: hidden;
+}
+
+#task-text {
+    width: 50;
+    position: relative;
+    overflow: hidden;
+}
+
 .todo-item span{
     font-size: 10px;
-}
+} */
 
 .workflow-drop-title {
     font-size: 80%;

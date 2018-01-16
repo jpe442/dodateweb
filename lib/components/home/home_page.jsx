@@ -90,7 +90,7 @@ class HomePage extends React.Component {
                     <div>Thursday</div>
                     <div>Friday</div>
                 </div>
-                <div onDragLeave={()=>closeBottomBar} className="weekday-columns">
+                <div className="weekday-columns">
                     <div className="monday">
                         <h2 className="column-back-shadow" id="M">
                             M

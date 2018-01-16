@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
     ownProps: ownProps,
     autherrors: state.errors.session,
     openTodoCreateModal: state.ui.openTodoCreateModal,
+    todoInEdit: state.ui.todo,
 });
 
 const mapDispatchToProps = (dispatch) => {

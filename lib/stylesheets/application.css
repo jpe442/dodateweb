@@ -381,6 +381,33 @@ body {
     width: 100%;
     overflow: hidden;
 }
+
+#current-task-show {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 2%;
+    height: 65%;
+    left: 35%;
+    top: 20%;
+    background-color: white;
+    color: #9CCC65;
+    width: 30%;
+    font-size: 75%;
+    display: flex;
+    justify-content: center;
+}
+
+#current-task-show > div {
+    padding: 9;
+    top: 30%;
+}
+
+
+#current-task-show > div > div {
+    padding: 2;
+    overflow: hidden;
+    /* top: 30%; */
+}
 /* 
 .todo-item > div > span {
     width: 60%;

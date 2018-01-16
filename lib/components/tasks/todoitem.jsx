@@ -46,6 +46,7 @@ class TodoItem extends React.Component {
     this.handleCheck = this.handleCheck.bind(this)
     this.handleDrag = this.handleDrag.bind(this)
     this.handleDoubleClick = this.handleDoubleClick.bind(this)
+    this.handleSelect = this.handleSelect.bind(this)
   }
 
   componentWillReceiveProps(newProps) {
@@ -110,11 +111,17 @@ class TodoItem extends React.Component {
     }
   }
 
+  handleSelect() {
+    console.log(this.props.todoFocus)
+    this.props.todoFocus(this.props.todo)
+  }
+
   handleCheck() {
     this.props.moveTask(this.props.todo.id, "D")
   }
   
   handleDrag() {
+    this.props.todoFocus(this.props.todo);
     if (this.props.closeRightSideBar) { this.props.closeRightSideBar() }
     if (this.props.closeLeftSidebar) {this.props.closeLeftSidebar()};
     // console.log("dragging")
@@ -152,6 +159,7 @@ class TodoItem extends React.Component {
           // animation={nothing}
           // disableFocusRipple={true}
           disableTouchRipple={true}
+          onClick={this.handleSelect}
           innerDivStyle={{width: '70%', overflow: 'hidden'}}
           style={{
             fontSize: 10,

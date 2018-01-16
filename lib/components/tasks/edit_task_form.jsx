@@ -1,11 +1,13 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Dialog';
+import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import WorkFlowDropdown from './workflow_pos_drop'
 import CategoryDropdown from './category_drop'
 import ETCDropdown from './etc_drop'
+import Delete from 'material-ui/svg-icons/action/delete';
 
 class EditTodoForm extends React.Component {
   constructor(props) {
@@ -23,11 +25,12 @@ class EditTodoForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   };
 
   componentWillReceiveProps(newProps) {
-    // console.log("yo yo yo")
-    // this.setState(newProps.todo, newProps.key)
+    console.log("yo yo yo")
+    this.setState(newProps.todo, newProps.key)
   }
 
   handleSubmit(e) {
@@ -49,6 +52,13 @@ class EditTodoForm extends React.Component {
       this.setState({ [type]: e.target.value });
     }
   };
+
+  handleDelete() {
+    const todo = Object.assign({}, this.state);
+    this.props.deleteTodo(this.state.user_id, todo.id);
+    this.props.toggleTodoEditModal();
+    // this.props.ownProps.history.push('/homepage');
+  }
 
   render() {
     const actions = [
@@ -73,6 +83,17 @@ class EditTodoForm extends React.Component {
           bottom: '8%'
         }}
       />,
+      <IconButton 
+        touch={true}
+        onClick={this.handleDelete}
+        style={{
+            position: 'absolute',
+            right: '3%',
+            bottom: '4%'
+          }}
+      >
+        <Delete />
+      </IconButton>
 
     ];
     const { task, notes, etc, workflow_pos, tag } = this.state;

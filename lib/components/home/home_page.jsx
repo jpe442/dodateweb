@@ -18,9 +18,10 @@ class HomePage extends React.Component {
     componentWillReceiveProps(newProps) {
         this.setState(newProps.todos)
     }
-    componentDidMount() {
-        this.props.fetchTodos();
-    }
+
+    // componentDidMount() {
+    //     this.props.fetchTodos();
+    // }
 
     moveTask(itemId, workflowPos, timeSlot) {
         let moveTodo = {

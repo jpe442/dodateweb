@@ -17,6 +17,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import EditTodoForm from './edit_task_form'
 
+
+
 const taskSource = {
   beginDrag(props) {
     return {id: props.todo.id,
@@ -44,12 +46,10 @@ class TodoItem extends React.Component {
 
   }
 
-  // componentDidMount() {
-  //   this.props.fetchTodos(this.state.user_id)
-  // }
+  
 
   componentWillReceiveProps(newProps) {
-    // console.log("in will receive in todoitem")
+    console.log("in will receive in todoitem")
     this.setState(newProps.todos)
   }
 
@@ -189,6 +189,7 @@ class TodoItem extends React.Component {
           currentUser={this.props.currentUser}
           // fetchTodos={this.props.fetchTodos}
           updateTodo={this.props.updateTodo}
+          deleteTodo={this.props.deleteTodo}
           toggleTodoEditModal={this.props.toggleTodoEditModal} />
       </Dialog >
       </div>

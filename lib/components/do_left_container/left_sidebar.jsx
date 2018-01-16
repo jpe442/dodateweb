@@ -65,9 +65,10 @@ class LeftSideBar extends React.Component {
                 onDragOver={this.handleToggle}>
                 </div>
                 <Drawer
+                onDragLeave={()=>closeLeftSidebar()}
                 docked={false}
                 width={'20%'}
-                // overlayStyle={{ zIndex: 10 }}
+                overlayStyle={{ zIndex: 10 }}
                 // zDepth={2}
                 style={{textAlign: "center", zIndex: 10, overflow: "visible", fontSize: 10}}
                 open={this.state.open}

@@ -134,6 +134,7 @@ class TodoItem extends React.Component {
     // console.log("here are the todos")
     // console.log(todos)
     const completed = todo.workflow_pos === "D"
+    const nothing = () => {}
     return connectDragSource(
         <div
           className="todo-item"
@@ -147,9 +148,20 @@ class TodoItem extends React.Component {
         {/* <Tooltip id="task-item-tooltip" title={this.props.todo.task}> */}
    
           <MenuItem
-          style={{fontSize: 10}}
+          // primaryText={this.props.todo.task}
+          // animation={nothing}
+          // disableFocusRipple={true}
+          disableTouchRipple={true}
+          innerDivStyle={{width: '70%', overflow: 'hidden'}}
+          style={{
+            fontSize: 10,
+            width: '100%',
+            insetChildren: true,
+            
+          }}
+   
           >
-            {this.props.todo.task}
+          {this.props.todo.task} 
           </MenuItem>
         {/* </Tooltip> */}
        
@@ -160,19 +172,22 @@ class TodoItem extends React.Component {
             inputStyle={{
               width: 24,
               height: 24,
-              left: '20%',
+              right: '20%',
               // position: 'relative',
               cursor: 'pointer',
               padding: "inherit"
             }}
+
             style={{
               // position: 'relative',
-              // left: '16%',
-              width: 24,
+              right: 50,
+              top: 10,
+              width: 0,
               height: 24,
               display: 'flex',
-              padding: 10,
-              cursor: 'default'
+              padding: 0,
+              cursor: 'default',
+              zIndex: 2
             }}
           />
 

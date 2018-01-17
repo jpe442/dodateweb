@@ -5,23 +5,18 @@ import { DropTarget } from 'react-dnd';
 // import { moveTask } from ''
 
 const moveTask = (item, workflowPos, timeSlot) => {
-  console.log("in move task")
-  console.log(item)
   item.moveTask(item.id, workflowPos, timeSlot)
 }
 
 const slotTarget = {
   drop(props, monitor) {
-    console.log("here in slotTarget")
-    console.log(this)
-    console.log(props)
     moveTask(monitor.getItem(), props.workflowpos, props.timeslot)
   }
 };
 
 function collect(connect, monitor) {
-  console.log("here in hourslot collect")
-  console.log(monitor.getItem())
+  // console.log("here in hourslot collect")
+  // console.log(monitor.getItem())
   return {
     connectDropTarget: connect.dropTarget(),
     isOver: monitor.isOver(),
@@ -30,6 +25,8 @@ function collect(connect, monitor) {
 }
 
 class HourSlot extends React.Component {
+
+  
   render() {
     const { workflowpos, timeslot, connectDropTarget, isOver, item} = this.props;
     // const black = (x + y) % 2 === 1;

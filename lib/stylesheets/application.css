@@ -55,6 +55,7 @@ body {
     font-size: 20px;
     font-weight: 400;
     letter-spacing: .5px;
+    overflow: hidden;
 }
 
 /* splash  */
@@ -299,11 +300,11 @@ body {
 
 .session-errors li{
     padding: 3%;
+    color: rgba(252, 80, 186, 0.466);
 }
 
 .nav-base {
     width: 100%;
-
 }
 
 .menu-items-left-drawer {
@@ -380,29 +381,72 @@ body {
     /* z-index: 2000; */
 }
 
+.todo-item > div {
+    width: 100%;
+    overflow: hidden;
+}
+
+#current-task-show {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 2%;
+    height: 65%;
+    left: 35%;
+    top: 20%;
+    background-color: white;
+    color: #9CCC65;
+    width: 30%;
+    font-size: 75%;
+    display: flex;
+    justify-content: center;
+}
+
+#current-task-show > div {
+    padding: 9;
+    top: 30%;
+}
+
+
+#current-task-show > div > div {
+    padding: 2;
+    overflow: hidden;
+    /* top: 30%; */
+}
+/* 
+.todo-item > div > span {
+    width: 60%;
+    overflow: hidden;
+}
+
+#task-text {
+    width: 50;
+    position: relative;
+    overflow: hidden;
+}
+
 .todo-item span{
     font-size: 10px;
-}
+} */
 
 .workflow-drop-title {
     font-size: 80%;
     position: absolute;
-    left: 73%;
-    top: 53%;
+    left: 68%;
+    top: 57%;
 }
 
 .category-drop-title {
     font-size: 80%;
     position: absolute;
-    left: 53%;
-    top: 18%;
+    left: 47%;
+    top: 20%;
 }
 
 .etc-drop-title {
     font-size: 80%;
     position: absolute;
-    left: 53%;
-    top: 53%;
+    left: 47%;
+    top: 57%;
 }
 
 .hours-available {

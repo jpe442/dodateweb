@@ -56,6 +56,7 @@ export default class Splash extends React.Component {
                         </div>
                         <div>
                           <img src="https://imgur.com/yoNBR7r.gif"></img>
+                          
                         </div>
                     </div>
                 </div>

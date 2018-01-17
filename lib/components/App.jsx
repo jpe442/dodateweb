@@ -8,7 +8,6 @@ import {cyan200, cyan400,
   grey100, grey300,
   white, darkBlack, fullBlack,
 } from 'material-ui/styles/colors';
-
 import NavBarContainer from './navbar/navbar_container';
 import HomePageContainer from './home/home_page_container';
 import Splash from './splash/splash';
@@ -16,7 +15,7 @@ import SplashContainer from './splash/splash_container';
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: cyan200,
+    primary1Color: cyan200, 
     primary2Color: cyan400,
     primary3Color: grey300,
     accent1Color: lightGreen400,

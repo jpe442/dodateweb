@@ -22,14 +22,19 @@ class NavBar extends React.Component {
         this.handleClose = this.handleClose.bind(this);
  
         // this.toggleLoginModal = this.toggleLoginModal.bind(this);
-        console.log(this.props);
-        console.log("above is props in NavBar constructor");
+        // console.log(this.props);
+        // console.log("above is props in NavBar constructor");
         // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     // componentWillReceiveProps(newProps) {
     //     this.setState(newProps.openTodoCreateModal)
     // }
+
+    // componentWillReceiveProps(newProps) {
+    //     this.setState(newProps.todoInEdit)
+    // }
+
 
     openLoginModal() {
       console.log("yo yo");
@@ -52,17 +57,19 @@ class NavBar extends React.Component {
   }
 
     render() {
-      console.log("navbar render");
+    //   console.log("navbar render");
         const { currentUser, logout, login} = this.props;
         // const modalBtnsStyle = {
         //   display: 'flex',
         //   position: 'absolute',
         //   bottom: '5%'
         // }
-
+        const taskSelect = this.props.todoInEdit ? (<div>{this.props.todoInEdit.task}</div>) : (<div>Todo In Focus</div>) 
+        const taskShow = <div id="current-task-show"><div>{taskSelect}</div></div>
         const AppNavBar = currentUser ? (
             <div className="nav-base">
             <AppBar
+                children={taskShow}
                 className="AppNavBar"
                 title={<span>DoDate</span>}
                 iconElementRight={
@@ -77,7 +84,7 @@ class NavBar extends React.Component {
             <Dialog
                 title="Create New Todo"
                 modal={false}
-                overlayStyle={{display: 'none'}}
+                // overlayStyle={{display: 'none'}}
                 style={{
                     width: '100%',
                     height: '100%',

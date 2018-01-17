@@ -46,9 +46,10 @@ class BottomBar extends React.Component {
         }
 
         const toWeek = <RaisedButton 
+                            primary={true}
+                            label='Drag to Work Week'
                             onClick={this.closeBottomBar}
                             onDragOver={this.closeBottomBar}>
-                            To Work Week
                         </RaisedButton>
 
         const styles = {
@@ -88,17 +89,23 @@ class BottomBar extends React.Component {
                     onDragOver={this.openBottomBar}
                 >
                 </RaisedButton>
+                <div className="weekend">
                 <BottomSheet
                     // className="bottom-sheet"
                     docked={false}
                     action={toWeek}
+                        actionStyle={{
+                            fontSize: 10,
+                            position: 'absolute',
+                            left: '40%'
+                        }}
                     // height={500}
                     bodyStyle={saturday}
                     // onMouseOver={   }
-                    onDragExit={()=>this.closeBottomBar()}
+                    // ondragleave={()=>this.closeBottomBar()}
                     open={this.state.open}
                     onRequestClose={() => this.closeBottomBar()}
-                    onRequestChange={(open) => this.setState({open})}
+                    // onRequestChange={(open) => this.setState({open})}
                 >
                     <Subheader 
                     onClick={this.closeBottomBar}
@@ -135,10 +142,11 @@ class BottomBar extends React.Component {
                     style={noFade}
                     bodyStyle={sunday}
                     open={this.state.open}
-                    onDragExit={this.closeBottomBar}
+
+                    // onDragExit={this.closeBottomBar}
 
                     onRequestClose={() => this.closeBottomBar()}
-                    onRequestChange={(open) => this.setState({ open })}
+                    // onRequestChange={(open) => this.setState({ open })}
                 >
                     <Subheader 
                         onClick={this.closeBottomBar} 
@@ -167,6 +175,7 @@ class BottomBar extends React.Component {
                     </ul>
 
                 </BottomSheet>
+                </div>
             </div>
         );
     }

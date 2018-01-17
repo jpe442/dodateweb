@@ -35,7 +35,7 @@ export default class WorkFlowDropdown extends React.Component {
           style={{
               position: 'absolute', 
               top: '65%',
-              left: '70%'
+              left: '65%'
                   }}>
           <MenuItem value={'unscheduled'} primaryText="Unscheduled" />
           <MenuItem value={'M'} primaryText="Monday" />

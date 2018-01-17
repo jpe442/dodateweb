@@ -31,6 +31,11 @@ class NavBar extends React.Component {
     //     this.setState(newProps.openTodoCreateModal)
     // }
 
+    // componentWillReceiveProps(newProps) {
+    //     this.setState(newProps.todoInEdit)
+    // }
+
+
     openLoginModal() {
       console.log("yo yo");
       this.setState({open: true});
@@ -59,7 +64,7 @@ class NavBar extends React.Component {
         //   position: 'absolute',
         //   bottom: '5%'
         // }
-        const taskSelect = this.props.todoInEdit.task ? (<div>{this.props.todoInEdit.task}</div>) : (<div>Todo In Focus</div>) 
+        const taskSelect = this.props.todoInEdit ? (<div>{this.props.todoInEdit.task}</div>) : (<div>Todo In Focus</div>) 
         const taskShow = <div id="current-task-show"><div>{taskSelect}</div></div>
         const AppNavBar = currentUser ? (
             <div className="nav-base">
@@ -79,7 +84,7 @@ class NavBar extends React.Component {
             <Dialog
                 title="Create New Todo"
                 modal={false}
-                overlayStyle={{display: 'none'}}
+                // overlayStyle={{display: 'none'}}
                 style={{
                     width: '100%',
                     height: '100%',

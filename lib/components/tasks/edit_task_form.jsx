@@ -8,6 +8,8 @@ import WorkFlowDropdown from './workflow_pos_drop'
 import CategoryDropdown from './category_drop'
 import ETCDropdown from './etc_drop'
 import Delete from 'material-ui/svg-icons/action/delete';
+import FileFolder from 'material-ui/svg-icons/file/folder';
+
 
 class EditTodoForm extends React.Component {
   constructor(props) {
@@ -26,6 +28,7 @@ class EditTodoForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleUnschedule = this.handleUnschedule.bind(this)
   };
 
   componentWillReceiveProps(newProps) {
@@ -41,6 +44,21 @@ class EditTodoForm extends React.Component {
     this.props.toggleTodoEditModal();
     this.props.ownProps.history.push('/homepage');
   };
+
+  handleUnschedule() {
+    console.log(this.state.workflow_pos)
+    // this.setState({ ['workflow_pos']: 'unscheduled'});
+    this.props.moveTask(this.props.todo.id, 'unscheduled')
+    console.log(this.state.workflow_pos)
+
+    // let todo = Object.assign({}, this.state);
+    // console.log("here is state")
+    // console.log(this.state)
+    // this.props.updateTodo(this.state.user_id, todo);
+    this.props.toggleTodoEditModal();
+
+  }
+
 
   handleInput(type, value) {
     
@@ -106,7 +124,6 @@ class EditTodoForm extends React.Component {
       >
         <Delete />
       </IconButton>
-
     ];
     const { task, notes, etc, workflow_pos, tag } = this.state;
     // console.log("this below is what this slice of state is pointing at")
@@ -147,6 +164,7 @@ class EditTodoForm extends React.Component {
           hintText="Estimated Time to Completion"
           floatingLabelText="How long might it take?"
         /><br /> */}
+      
         <h3 className="category-drop-title">Category</h3>
         <CategoryDropdown
           handleInput={this.handleInput}
@@ -157,11 +175,24 @@ class EditTodoForm extends React.Component {
           handleInput={this.handleInput}
           value={etc}
         />
-        <h3 className="workflow-drop-title">Workflow Status</h3>
-        <WorkFlowDropdown
-          handleInput={this.handleInput}
-          value={workflow_pos}
-        />
+        <h3 className="workflow-drop-title"></h3>
+        <IconButton
+          tooltip="To Unscheduled"
+          tooltipPosition="top-center"
+          onClick={this.handleUnschedule}
+          iconStyle={smallIcon}
+          touch={false}
+
+          style={{
+            position: 'absolute',
+            display: 'flex',
+            justifyContents: 'center',
+            right: '4%',
+            top: '8%',
+          }}
+        >
+          <FileFolder />
+        </IconButton>
         {/* <TextField
           onChange={this.handleInput('workflow_pos')}
           hintText="Status"

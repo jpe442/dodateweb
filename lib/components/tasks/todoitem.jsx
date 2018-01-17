@@ -66,7 +66,7 @@ class TodoItem extends React.Component {
   categoryStyle(category) {
     switch (category) {
       case 'Misc.':
-        return {
+        return {  
                 backgroundColor: 'rgba(135, 210, 250, .15)', 
                 border: '1px solid lightgray', 
                 overflow: 'hidden',
@@ -201,7 +201,7 @@ class TodoItem extends React.Component {
 
       <Dialog
         title="View/Update Todo"
-        modal={false}
+        modal={true}
         overlayStyle={{ display: 'none' }}
         style = {{
           width: '100%',
@@ -224,6 +224,7 @@ class TodoItem extends React.Component {
       >
         <EditTodoForm
           todo={this.props.todoInEdit}
+          moveTask={this.props.moveTask}
           // key={todos[todo.id]}
           currentUser={this.props.currentUser}
           // fetchTodos={this.props.fetchTodos}

@@ -48,7 +48,7 @@ class HourSlot extends React.Component {
             width: '100%',
             zIndex: 1,
             opacity: 0.5,
-            backgroundColor: 'yellow',
+            backgroundColor: 'lightgray',
           }} />
         }
       </div>

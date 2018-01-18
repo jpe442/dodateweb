@@ -32,13 +32,13 @@ class BottomBar extends React.Component {
     render() {
         const saturday = {
             width: '50%',
-            height: '80%'
+            height: '100%'
         }
 
         const sunday = {
             width: '50%',
             right: 0,
-            height: '80%'
+            height: '100%'
         }
 
         const noFade = {

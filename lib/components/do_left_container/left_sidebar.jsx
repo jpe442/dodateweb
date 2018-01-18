@@ -39,19 +39,6 @@ class LeftSideBar extends React.Component {
         todo.workflow_pos = 'D';
     }
 
-    categoryStyle(category) {
-        switch (category) {
-            case 'Misc.':
-                return { backgroundColor: 'lightpink', border: '1px solid lightgray', overflow: 'hidden'}
-            case 'Home':
-                return { backgroundColor: 'lightyellow', border: '1px solid lightgray', overflow: 'hidden', fontsize: 10}
-            case 'test':    
-                return { backgroundColor: 'lightblue', border: '1px solid lightgray', overflow: 'hidden'}
-            default:
-                return { backgroundColor: 'whitesmoke', border: '1px solid lightgray', overflow: 'hidden'}
-        }
-    }
-    
     render() {
         let todosVals = Object.values(this.props.todos)
         let todosUnscheduled = todosVals.filter(todo => todo.workflow_pos === 'unscheduled')
@@ -68,7 +55,7 @@ class LeftSideBar extends React.Component {
                 onDragLeave={()=>closeLeftSidebar()}
                 docked={false}
                 width={'20%'}
-                overlayStyle={{ zIndex: 10 }}
+                overlayStyle={{ zIndex: 1000 }}
                 // zDepth={2}
                 style={{textAlign: "center", zIndex: 10, overflow: "visible", fontSize: 10}}
                 open={this.state.open}

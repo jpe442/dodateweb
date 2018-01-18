@@ -374,9 +374,9 @@ body {
     background-color: rgba(135, 210, 250, 0.15);
     width: 100%;
 
-   &hover{
+   /* &hover{
        
-   }
+   } */
 
     /* z-index: 2000; */
 }

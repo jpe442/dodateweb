@@ -59,7 +59,7 @@ class TodoItem extends React.Component {
   }
 
   handleDoubleClick() {
-    console.log(this.props.todo)
+    // console.log(this.props.todo)
     this.props.toggleTodoEditModal(this.props.todo)
   }
 
@@ -146,14 +146,10 @@ class TodoItem extends React.Component {
         <div
           className="todo-item"
           onDragStart={this.handleDrag}
-<<<<<<< HEAD
-          onDoubleClick={()=>console.log("what what")}
           
-=======
           
           // onRightClick={()=>console.log("Right clicking")}
           onDoubleClick={this.handleDoubleClick}
->>>>>>> 2a194b34299d803bbafdf3244d1b9b4df3bd11d3
           // ondrag={this.handleClick}
           style={this.categoryStyle(this.props.todo.tag)}
         >
@@ -206,8 +202,8 @@ class TodoItem extends React.Component {
 
       <Dialog
         title="View/Update Todo"
-        modal={true}
-        overlayStyle={{ display: 'none' }}
+        modal={false}
+        // overlayStyle={{ display: 'none' }}
         style = {{
           width: '100%',
           height: '100%',
@@ -224,6 +220,14 @@ class TodoItem extends React.Component {
           left: '7%',
           top: '20%'
         }}
+        // style={{height: '50%'}}
+        // titleStyle={{
+        //   paddingBottom: '1%',
+        //   fontSize: '120%',
+        //   position: 'absolute',
+        //   left: '35%',
+        //   top: '7%'
+        // }}
         onRequestClose = { this.props.toggleTodoEditModal }
         open = { this.props.openTodoEditModal }
       >

@@ -15,9 +15,9 @@ class HomePage extends React.Component {
         super(props);
         this.moveTask = this.moveTask.bind(this)
     }
-    componentWillReceiveProps(newProps) {
-        this.setState(newProps.todos)
-    }
+    // componentWillReceiveProps(newProps) {
+    //     this.setState(newProps.todos)
+    // }
 
     // componentDidMount() {
     //     this.props.fetchTodos();

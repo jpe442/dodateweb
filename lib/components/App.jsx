@@ -28,9 +28,6 @@ const muiTheme = getMuiTheme({
 });
 
 const App = () => {
-  let drag = document.getElementById('draggable-test');
-  console.log(drag);
-  $(drag).draggable();
 
   return (
     <MuiThemeProvider muiTheme={muiTheme}>

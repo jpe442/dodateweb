@@ -5,7 +5,7 @@ import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import WorkFlowDropdown from './workflow_pos_drop'
-import CategoryDropdown from './category_drop'
+import CategoryDropdown from './category_drop'  
 import ETCDropdown from './etc_drop'
 import Delete from 'material-ui/svg-icons/action/delete';
 import FileFolder from 'material-ui/svg-icons/file/folder';
@@ -28,44 +28,45 @@ class EditTodoForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
-    this.handleUnschedule = this.handleUnschedule.bind(this)
+    this.handleUnschedule = this.handleUnschedule.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   };
 
-  componentWillReceiveProps(newProps) {
-    console.log("yo yo yo")
-    this.setState(newProps.todo, newProps.key)
+  moveTask(itemId, workflowPos, timeSlot) {
+    let moveTodo = {
+      id: itemId,
+      workflow_pos: workflowPos,
+      time_slot: timeSlot,
+      tag: this.props.todo.tag,
+      notes: this.props.todo.notes,
+      etc: this.props.todo.etc,
+      user_id: this.props.currentUser.id
+    }
+
+    this.props.updateTodo(this.props.currentUser.id, moveTodo)
+  }
+
+  handleCancel() {
+    this.props.toggleTodoEditModal(this.props.todo)
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props.todo.task)
     const todo = Object.assign({}, this.state);
     this.props.updateTodo(this.state.user_id, todo);
-    this.props.toggleTodoEditModal();
-    this.props.ownProps.history.push('/homepage');
+    this.props.toggleTodoEditModal(todo);
   };
 
   handleUnschedule() {
-    console.log(this.state.workflow_pos)
-    // this.setState({ ['workflow_pos']: 'unscheduled'});
-    this.props.moveTask(this.props.todo.id, 'unscheduled')
-    console.log(this.state.workflow_pos)
-
-    // let todo = Object.assign({}, this.state);
-    // console.log("here is state")
-    // console.log(this.state)
-    // this.props.updateTodo(this.state.user_id, todo);
-    this.props.toggleTodoEditModal();
-
+    this.moveTask(this.props.todo.id, 'unscheduled')
+    this.props.toggleTodoEditModal(this.props.todo);
   }
 
 
   handleInput(type, value) {
-    
     if (value) {
       this.setState({ [type]: value })
     }
-
     return (e) => {
       this.setState({ [type]: e.target.value });
     }
@@ -75,10 +76,11 @@ class EditTodoForm extends React.Component {
     const todo = Object.assign({}, this.state);
     this.props.deleteTodo(this.state.user_id, todo.id);
     this.props.toggleTodoEditModal();
-    // this.props.ownProps.history.push('/homepage');
   }
 
   render() {
+    console.log("hereZE");
+    console.log(this.props.todo)
     const smallIcon = {
       width: 36,
       height: 36,
@@ -96,11 +98,9 @@ class EditTodoForm extends React.Component {
         }}
       />,
       <RaisedButton
-        // className="login-modal-cancel-btn"
         label="Cancel"
-
         primary={true}
-        onClick={this.props.toggleTodoEditModal}
+        onClick={this.handleCancel}
         style={{
           position: 'absolute',
           left: '28%',
@@ -126,8 +126,7 @@ class EditTodoForm extends React.Component {
       </IconButton>
     ];
     const { task, notes, etc, workflow_pos, tag } = this.state;
-    // console.log("this below is what this slice of state is pointing at")
-    // console.log(this.state)
+ 
     return (
       <div className="todo-create">
         <TextField
@@ -157,13 +156,6 @@ class EditTodoForm extends React.Component {
             left: '5%'
           }}
         /><br />
-        {/* <TextField
-          className=""
-          onChange={this.handleInput('etc')}
-          value={60}
-          hintText="Estimated Time to Completion"
-          floatingLabelText="How long might it take?"
-        /><br /> */}
       
         <h3 className="category-drop-title">Category</h3>
         <CategoryDropdown
@@ -193,39 +185,9 @@ class EditTodoForm extends React.Component {
         >
           <FileFolder />
         </IconButton>
-        {/* <TextField
-          onChange={this.handleInput('workflow_pos')}
-          hintText="Status"
-          floatingLabelText="Where in your workflow is this?"
-        /><br /> */}
 
         {actions}
 
-        {/* <div className="new-form">
-          <h3>New Todo</h3>
-          <form onSubmit={this.handleSubmit}>
-            <label className="question-title-field">
-              <input
-                type="text"
-                placeholder="Your question here..."
-                value={title}
-                onChange={this.handleInput('task')}
-              />
-            </label>
-            <label className="question-body-field">
-              <input
-                type="text"
-                placeholder="Additional context here..."
-                value={body}
-                onChange={this.handleInput('body')}
-              />
-            </label>
-            <button
-              className="question-form-submit-btn"
-              onClick={this.handleSubmit}>Submit</button>
-          </form>
-
-        </div> */}
       </div>
     )
   }

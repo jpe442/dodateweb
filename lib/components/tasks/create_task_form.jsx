@@ -27,24 +27,17 @@ class TodoForm extends React.Component {
     const todo = Object.assign({}, this.state);
     this.props.createTodo(this.state.user_id, todo);
     this.props.toggleTodoCreateModal();
-    this.props.ownProps.history.push('/homepage');
   };
 
   handleInput(type, value) {
-    // let e = undefined;
-    console.log(this.state)
-    console.log("in handleInput")
-    console.log(type)
-    console.log(value)
-    console.log(this.setState)  
+
     if (value) {
       this.setState({[type]: value})
-      }
+    };
 
-      return (e) => {
-          console.log("about to set workflow")
-          this.setState({ [type]: e.target.value });
-        }
+    return (e) => {
+      this.setState({ [type]: e.target.value });
+    };
   };
     // console.log(e)
        
@@ -52,6 +45,8 @@ class TodoForm extends React.Component {
 
 
   render() {
+
+    console.log("CREATE")
     const actions = [
       <RaisedButton
         label="Submit"
@@ -121,11 +116,11 @@ class TodoForm extends React.Component {
           handleInput={this.handleInput}
           value={this.state.etc}
         />
-        <h3 className="workflow-drop-title">Workflow Status</h3>
+        {/* <h3 className="workflow-drop-title">Workflow Status</h3>
         <WorkFlowDropdown
           handleInput={this.handleInput}
           value={this.state.workflow_pos}
-        />
+        /> */}
         {/* <TextField
           onChange={this.handleInput('workflow_pos')}
           hintText="Status"

@@ -18,7 +18,6 @@ class RightSideBar extends React.Component {
     }
 
     handleToggle() {
-        console.log("toggling");
         this.setState({open: !this.state.open});
     }
 
@@ -60,7 +59,9 @@ class RightSideBar extends React.Component {
                                 key={todo.id}
                                 todos={this.props.todos}
                                 todo={todo}
+                                todoFocus={this.props.todoFocus}
                                 closeRightSideBar={this.closeRightSideBar}
+                                openTodoEditModal={this.props.openTodoEditModal}
                                 toggleTodoEditModal={this.props.toggleTodoEditModal}
                                 // onClick={()=>this.markComplete(todo)}
                                 // onClick={()=>console.log("getting clicked")}

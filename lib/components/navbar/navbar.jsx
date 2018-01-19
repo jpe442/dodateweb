@@ -32,7 +32,7 @@ class NavBar extends React.Component {
     }
 
     handleEdit() {
-        console.log("BOOOM")
+        console.log("BOOOOOOOOOOOOOOM")
         this.props.openEdit(this.props.todoInEdit)
     }
 
@@ -57,7 +57,7 @@ class NavBar extends React.Component {
                 }
             />
             <Dialog
-                title="Create New TodoS"
+                title="Create New TodoSS"
                 modal={false}
                 overlayStyle={{display: 'none'}}
                 style={{

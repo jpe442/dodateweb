@@ -35,7 +35,6 @@ class LeftSideBar extends React.Component {
     }  
 
     markComplete(todo) {
-        console.log("WTF")
         todo.workflow_pos = 'D';
     }
 
@@ -52,14 +51,13 @@ class LeftSideBar extends React.Component {
                 onDragOver={this.handleToggle}>
                 </div>
                 <Drawer
-                onDragLeave={()=>closeLeftSidebar()}
-                docked={false}
-                width={'20%'}
-                overlayStyle={{ zIndex: 1000 }}
-                // zDepth={2}
-                style={{textAlign: "center", zIndex: 10, overflow: "visible", fontSize: 10}}
-                open={this.state.open}
-                onRequestChange={(open) => this.setState({open})}
+                    onDragLeave={()=>closeLeftSidebar()}
+                    docked={false}
+                    width={'20%'}
+                    overlayStyle={{ zIndex: 1000 }}
+                    style={{textAlign: "center", zIndex: 10, overflow: "visible", fontSize: 10}}
+                    open={this.state.open}
+                    onRequestChange={(open) => this.setState({open})}
                 >
                     <FloatingActionButton 
                         secondary={true} 
@@ -74,16 +72,12 @@ class LeftSideBar extends React.Component {
                                 key={todo.id}
                                 todo={todo}
                                 closeLeftSidebar={this.closeLeftSidebar}
-                                // onClick={()=>this.markComplete(todo)}
-                                // onClick={()=>console.log("getting clicked")}
                                 moveTask={this.props.moveTask}
                             >
                             </TodoItemContainer>
                         ))}
                     </ul>
-                  
-                    {/* <MenuItem onClick={this.closeLeftSidebar}>Todo 1</MenuItem>
-                    <MenuItem onClick={this.closeLeftSidebar}>Todo 2</MenuItem> */}
+                
                 </Drawer>
                 
             </div>

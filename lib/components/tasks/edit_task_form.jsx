@@ -5,7 +5,7 @@ import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import WorkFlowDropdown from './workflow_pos_drop'
-import CategoryDropdown from './category_drop'
+import CategoryDropdown from './category_drop'  
 import ETCDropdown from './etc_drop'
 import Delete from 'material-ui/svg-icons/action/delete';
 import FileFolder from 'material-ui/svg-icons/file/folder';
@@ -32,10 +32,19 @@ class EditTodoForm extends React.Component {
     this.handleCancel = this.handleCancel.bind(this);
   };
 
-  // componentWillReceiveProps(newProps) {
-  //   // console.log("yo yo yo")
-  //   this.setState(newProps.todo, newProps.key)
-  // }
+  moveTask(itemId, workflowPos, timeSlot) {
+    let moveTodo = {
+      id: itemId,
+      workflow_pos: workflowPos,
+      time_slot: timeSlot,
+      tag: this.props.todo.tag,
+      notes: this.props.todo.notes,
+      etc: this.props.todo.etc,
+      user_id: this.props.currentUser.id
+    }
+
+    this.props.updateTodo(this.props.currentUser.id, moveTodo)
+  }
 
   handleCancel() {
     this.props.toggleTodoEditModal(this.props.todo)
@@ -49,7 +58,7 @@ class EditTodoForm extends React.Component {
   };
 
   handleUnschedule() {
-    this.props.moveTask(this.props.todo.id, 'unscheduled')
+    this.moveTask(this.props.todo.id, 'unscheduled')
     this.props.toggleTodoEditModal(this.props.todo);
   }
 

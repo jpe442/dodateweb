@@ -33,8 +33,6 @@ const App = () => {
     <MuiThemeProvider muiTheme={muiTheme}>
       <div>
         <Route path="/" component={NavBarContainer} />
-        {/* <Route exact_path="/" component={HomePageContainer} /> */}
-        {/* testing for homepage design, will revert line 40 to protected */}
         <ProtectedRoute exact_path="/homepage" component={HomePageContainer} />
         <Route exact path="/" component={SplashContainer} />
       </div>

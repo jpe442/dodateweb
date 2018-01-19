@@ -166,7 +166,7 @@ class TodoItem extends React.Component {
             }}
           />
 
-      <Dialog
+      {/* <Dialog
         title="View/Update Todo"
         modal={false}
         overlayStyle={{ display: 'none' }}
@@ -197,7 +197,7 @@ class TodoItem extends React.Component {
           updateTodo={this.props.updateTodo}
           deleteTodo={this.props.deleteTodo}
           toggleTodoEditModal={this.props.toggleTodoEditModal} />
-      </Dialog >
+      </Dialog > */}
       </div>
       )
   }

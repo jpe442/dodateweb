@@ -8,6 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import Login from './login_form';
 import TodoForm from '../tasks/create_task_form'
+import EditTodoForm from '../tasks/edit_task_form'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -20,7 +21,6 @@ class NavBar extends React.Component {
         this.openLoginModal = this.openLoginModal.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
-        // this.toggleTodoEditModal = this.props.toggleTodoEditModal.bind(this);
     }
 
     openLoginModal() {
@@ -32,8 +32,8 @@ class NavBar extends React.Component {
     }
 
     handleEdit() {
-        this.props.toggleTodoEditModal(this.props.todoInEdit)
-
+        console.log("BOOOM")
+        this.props.openEdit(this.props.todoInEdit)
     }
 
     render() {
@@ -57,7 +57,7 @@ class NavBar extends React.Component {
                 }
             />
             <Dialog
-                title="Create New Todo"
+                title="Create New TodoS"
                 modal={false}
                 overlayStyle={{display: 'none'}}
                 style={{
@@ -90,6 +90,43 @@ class NavBar extends React.Component {
                     toggleTodoCreateModal={this.props.toggleTodoCreateModal}
                 />
             </Dialog>
+
+                <Dialog
+                    title="Edit Todo"
+                    modal={false}
+                    // overlayStyle={{ display: 'none' }}
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        zIndex: 1500,
+                    }}
+
+                    bodyStyle={{
+                        height: '100%'
+                    }}
+
+                    titleStyle={{
+                        paddingTop: '3%',
+                        padding: '1%',
+                        fontSize: '80%',
+                        position: 'relative',
+                        left: '7%',
+                        top: '20%'
+                    }}
+
+                    onRequestClose={this.props.toggleTodoEditModal}
+                    open={this.props.openTodoEditModal}
+
+                >
+                <EditTodoForm
+                    todo={this.props.todoInEdit}
+                    currentUser={this.props.currentUser}
+                    updateTodo={this.props.updateTodo}
+                    deleteTodo={this.props.deleteTodo}
+                    openEdit={this.props.openEdit} 
+                    toggleTodoEditModal={this.props.toggleTodoEditModal}
+                    />
+                </Dialog>
             </div>
         ) : (
             <div>

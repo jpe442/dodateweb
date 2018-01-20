@@ -132,6 +132,7 @@ class NavBar extends React.Component {
                 <AppBar
                     className="AppNavBar"
                     title={<span>DoDate</span>}
+                    showMenuIconButton={false}
                     iconElementRight={ 
 
                         <RaisedButton

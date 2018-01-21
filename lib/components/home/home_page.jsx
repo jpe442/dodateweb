@@ -23,6 +23,8 @@ class HomePage extends React.Component {
     //     this.props.fetchTodos();
     // }
 
+    
+
     moveTask(itemId, workflowPos, timeSlot) {
         let moveTodo = {
                         id: itemId,
@@ -49,6 +51,9 @@ class HomePage extends React.Component {
         // $(function () {
         //     $(todoItem).draggable();
         // });
+
+
+
 
         const hours = []
         for (let i = 8; i < 20; i++) {
@@ -81,6 +86,7 @@ class HomePage extends React.Component {
                 )
             }
         }
+
         return (
             <div className="homepage-background">
                 <div className="weekday-titles">

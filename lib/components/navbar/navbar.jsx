@@ -36,13 +36,51 @@ class NavBar extends React.Component {
     }
 
     render() {
+
+        /*
+ * Create form to request access token from Google's OAuth 2.0 server.
+ */
+        const oauthSignIn = () => {
+            // Google's OAuth 2.0 endpoint for requesting an access token
+            let oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
+
+            // Create <form> element to submit parameters to OAuth 2.0 endpoint.
+            let form = document.createElement('form');
+            form.setAttribute('method', 'GET'); // Send as a GET request.
+            form.setAttribute('action', oauth2Endpoint);
+
+            // Parameters to pass to OAuth 2.0 endpoint.
+            let params = {
+                'client_id': '591847328765-855vukh94icl3h11qkiqmt0j4lvg3auk.apps.googleusercontent.com',
+                'redirect_uri': 'https://jpe442.github.io/dodateweb',
+                'response_type': 'token',
+                'scope': 'https://www.googleapis.com/auth/calendar	',
+                'include_granted_scopes': 'true',
+                'state': 'pass-through value'
+            };
+
+            console.log(params['redirect_uri'])
+            // Add form parameters as hidden input values.
+            for (var p in params) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'hidden');
+                input.setAttribute('name', p);
+                input.setAttribute('value', params[p]);
+                form.appendChild(input);
+            }
+
+            // Add form to page and submit it to open the OAuth 2.0 endpoint.
+            document.body.appendChild(form);
+            form.submit();
+        }
+
         const { currentUser, logout, login} = this.props;
         const taskSelect = this.props.todoInEdit ? (<div>{this.props.todoInEdit.task}</div>) : (<div>Todo In Focus</div>) 
         const taskShow = <div id="current-task-show"><div>{taskSelect}</div></div>
         const AppNavBar = currentUser ? (
             <div className="nav-base">
             <AppBar
-                onLeftIconButtonClick={this.handleEdit}
+                onLeftIconButtonClick={oauthSignIn}
                 children={taskShow}
                 className="AppNavBar"
                 title={<span>DoDate</span>}

@@ -37,7 +37,7 @@ class NavBar extends React.Component {
     }
 
     render() {
-
+        console.log("finally changed again4")
         var queryString = location.hash.substring(1);
         // Parse query string to see if page request is coming from OAuth 2.0 server.
         var params = {};
@@ -51,6 +51,17 @@ class NavBar extends React.Component {
         }
 
         function handleSync() {
+            const event = {
+                            "end": {
+                                "dateTime": "2018-01-22T11:30:00-07:00"
+                            }, 
+                            "start": {
+                                "dateTime": "2018-01-22T10:00:00-07:00"
+                            }, 
+                            "summary": "Hello from DoDate!"
+                        }
+                
+            console.log("handleSync fired")
             var params = JSON.parse(localStorage.getItem('oauth2-test-params'));
             if (params && params['access_token']) {
                 var xhr = new XMLHttpRequest();
@@ -63,12 +74,13 @@ class NavBar extends React.Component {
                     console.log(xhr.response);
                     localStorage.removeItem('oauth2-test-params')
                 };
-                xhr.send(null);
+                xhr.setRequestHeader("Content-Type", "application/json")
+                xhr.send(JSON.stringify(event));
             } else {
                 oauth2SignIn();
             }
         }
-        // 'ya29.GltJBfucCVAoy7IQBocF_DAFdD_p7SYiVA58anXyApuaWjZiCVRhNp3KZAr-fsjAYjVck2_KvpEj0luPPDKYOf9qNDutz97ceslqfsP0C5Bs0u2y7NjknS6v13Ue'
+        
         function oauth2SignIn() {
         // Google's OAuth 2.0 endpoint for requesting an access token
             let oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';

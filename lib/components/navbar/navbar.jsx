@@ -59,6 +59,7 @@ class NavBar extends React.Component {
                     'https://www.googleapis.com/calendar/v3/calendars/primary/events?'
                     + 'access_token=' + params['access_token'], );
                 xhr.onreadystatechange = function (e) {
+                    console.log("just after onreadystatechange")
                     console.log(xhr.response);
                     localStorage.removeItem('oauth2-test-params')
                 };

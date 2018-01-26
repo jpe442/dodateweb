@@ -28,7 +28,6 @@ class Login extends React.Component {
     e.preventDefault(e);
     this.props.login(this.state)
       .then(() => this.props.clearSessionErrors())
-        .then(() => this.props.ownProps.history.push('/homepage'))
      
       // .then(() => this.props.clearSessionErrors())
   };

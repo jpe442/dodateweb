@@ -23,6 +23,8 @@ class HomePage extends React.Component {
     //     this.props.fetchTodos();
     // }
 
+    
+
     moveTask(itemId, workflowPos, timeSlot) {
         let moveTodo = {
                         id: itemId,
@@ -54,12 +56,12 @@ class HomePage extends React.Component {
         for (let i = 8; i < 20; i++) {
             if (i > 12) {
                 let hourNum = i - 12
-                hours.push({ hour: hourNum, timeOfDay: "p" })
+                hours.push({rawHour: i, hour: hourNum, timeOfDay: "p" })
             }else{
                 if (i === 12) {
-                hours.push({ hour: i, timeOfDay: "p" })
+                    hours.push({ rawHour: i, hour: i, timeOfDay: "p" })
                 }else{
-                hours.push({ hour: i, timeOfDay: "a" })
+                    hours.push({ rawHour: i, hour: i, timeOfDay: "a" })
                 }
             }
         }
@@ -81,6 +83,7 @@ class HomePage extends React.Component {
                 )
             }
         }
+
         return (
             <div className="homepage-background">
                 <div className="weekday-titles">

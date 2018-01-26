@@ -13,11 +13,13 @@ class RightSideBar extends React.Component {
         this.state = {
             open: false
         };
+        
         this.handleToggle = this.handleToggle.bind(this);
         this.closeRightSideBar = this.closeRightSideBar.bind(this);
     }
 
     handleToggle() {
+        console.log("HELLLLLLLO")
         this.setState({open: !this.state.open});
     }
 

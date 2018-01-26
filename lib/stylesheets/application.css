@@ -58,13 +58,7 @@ body {
     overflow: hidden;
 }
 
-/* splash  */
-
-.AppNavBar {
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
-}
+/* Splash */
 
 .logout-btn {
     margin-top: 5px;
@@ -245,8 +239,8 @@ body {
     right: 0px;
     top: 0px;
     height: 100vh;
-    max-width: 2px;
-    width: 5px;
+    max-width: 7px;
+    width: 8px;
 }
 
 .left-hidden-trigger {

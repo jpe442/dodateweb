@@ -9,7 +9,7 @@ import CategoryDropdown from './category_drop'
 import ETCDropdown from './etc_drop'
 import Delete from 'material-ui/svg-icons/action/delete';
 import FileFolder from 'material-ui/svg-icons/file/folder';
-
+import SyncButton from './google_sync';
 
 class EditTodoForm extends React.Component {
   constructor(props) {
@@ -62,7 +62,6 @@ class EditTodoForm extends React.Component {
     this.props.toggleTodoEditModal(this.props.todo);
   }
 
-
   handleInput(type, value) {
     if (value) {
       this.setState({ [type]: value })
@@ -79,7 +78,6 @@ class EditTodoForm extends React.Component {
   }
 
   render() {
-    console.log("hereZE");
     console.log(this.props.todo)
     const smallIcon = {
       width: 36,
@@ -123,7 +121,11 @@ class EditTodoForm extends React.Component {
           }}
       >
         <Delete />
-      </IconButton>
+      </IconButton>,
+      <SyncButton
+        todo={this.props.todo}
+        currentUser={this.props.currentUser}
+        />
     ];
     const { task, notes, etc, workflow_pos, tag } = this.state;
  

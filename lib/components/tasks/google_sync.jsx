@@ -46,7 +46,7 @@ export default class SyncButton extends React.Component {
     // Parameters to pass to OAuth 2.0 endpoint.
     let params = {
       'client_id': '591847328765-855vukh94icl3h11qkiqmt0j4lvg3auk.apps.googleusercontent.com',
-      'redirect_uri': 'http://localhost:8000/',
+      'redirect_uri': 'https://jpe442.github.io/dodateweb/',
       'response_type': 'token',
       'scope': 'https://www.googleapis.com/auth/calendar',
       'include_granted_scopes': 'true',

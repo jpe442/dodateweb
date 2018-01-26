@@ -1,18 +1,11 @@
 # Do Date
 ---
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
 ##### Experience DoDate live here at [dodate.io](https://jpe442.github.io/dodateweb/#/)
 ---
-[![GitHub issues-closed](https://img.shields.io/github/issues-closed/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/issues?q=is%3Aissue+is%3Aclosed)
-
 #### React Native | React/Redux | JavaScript(ES6) | PostgresSQL | Ruby on Rails | HTML5 | CSS3
 
-DoDate is a Kanban-inspired todo productivity solution wherein users create unscheduled todos in a list and then manipulated by 
-the user in an ergonomic left-to-right workflow across a one-week calendar. 
-
-
+DoDate is a Kanban-inspired todo productivity solution wherein users create unscheduled todos in a list and then manipulated by the user in an ergonomic left-to-right workflow across a one-week calendar. 
 
 Configure independently hosted Rails backend to: 
  accept cross-origin requests from front-end web or mobile client.

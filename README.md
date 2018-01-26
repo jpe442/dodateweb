@@ -14,8 +14,6 @@
 [![Wercker](https://img.shields.io/badge/HTML-5-red.svg?colorB=f16529)]()
 [![Wercker](https://img.shields.io/badge/CSS-3-red.svg?colorB=52a7db)]()
 
-52a7db
-
 #### React JS/Redux | React Native/Redux | JavaScript(ES6) | PostgresSQL | Ruby on Rails | HTML5 | CSS3
 
 DoDate is a Kanban-inspired todo productivity solution wherein users create unscheduled todos in a list and then distribute them accross a one-week calendar in an ergonomic left-to-right workflow.

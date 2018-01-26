@@ -102,16 +102,16 @@ class HomePage extends React.Component {
                             {hours.map(hour => (
                                 <div
                                     workflowpos="M"
-                                    timeslot={hour.hour}
+                                    timeslot={hour.rawHour}
                                 >
                                     <HourSlot
                                         className="hourslot"
                                         workflowpos="M"
-                                        timeslot={hour.hour}>
+                                        timeslot={hour.rawHour}>
                                         <div
                                         className="hoursdisplay"
                                         >{hour.hour}{hour.timeOfDay}</div>
-                                        {task('M', hour.hour)}
+                                        {task('M', hour.rawHour)}
 
                                     </HourSlot>
 
@@ -127,16 +127,16 @@ class HomePage extends React.Component {
                             {hours.map(hour => (
                                 <div
                                     workflowpos="T"
-                                    timeslot={hour.hour}
+                                    timeslot={hour.rawHour}
                                 >
                                     <HourSlot
                                         className="hourslot"
                                         workflowpos="T"
-                                        timeslot={hour.hour}>
+                                        timeslot={hour.rawHour}>
                                         <div
                                         className="hoursdisplay"
                                         >{hour.hour}{hour.timeOfDay}</div>
-                                        {task('T', hour.hour)}
+                                        {task('T', hour.rawHour)}
                                         
                                     </HourSlot>
 
@@ -152,16 +152,16 @@ class HomePage extends React.Component {
                             {hours.map(hour => (
                                 <div
                                     workflowpos="W"
-                                    timeslot={hour.hour}
+                                    timeslot={hour.rawHour}
                                 >
                                     <HourSlot
                                         className="hourslot"
                                         workflowpos="W"
-                                        timeslot={hour.hour}>
+                                        timeslot={hour.rawHour}>
                                         <div
                                         className="hoursdisplay"
                                         >{hour.hour}{hour.timeOfDay}</div>
-                                        {task('W', hour.hour)}
+                                        {task('W', hour.rawHour)}
                                     </HourSlot>
 
                                 </div>
@@ -176,16 +176,16 @@ class HomePage extends React.Component {
                             {hours.map(hour => (
                                 <div
                                     workflowpos="TH"
-                                    timeslot={hour.hour}
+                                    timeslot={hour.rawHour}
                                 >
                                     <HourSlot
                                         className="hourslot"
                                         workflowpos="TH"
-                                        timeslot={hour.hour}>
+                                        timeslot={hour.rawHour}>
                                         <div
                                         className="hoursdisplay"
                                         >{hour.hour}{hour.timeOfDay}</div>
-                                        {task('TH', hour.hour)}
+                                        {task('TH', hour.rawHour)}
                                     </HourSlot>
 
                                 </div>
@@ -200,16 +200,16 @@ class HomePage extends React.Component {
                             {hours.map(hour => (
                                 <div
                                     workflowpos="F"
-                                    timeslot={hour.hour}
+                                    timeslot={hour.rawHour}
                                 >
                                     <HourSlot
                                         className="hourslot"
                                         workflowpos="F"
-                                        timeslot={hour.hour}>
+                                        timeslot={hour.rawHour}>
                                         <div
                                         className="hoursdisplay"
                                         >{hour.hour}{hour.timeOfDay}</div>
-                                        {task('F', hour.hour)}
+                                        {task('F', hour.rawHour)}
                                     </HourSlot>
 
                                 </div>

@@ -55,184 +55,184 @@ class NavBar extends React.Component {
 
         var todo = this.props.todoInEdit;
 
-        console.log("finally changed again5")
-        var queryString = location.hash.substring(1);
-        // Parse query string to see if page request is coming from OAuth 2.0 server.
-        var params = {};
+        // console.log("finally changed again5")
+        // var queryString = location.hash.substring(1);
+        // // Parse query string to see if page request is coming from OAuth 2.0 server.
+        // var params = {};
 
-        var regex = /([^&=]+)=([^&]*)/g, m;
+        // var regex = /([^&=]+)=([^&]*)/g, m;
 
-        while (m = regex.exec(queryString)) {
-            params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
-            // Try to exchange the param values for an access token.
-            exchangeOAuth2Token(params);
-        }
+        // while (m = regex.exec(queryString)) {
+        //     params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+        //     // Try to exchange the param values for an access token.
+        //     exchangeOAuth2Token(params);
+        // }
         
-        function dayToNumConvert(workflow_pos) {
-            let converter = { 'M': 1, 'T': 2, 'W': 3, 'TH': 4, 'F': 5, 'ST': 6, 'SN': 7 }
-            return converter[workflow_pos]
-        }
+        // function dayToNumConvert(workflow_pos) {
+        //     let converter = { 'M': 1, 'T': 2, 'W': 3, 'TH': 4, 'F': 5, 'ST': 6, 'SN': 7 }
+        //     return converter[workflow_pos]
+        // }
 
-        function syncEvent(todo) {
-            console.log(todo)
+        // function syncEvent(todo) {
+        //     console.log(todo)
 
     
-            const dateTimeNow = new Date(); // i.e. new Date object
+        //     const dateTimeNow = new Date(); // i.e. new Date object
 
-            const dayNow = dateTimeNow.getDay(); // i.e. 2 for 'M'
+        //     const dayNow = dateTimeNow.getDay(); // i.e. 2 for 'M'
 
-            const dateNow = dateTimeNow.getDate(); // i.e. 22
+        //     const dateNow = dateTimeNow.getDate(); // i.e. 22
 
-            const todoDay = dayToNumConvert(todo.workflow_pos); // 'M'
+        //     const todoDay = dayToNumConvert(todo.workflow_pos); // 'M'
 
-            const todoStart = todo.time_slot // 11
-            console.log(todo.time_slot)
-            console.log(todoStart)
+        //     const todoStart = todo.time_slot // 11
+        //     console.log(todo.time_slot)
+        //     console.log(todoStart)
 
 
-            if (dayNow === todoDay) {
-                // create start/end dateTime using date/timezone from current day and 
-                // start-time/calculated endtime from todo
-                let newStartDateTime = new Date();
-                newStartDateTime.setHours(todoStart, 0, 0)
-                var startString = newStartDateTime.toJSON();
-                let newEndDateTime = new Date();
-                newEndDateTime.setHours(todoStart + 1, 0, 0)
-                var endString = newEndDateTime.toJSON();
+        //     if (dayNow === todoDay) {
+        //         // create start/end dateTime using date/timezone from current day and 
+        //         // start-time/calculated endtime from todo
+        //         let newStartDateTime = new Date();
+        //         newStartDateTime.setHours(todoStart, 0, 0)
+        //         var startString = newStartDateTime.toJSON();
+        //         let newEndDateTime = new Date();
+        //         newEndDateTime.setHours(todoStart + 1, 0, 0)
+        //         var endString = newEndDateTime.toJSON();
               
-            } else if (dayNow < todoDay) {
-                // get the difference as an integer by subtracting numerical dayNow
-                // from numerical todoDay
-                let dateTimeNowJSON = dateTimeNow.toJSON();
-                let dateNow = dateTimeNow.getDate();
-                // add the difference from the todo day and current day to create todo date
-                let todoDate = dateNow + (todoDay - dayNow)
+        //     } else if (dayNow < todoDay) {
+        //         // get the difference as an integer by subtracting numerical dayNow
+        //         // from numerical todoDay
+        //         let dateTimeNowJSON = dateTimeNow.toJSON();
+        //         let dateNow = dateTimeNow.getDate();
+        //         // add the difference from the todo day and current day to create todo date
+        //         let todoDate = dateNow + (todoDay - dayNow)
 
 
-                let newTodoDate = new Date(dateTimeNowJSON);
-                newTodoDate.setDate(todoDate);
+        //         let newTodoDate = new Date(dateTimeNowJSON);
+        //         newTodoDate.setDate(todoDate);
 
-                let newStartDateTime = new Date(newTodoDate.toJSON())
-                newStartDateTime.setHours(todo.time_slot, 0, 0)
-                var startString = newStartDateTime.toJSON();
+        //         let newStartDateTime = new Date(newTodoDate.toJSON())
+        //         newStartDateTime.setHours(todo.time_slot, 0, 0)
+        //         var startString = newStartDateTime.toJSON();
 
-                let newEndDateTime = new Date(newStartDateTime.toJSON());
-                newEndDateTime.setHours(todo.time_slot + 1, 0, 0);
-                var endString = newEndDateTime.toJSON();
+        //         let newEndDateTime = new Date(newStartDateTime.toJSON());
+        //         newEndDateTime.setHours(todo.time_slot + 1, 0, 0);
+        //         var endString = newEndDateTime.toJSON();
 
-            } else if (dayNow > todoDay) {
-                 // create DateTime object using newSyncDate/Start
-                // create DateTime object using newSyncDate/End
-                // pull the ISO string conversions from each object
-                // use todo.task and dateTime strings to create event object
-                // send event object to Google Calendar API
+        //     } else if (dayNow > todoDay) {
+        //          // create DateTime object using newSyncDate/Start
+        //         // create DateTime object using newSyncDate/End
+        //         // pull the ISO string conversions from each object
+        //         // use todo.task and dateTime strings to create event object
+        //         // send event object to Google Calendar API
 
-                // get the difference as an integer by subtracting numerical dayNow
-                // from numerical todoDay
-                let dateTimeNowJSON = dateTimeNow.toJSON();
-                let dateNow = dateTimeNow.getDate();
-                // add the difference from the todo day and current day to create todo date
-                let todoDate = dateNow + 7 - (dayNow - todoDay)
+        //         // get the difference as an integer by subtracting numerical dayNow
+        //         // from numerical todoDay
+        //         let dateTimeNowJSON = dateTimeNow.toJSON();
+        //         let dateNow = dateTimeNow.getDate();
+        //         // add the difference from the todo day and current day to create todo date
+        //         let todoDate = dateNow + 7 - (dayNow - todoDay)
 
 
-                let newTodoDate = new Date(dateTimeNowJSON);
-                newTodoDate.setDate(todoDate);
+        //         let newTodoDate = new Date(dateTimeNowJSON);
+        //         newTodoDate.setDate(todoDate);
 
-                let newStartDateTime = new Date(newTodoDate.toJSON())
-                newStartDateTime.setHours(todo.time_slot, 0, 0)
-                var startString = newStartDateTime.toJSON();
+        //         let newStartDateTime = new Date(newTodoDate.toJSON())
+        //         newStartDateTime.setHours(todo.time_slot, 0, 0)
+        //         var startString = newStartDateTime.toJSON();
 
-                let newEndDateTime = new Date(newStartDateTime.toJSON());
-                newEndDateTime.setHours(todo.time_slot + 1, 0, 0);
-                var endString = newEndDateTime.toJSON();
-            }
+        //         let newEndDateTime = new Date(newStartDateTime.toJSON());
+        //         newEndDateTime.setHours(todo.time_slot + 1, 0, 0);
+        //         var endString = newEndDateTime.toJSON();
+        //     }
 
-            let event = {'start': {'dateTime': startString}, 'end': {'dateTime': endString}, 'summary': todo.task}
-            return event
-        }   
+        //     let event = {'start': {'dateTime': startString}, 'end': {'dateTime': endString}, 'summary': todo.task}
+        //     return event
+        // }   
 
-        function handleSync() {
+        // function handleSync() {
                 
-            var params = JSON.parse(localStorage.getItem('oauth2-test-params'));
-            if (params && params['access_token']) {
-                var xhr = new XMLHttpRequest();
-                console.log("in handleSync about to POST")
-                xhr.open('POST',
-                    'https://www.googleapis.com/calendar/v3/calendars/primary/events?'
-                    + 'access_token=' + params['access_token'], );
-                xhr.onreadystatechange = function (e) {
-                    console.log("just after onreadystatechange")
-                    console.log(xhr.response);
-                    localStorage.removeItem('oauth2-test-params')
-                };
-                xhr.setRequestHeader("Content-Type", "application/json")
-                console.log(todo)
-                console.log(syncEvent(todo))
-                xhr.send(JSON.stringify(syncEvent(todo)));
-            } else {
-                oauth2SignIn();
-            }
-        }
+        //     var params = JSON.parse(localStorage.getItem('oauth2-test-params'));
+        //     if (params && params['access_token']) {
+        //         var xhr = new XMLHttpRequest();
+        //         console.log("in handleSync about to POST")
+        //         xhr.open('POST',
+        //             'https://www.googleapis.com/calendar/v3/calendars/primary/events?'
+        //             + 'access_token=' + params['access_token'], );
+        //         xhr.onreadystatechange = function (e) {
+        //             console.log("just after onreadystatechange")
+        //             console.log(xhr.response);
+        //             localStorage.removeItem('oauth2-test-params')
+        //         };
+        //         xhr.setRequestHeader("Content-Type", "application/json")
+        //         console.log(todo)
+        //         console.log(syncEvent(todo))
+        //         xhr.send(JSON.stringify(syncEvent(todo)));
+        //     } else {
+        //         oauth2SignIn();
+        //     }
+        // }
         
-        function oauth2SignIn() {
-        // Google's OAuth 2.0 endpoint for requesting an access token
-            let oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
-        // Create <form> element to submit parameters to OAuth 2.0 endpoint.
-            let form = document.createElement('form');
-            form.setAttribute('method', 'GET'); // Send as a GET request.
-            form.setAttribute('action', oauth2Endpoint);
+        // function oauth2SignIn() {
+        // // Google's OAuth 2.0 endpoint for requesting an access token
+        //     let oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
+        // // Create <form> element to submit parameters to OAuth 2.0 endpoint.
+        //     let form = document.createElement('form');
+        //     form.setAttribute('method', 'GET'); // Send as a GET request.
+        //     form.setAttribute('action', oauth2Endpoint);
 
-        // Parameters to pass to OAuth 2.0 endpoint.
-            let params = {
-                'client_id': '591847328765-855vukh94icl3h11qkiqmt0j4lvg3auk.apps.googleusercontent.com',
-                'redirect_uri': 'http://localhost:8000/',
-                'response_type': 'token',
-                'scope': 'https://www.googleapis.com/auth/calendar',
-                'include_granted_scopes': 'true',
-                'state': 'sync',
-                'prompt': 'select_account'
-            };
+        // // Parameters to pass to OAuth 2.0 endpoint.
+        //     let params = {
+        //         'client_id': '591847328765-855vukh94icl3h11qkiqmt0j4lvg3auk.apps.googleusercontent.com',
+        //         'redirect_uri': 'http://localhost:8000/',
+        //         'response_type': 'token',
+        //         'scope': 'https://www.googleapis.com/auth/calendar',
+        //         'include_granted_scopes': 'true',
+        //         'state': 'sync',
+        //         'prompt': 'select_account'
+        //     };
 
-        // Add form parameters as hidden input values.
-            for (var p in params) {
-                var input = document.createElement('input');
-                input.setAttribute('type', 'hidden');
-                input.setAttribute('name', p);
-                input.setAttribute('value', params[p]);
-                form.appendChild(input);
-            }
+        // // Add form parameters as hidden input values.
+        //     for (var p in params) {
+        //         var input = document.createElement('input');
+        //         input.setAttribute('type', 'hidden');
+        //         input.setAttribute('name', p);
+        //         input.setAttribute('value', params[p]);
+        //         form.appendChild(input);
+        //     }
 
-        // Add form to page and submit it to open the OAuth 2.0 endpoint.
-            document.body.appendChild(form);
-            form.submit();
-        }
+        // // Add form to page and submit it to open the OAuth 2.0 endpoint.
+        //     document.body.appendChild(form);
+        //     form.submit();
+        // }
 
-        /* Validate the access token received on the query string. */
-        function exchangeOAuth2Token(params) {
-            var oauth2Endpoint = 'https://www.googleapis.com/oauth2/v3/tokeninfo';
-            if (params['access_token']) {
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', oauth2Endpoint + '?access_token=' + params['access_token']);
-                xhr.onreadystatechange = function (e) {
-                    var response = JSON.parse(xhr.response);
-                    // Verify that the 'aud' property in the response matches YOUR_CLIENT_ID.
-                    if (xhr.readyState == 4 &&
-                        xhr.status == 200 &&
-                        response['aud'] &&
-                        response['aud'] == '591847328765-855vukh94icl3h11qkiqmt0j4lvg3auk.apps.googleusercontent.com') {
-                        params['scope'] = response['scope'];
-                        localStorage.setItem('oauth2-test-params', JSON.stringify(params));
-                        // if (params['state'] == 'sync') {
-                        //     handleSync();
-                        // }
-                    } else if (xhr.readyState == 4) {
-                        console.log('There was an error processing the token, another ' +
-                            'response was returned, or the token was invalid.')
-                    }
-                };
-                xhr.send(null);
-            }
-        }
+        // /* Validate the access token received on the query string. */
+        // function exchangeOAuth2Token(params) {
+        //     var oauth2Endpoint = 'https://www.googleapis.com/oauth2/v3/tokeninfo';
+        //     if (params['access_token']) {
+        //         var xhr = new XMLHttpRequest();
+        //         xhr.open('POST', oauth2Endpoint + '?access_token=' + params['access_token']);
+        //         xhr.onreadystatechange = function (e) {
+        //             var response = JSON.parse(xhr.response);
+        //             // Verify that the 'aud' property in the response matches YOUR_CLIENT_ID.
+        //             if (xhr.readyState == 4 &&
+        //                 xhr.status == 200 &&
+        //                 response['aud'] &&
+        //                 response['aud'] == '591847328765-855vukh94icl3h11qkiqmt0j4lvg3auk.apps.googleusercontent.com') {
+        //                 params['scope'] = response['scope'];
+        //                 localStorage.setItem('oauth2-test-params', JSON.stringify(params));
+        //                 // if (params['state'] == 'sync') {
+        //                 //     handleSync();
+        //                 // }
+        //             } else if (xhr.readyState == 4) {
+        //                 console.log('There was an error processing the token, another ' +
+        //                     'response was returned, or the token was invalid.')
+        //             }
+        //         };
+        //         xhr.send(null);
+        //     }
+        // }
 
 
         const { currentUser, logout, login} = this.props;
@@ -241,7 +241,7 @@ class NavBar extends React.Component {
         const AppNavBar = currentUser ? (
             <div className="nav-base">
             <AppBar
-                onLeftIconButtonClick={handleSync}
+                // onLeftIconButtonClick={handleSync}
                 // children={taskShow}
                 className="AppNavBar"
                 title={<span>DoDate</span>}

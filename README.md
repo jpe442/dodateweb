@@ -47,6 +47,7 @@ DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML
 
 - [React DnD (Drag and Drop)](https://github.com/react-dnd/react-dnd) module integration preserves the Redux loop so users drag todos through the UI without the possibility of representing frontend state inconsistent with the backend database.
 
+&#9733;*Material UI*&#9733;
 
 
 
@@ -66,7 +67,6 @@ DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML
 
 - So, whenever the todo moves its location on the calendar, its timeslot is guaranteed to be up-to-date on the backend. The user safely logs out without losing precious planning work.
 
-&#9733;*Material UI*&#9733;
 
 
 

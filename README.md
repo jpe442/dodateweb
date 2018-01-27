@@ -46,16 +46,15 @@ DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML
 
 - [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module (React DnD) integration preserves the Redux loop so todos in DoDate can be easily dragged throughout the UI without the possibility of becoming out of sync with the backend database.
 
-## &#8734;
-**DoDate's React/Redux Drag/Drop Loop**
+## &#8734; **DoDate's Drag/Drop Redux Loop using React DnD** &#8734;
 
-- A user dragging a todo throughout the UI sees a transluscent screenshot of the todo component being manipulated and not the component itself. This way 
+- A user dragging a todo sees a transluscent screenshot of the todo component being moved throughout the UI and not the component itself. The actual component stays in place in the DOM at this point. 
 
 - A user attempting to drop todos on the client-side frontend initiates an action that, if completed, would change the state of the frontend such that the backend database would need to be updated to stay consistent with the new frontend state. 
 
-- For this reason, when the drop action isthe update is attempted on the backend first.
+- For this reason, when the drop action is initiated by the user, an AJAX update request sends the update to the backend to be attempted there first and the drop action stalls until the return of a successful promise from the AJAX request.
 
-- After the backend data is updated successfully and this is confirmed by the frontend, only then is the frontend state changed and the drag/drop action successfully completed.
+- After the backend data is updated successfully and this is information is processed by the frontend reducer, only then is the frontend state updated and the drag/drop action successfully complete.
 
 - If the backend update in not successful, the frontend action will fail to be complete and the draggable todo will stay in its original, dragged-from, location.
 

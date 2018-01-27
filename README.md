@@ -57,7 +57,7 @@ DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, and C
 
 - A user dragging a todo sees a transluscent screenshot of the todo component being moved throughout the UI and not the component itself. The actual component stays in place in the DOM at this point. 
 
-- A user attempting to drop todos on the client-side frontend initiates an action that, if completed, changes the state of the frontend such that the backend database would need to be updated to stay consistent with the new frontend state. 
+- A user attempting to drop a todo on the client-side frontend initiates an action that, if completed, changes the state of the frontend such that the backend database would need to be updated to stay consistent with the new frontend state. 
 
 - For this reason, when the drop action is initiated by the user, an AJAX call requests the update on the backend to be attempted first while the drop action stalls until the return of a successful promise from that AJAX request.
 

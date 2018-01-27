@@ -30,7 +30,7 @@ DoDate is a Kanban-inspired todo productivity solution whereby users can create 
 ---
 [//]: # (Discussion of technologies used)
 
-## Technologies Utilized: From Front to Back
+## Technologies from Front to Back
 ---
 ### Frontends: Web & Mobile
 

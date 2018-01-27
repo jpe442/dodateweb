@@ -51,13 +51,15 @@ DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, and C
 
 - Customized prestyled [Material UI](http://www.material-ui.com/#/) React components provide many familiar industry-standard UI/UX styling features created and proliferated by Google. 
 
-#### Mobile
+#### Mobile 
+
+[![Wercker](https://img.shields.io/badge/Coming-Soon-yellowgreen.svg)]()
 
 This feature is still being developed and we hope to make a version available soon. The frontend is built in React Native using the React Native Redux module for unidirectional FLUX information architecture and React Native Material UI for modern styling consistent with web application.
 
 ### Backend Server Side
 
-
+&#9733;*PostgreSQL*&#9733;
 
 
 [//]: # (Deep delving into 2-3 features that show off your technical abilities and mastery of concepts/language)

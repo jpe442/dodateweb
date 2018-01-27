@@ -34,7 +34,9 @@ DoDate is a Kanban-inspired todo productivity solution wherein users can create 
 ---
 ### Frontends: Web & Mobile
 
-  #### DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML5, CSS3. 
+#### Web
+  
+DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML5, CSS3. 
 
 &#9733;*React with Redux*&#9733;
 

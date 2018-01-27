@@ -48,9 +48,9 @@ DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML
 
 - When a user dragging todos on client-side frontend initiates an action that, if completed, would change the state of the frontend such that the backend server would need to be updated to stay consistent with the client, the update in information is attempted on the backend first. If the backend data is updated successfully, only then is the frontend state changed and the drag/drop action successfully completed.
 
-- If the backend update in not successful, the frontend action will fail to be complete and the draggable todo will stay where in its original timeslot.
+- If the backend update in not successful, the frontend action will fail to be complete and the draggable todo will stay in its original, dragged-from, location.
 
-- So then, if the todo moves locations on the calendar, its timeslot is guaranteed to be up-to-date on the backend. The user can safely log out without losing precious planning work.
+- So then, if the todo moves its location on the calendar, its timeslot is guaranteed to be up-to-date on the backend. The user can safely log out without losing precious planning work.
 
 &#9733;*Material UI*&#9733;
 

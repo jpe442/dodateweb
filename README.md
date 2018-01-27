@@ -55,7 +55,9 @@ DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, and C
 
 [![Wercker](https://img.shields.io/badge/Coming-Soon-yellowgreen.svg)]()
 
-This feature is still being developed and we hope to make a version available soon. The frontend is built in React Native using the React Native Redux module for unidirectional FLUX information architecture and React Native Material UI for modern styling consistent with web application.
+- This feature is still being developed and we hope to make a version available soon. 
+
+- The frontend is built in React Native using the React Native Redux module for unidirectional FLUX information architecture and React Native Material UI for modern styling consistent with web application.
 
 ### Backend Server Side
 

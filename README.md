@@ -24,8 +24,9 @@
 ---
 
 [//]: # (Brief explanation of what the app is and does)
+## Do&#10150;Doing&#10150;Done
 
-DoDate is a Kanban-inspired todo productivity solution whereby users can create unscheduled todos in a list (todo), distribute them accross a one-week calendar (doing), and finally mark them as complete to move them off the calendar to another list (done). Utilizing the latest frontend technologies - *Redux, ReactJS, React Native, React DnD, and Material UI* - DoDate epidomizes the modern single-page-app (SPA).
+DoDate is a Kanban-inspired todo productivity solution whereby users create unscheduled todos in a list (do), distribute them accross a one-week calendar (doing), and finally mark them as complete to move them off the calendar to another list (done). Utilizing the latest frontend technologies - *Redux, ReactJS, React Native, React DnD, and Material UI* - DoDate epidomizes the modern single-page-app (SPA).
 
 ---
 [//]: # (Discussion of technologies used)
@@ -58,7 +59,7 @@ DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML
 
 - If the backend update in not successful, the drop action fails to complete and the todo component stays in its original, dragged-from, location.
 
-- So then, whenever the todo moves its location on the calendar, its timeslot is guaranteed to be up-to-date on the backend. The user safely logs out without losing precious planning work.
+- So, whenever the todo moves its location on the calendar, its timeslot is guaranteed to be up-to-date on the backend. The user safely logs out without losing precious planning work.
 
 &#9733;*Material UI*&#9733;
 

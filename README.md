@@ -51,7 +51,16 @@ DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, and C
 
 - Customized prestyled [Material UI](http://www.material-ui.com/#/) React components provide many familiar industry-standard UI/UX styling features created and proliferated by Google. 
 
+#### Mobile
 
+
+### Backend Server Side
+
+
+
+
+
+[//]: # (Deep delving into 2-3 features that show off your technical abilities and mastery of concepts/language)
 
 
 ## &#8734; **DoDate's Drag/Drop Redux Loop using React DnD** &#8734;
@@ -72,11 +81,6 @@ DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, and C
 
 
 
-#### Backend
-
-
-
-[//]: # (Deep delving into 2-3 features that show off your technical abilities and mastery of concepts/language)
 
 [//]: # (Discuss challenges faced and my solutions to those challenges)
 

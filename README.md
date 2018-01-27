@@ -43,7 +43,7 @@ DoDate is a Kanban-inspired todo productivity solution wherein users can create 
 
    > &#9733; Todos in DoDate can be easily dragged throughout the UI without a possibility of becoming out of sync with the backend database.
 
-&#9733; Changes in data initiated by the user dragging todos on the frontend are sent to the backend database before coming  [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module to preserve the integrity of the Redux loop. 
+   > &#9733; Changes in data initiated by the user dragging todos on the frontend are sent to the backend database before coming  [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module to preserve the integrity of the Redux loop. 
 
 
 #### Backend

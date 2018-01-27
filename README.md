@@ -44,13 +44,15 @@ DoDate is a Kanban-inspired todo productivity solution wherein users can create 
 
 - [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module (React DnD) integration enforces the Redux loop so Todos in DoDate can be easily dragged throughout the UI without a possibility of becoming out of sync with the backend database.
 
-- Changes in state entailing data alterations initiated by the user dragging todos on the frontend are sent to the server to first modify their properties there and only then completing the drag/drop action after successfully sending back the new slice of state to the client, preserving the integrity of the Redux loop. 
+- When a user dragging todos on the client-side frontend initiates an action that, if completed, would change the state of the frontend such that the backend server would need to be updated to stay consistent with the client, the update in information is attempted on the backend first. If the backend data is updated successfully, only then is the frontend state changed and the drag/drop action successfully completed.
 
-- So then, if the todo moves timeslots on the calendar, that timeslot has been updated on the backend and the user can safely log out without losing planning work.
+-
 
-&#9733;*React DnD*&#9733;
+- So then, if the todo moves timeslots on the calendar, that timeslot has been updated on the backend. The user can safely log out without losing precious planning work.
 
-t
+&#9733;*Material UI*&#9733;
+
+
 #### Backend
 
 

@@ -40,11 +40,11 @@ DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML
 
 &#9733;*React with Redux*&#9733;
 
-- React components arranged and interelated according to [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) to structures the application to follow a unidirectional flow of information which ensures that backend data stays in sync with the frontend state of the client application. 
+- React components arranged and interelated according to [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) to enforce a unidirectional flow of information ensuring that backend data stays in sync with the frontend state of the client application. 
 
 &#9733;*React DnD*&#9733;
 
-- [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module (React DnD) integration enforces the Redux loop so todos in DoDate can be easily dragged throughout the UI without a possibility of becoming out of sync with the backend database.
+- [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module (React DnD) integration preserves the Redux loop so todos in DoDate can be easily dragged throughout the UI without a possibility of becoming out of sync with the backend database.
 
 - When a user dragging todos on client-side frontend initiates an action that, if completed, would change the state of the frontend such that the backend server would need to be updated to stay consistent with the client, the update in information is attempted on the backend first. If the backend data is updated successfully, only then is the frontend state changed and the drag/drop action successfully completed.
 

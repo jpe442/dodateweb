@@ -33,7 +33,12 @@ DoDate is a Kanban-inspired todo productivity solution wherein users can create 
 ### Technologies Utilized
 #### Frontends
 
-DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, CSS3. The React components are arranged and interelated according to a [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) to provide a unidirectional flow of information which ensures that backend data stays in sync with the frontend state of the client application. To this end, DoDate employs the [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module to preserve the Redux loop.
+DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, CSS3. 
+
+*Redux*
+- [X] The React components are arranged and interelated according to a [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) to provide a unidirectional flow of information which ensures that backend data stays in sync with the frontend state of the client application. 
+
+To this end, DoDate employs the [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module to preserve the Redux loop. 
 
 
 

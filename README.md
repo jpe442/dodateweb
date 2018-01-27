@@ -27,9 +27,17 @@
 
 DoDate is a Kanban-inspired todo productivity solution wherein users can create unscheduled todos in a list (todo), distribute them accross a one-week calendar (doing), and finally mark them as complete to move them off the calendar to another list (done). Utilizing the latest frontend technologies - *Redux, ReactJS, React Native, React DnD, and Material UI* - DoDate epidomizes the modern single-page-app (SPA).
 
+---
 [//]: # (Discussion of technologies used)
 
-##### Frontend Technologies
+### Technologies Utilized
+#### Frontends
+
+DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, CSS3 
+
+
+
+#### Backend
 
 
 

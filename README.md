@@ -37,7 +37,7 @@ DoDate is a Kanban-inspired todo productivity solution wherein users can create 
 
 *React with Redux*
 
-&#9733; React components are arranged and interelated according to a [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) to provide a unidirectional flow of information which ensures that backend data stays in sync with the frontend state of the client application. 
+> &#9733; React components are arranged and interelated according to a [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) to provide a unidirectional flow of information which ensures that backend data stays in sync with the frontend state of the client application. 
 
 *React DnD*
 

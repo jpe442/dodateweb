@@ -30,11 +30,11 @@ DoDate is a Kanban-inspired todo productivity solution wherein users can create 
 ---
 [//]: # (Discussion of technologies used)
 
-### Technologies Utilized
+## Technologies Utilized: From Front to Back
 ---
-#### Frontends
+### Frontends: Web & Mobile
 
-  ##### DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, CSS3. 
+  #### DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML5, CSS3. 
 
 &#9733;*React with Redux*&#9733;
 
@@ -42,11 +42,11 @@ DoDate is a Kanban-inspired todo productivity solution wherein users can create 
 
 &#9733;*React DnD*&#9733;
 
-- [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module (React DnD) integration enforces the Redux loop so Todos in DoDate can be easily dragged throughout the UI without a possibility of becoming out of sync with the backend database.
+- [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module (React DnD) integration enforces the Redux loop so todos in DoDate can be easily dragged throughout the UI without a possibility of becoming out of sync with the backend database.
 
-- When a user dragging todos on the client-side frontend initiates an action that, if completed, would change the state of the frontend such that the backend server would need to be updated to stay consistent with the client, the update in information is attempted on the backend first. If the backend data is updated successfully, only then is the frontend state changed and the drag/drop action successfully completed.
+- When a user dragging todos on client-side frontend initiates an action that, if completed, would change the state of the frontend such that the backend server would need to be updated to stay consistent with the client, the update in information is attempted on the backend first. If the backend data is updated successfully, only then is the frontend state changed and the drag/drop action successfully completed.
 
--
+- If the backend update in not successful, the frontend action will fail to be complete and the draggable todo will stay where in its original timeslot.
 
 - So then, if the todo moves timeslots on the calendar, that timeslot has been updated on the backend. The user can safely log out without losing precious planning work.
 

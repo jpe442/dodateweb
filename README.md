@@ -37,13 +37,13 @@ DoDate is a Kanban-inspired todo productivity solution wherein users can create 
 
 &#9733;*React with Redux*
 
-   - #React components are arranged and interelated according to a [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) to provide a unidirectional flow of information which ensures that backend data stays in sync with the frontend state of the client application. 
+ - React components are arranged and interelated according to a [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) to provide a unidirectional flow of information which ensures that backend data stays in sync with the frontend state of the client application. 
 
 &#9733;*React DnD*
 
-- Todos in DoDate can be easily dragged throughout the UI without a possibility of becoming out of sync with the backend database.
+- [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module (React DnD) integration enforces the Redux loop so that Todos in DoDate can be easily dragged throughout the UI without a possibility of becoming out of sync with the backend database.
 
-- Changes in data initiated by the user dragging todos on the frontend are sent to the backend database before coming  [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module to preserve the integrity of the Redux loop. 
+- Changes in state entailing data alterations initiated by the user dragging todos on the frontend are sent to the server to first modify their properties there and then only completing the drag/drop action after successfully sending back the new slice of state coming back to the client  to preserve the integrity of the Redux loop. 
 
 
 #### Backend

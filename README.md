@@ -40,25 +40,25 @@ DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML
 
 &#9733;*React with Redux*&#9733;
 
-- React components arranged and interelated according to [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) to enforce a unidirectional flow of information ensuring that backend data stays in sync with the frontend state of the client application. 
+- React components arranged and interelated according to [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) enforces a unidirectional flow of information ensuring that backend data stays in sync with the frontend state of the client application at all times. 
 
 &#9733;*React DnD*&#9733;
 
-- [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module (React DnD) integration preserves the Redux loop so todos in DoDate can be easily dragged throughout the UI without the possibility of becoming out of sync with the backend database.
+- [React Drag-and-Drop](https://github.com/react-dnd/react-dnd) module (React DnD) integration preserves the Redux loop so the user drags todos throughout the UI without the possibility of them representing state inconsistent with the backend database.
 
 ## &#8734; **DoDate's Drag/Drop Redux Loop using React DnD** &#8734;
 
 - A user dragging a todo sees a transluscent screenshot of the todo component being moved throughout the UI and not the component itself. The actual component stays in place in the DOM at this point. 
 
-- A user attempting to drop todos on the client-side frontend initiates an action that, if completed, would change the state of the frontend such that the backend database would need to be updated to stay consistent with the new frontend state. 
+- A user attempting to drop todos on the client-side frontend initiates an action that, if completed, changes the state of the frontend such that the backend database would need to be updated to stay consistent with the new frontend state. 
 
-- For this reason, when the drop action is initiated by the user, an AJAX update request sends the update to the backend to be attempted there first and the drop action stalls until the return of a successful promise from the AJAX request.
+- For this reason, when the drop action is initiated by the user, an AJAX call requests the update on the backend to be attempted first while the drop action stalls until the return of a successful promise from that AJAX request.
 
 - After the backend data is updated successfully and this is information is processed by the frontend reducer, only then is the frontend state updated and the drag/drop action successfully complete.
 
-- If the backend update in not successful, the frontend action will fail to be complete and the draggable todo will stay in its original, dragged-from, location.
+- If the backend update in not successful, the drop action fails to complete and the todo component stays in its original, dragged-from, location.
 
-- So then, if the todo moves its location on the calendar, its timeslot is guaranteed to be up-to-date on the backend. The user can safely log out without losing precious planning work.
+- So then, whenever the todo moves its location on the calendar, its timeslot is guaranteed to be up-to-date on the backend. The user safely logs out without losing precious planning work.
 
 &#9733;*Material UI*&#9733;
 

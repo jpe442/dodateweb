@@ -48,9 +48,11 @@ DoDate is a Kanban-inspired todo productivity solution wherein users can create 
 
 - If the backend update in not successful, the frontend action will fail to be complete and the draggable todo will stay where in its original timeslot.
 
-- So then, if the todo moves timeslots on the calendar, that timeslot has been updated on the backend. The user can safely log out without losing precious planning work.
+- So then, if the todo moves locations on the calendar, its timeslot is guaranteed to be up-to-date on the backend. The user can safely log out without losing precious planning work.
 
 &#9733;*Material UI*&#9733;
+
+
 
 
 #### Backend

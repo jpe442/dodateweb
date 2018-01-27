@@ -40,9 +40,7 @@ DoDate is a Kanban-inspired todo productivity solution wherein users can create 
 
 *React DnD*
 
-- [X] To this end, DoDate employs the [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module to preserve the Redux loop. 
-
-
+- [X] Todos in DoDate can be easily dragged throughout the UI without a possibility of becoming out of sync with the database. employing the [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module to preserve the Redux loop. 
 
 
 #### Backend

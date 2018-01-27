@@ -37,15 +37,20 @@ DoDate is a Kanban-inspired todo productivity solution whereby users create unsc
 
 #### Web
   
-DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML5, CSS3. 
+DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML5, and CSS3. DoDate leverages the React-Redux and React Drag and Drop foster FLUX's front-to-back-to-front data consistency. 
 
 &#9733;*React with Redux*&#9733;
 
-- React components arranged and interelated according to [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) enforces a unidirectional flow of information ensuring that backend data stays in sync with the frontend state of the client application at all times. 
+- React components arranged and interelated according to [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) enforce a unidirectional flow of information ensuring that backend data stays in sync with the frontend state of the client application at all times. 
 
 &#9733;*React DnD*&#9733;
 
-- [React Drag-and-Drop](https://github.com/react-dnd/react-dnd) module (React DnD) integration preserves the Redux loop so the user drags todos throughout the UI without the possibility of them representing state inconsistent with the backend database.
+- [React DnD (Drag and Drop)](https://github.com/react-dnd/react-dnd) module integration preserves the Redux loop so users drag todos through the UI without the possibility of representing frontend state inconsistent with the backend database.
+
+
+
+
+
 
 ## &#8734; **DoDate's Drag/Drop Redux Loop using React DnD** &#8734;
 

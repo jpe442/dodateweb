@@ -46,15 +46,20 @@ DoDate's primary web-app frontend is built in ReactJS using JavaScript ES6, HTML
 
 - [React Drag-and-Drop (DnD)](https://github.com/react-dnd/react-dnd) module (React DnD) integration preserves the Redux loop so todos in DoDate can be easily dragged throughout the UI without the possibility of becoming out of sync with the backend database.
 
-**React/Redux DnD Loop**
+## &#8734;
+**DoDate's React/Redux Drag/Drop Loop**
 
-1. A user trying to drag todos on the client-side frontend initiates an action that, if completed, would change the state of the frontend such that the backend database would need to be updated to stay consistent with the frontend state. For this reason, the update is attempted on the backend first.
+- A user dragging a todo throughout the UI sees a transluscent screenshot of the todo component being manipulated and not the component itself. This way 
 
-2. After the backend data is updated successfully and this is confirmed by the frontend, only then is the frontend state changed and the drag/drop action successfully completed.
+- A user attempting to drop todos on the client-side frontend initiates an action that, if completed, would change the state of the frontend such that the backend database would need to be updated to stay consistent with the new frontend state. 
 
-3. If the backend update in not successful, the frontend action will fail to be complete and the draggable todo will stay in its original, dragged-from, location.
+- For this reason, when the drop action isthe update is attempted on the backend first.
 
-4. So then, if the todo moves its location on the calendar, its timeslot is guaranteed to be up-to-date on the backend. The user can safely log out without losing precious planning work.
+- After the backend data is updated successfully and this is confirmed by the frontend, only then is the frontend state changed and the drag/drop action successfully completed.
+
+- If the backend update in not successful, the frontend action will fail to be complete and the draggable todo will stay in its original, dragged-from, location.
+
+- So then, if the todo moves its location on the calendar, its timeslot is guaranteed to be up-to-date on the backend. The user can safely log out without losing precious planning work.
 
 &#9733;*Material UI*&#9733;
 

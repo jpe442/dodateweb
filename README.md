@@ -96,7 +96,7 @@ Independently hosted backend serves data for both the web and mobile application
 
 ---
 
-### &#9729; DoDate's Sync with Google Calendar &#9729;
+### &#9729; DoDate's Google Calendar Event Sync Cycle &#9729;
 
 
 

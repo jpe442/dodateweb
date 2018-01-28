@@ -65,11 +65,13 @@ Independently hosted backend serves data for both the web and mobile application
 
 &#9733;*PostgreSQL*&#9733;
 
-- Two tables, one consisting of user data, the other todo data, compose a lightweight database indexed by users and by todos-by-user for less costly SQL querying.
+- Two tables, one consisting of user data, the other todo data, compose a simple [PostgreSQL](https://www.postgresql.org/) database indexed both by users and by todos-by-user for less costly SQL querying.
 
 &#9733;*Ruby on Rails*&#9733;
 
-- Routes and server-side authorization cycle managed by Rails via Ruby's BCrypt gem for salting users' passwords to be securely stored in the database alongside Ruby's SecureRandom module for secure session token management.
+- Restful routes and server-side authorization cycle managed by Rails via Ruby's BCrypt gem for salting users' passwords to be securely stored in the database alongside Ruby's SecureRandom module for secure session token management.
+
+- 
 
 ---
 

@@ -71,8 +71,6 @@ Independently hosted backend serves data for both the web and mobile application
 
 - Routes and server-side authorization cycle managed by Rails via Ruby's BCrypt gem for salting users' passwords to be securely stored in the database alongside Ruby's SecureRandom module for secure session token management.
 
-- 
-
 
 
 
@@ -85,7 +83,7 @@ Independently hosted backend serves data for both the web and mobile application
 
 - A user attempting to drop a todo on the client-side frontend initiates an action that, if completed, changes the state of the frontend such that the backend database would need to be updated to stay consistent with the new frontend state. 
 
-- For this reason, when the drop action is initiated by the user, an AJAX call requests the update on the backend to be attempted first while the drop action stalls until the return of a successful promise from that AJAX request.
+- For this reason, when the drop action is initiated by the user, an AJAX call requests the update on the backend to be attempted first while the drop action stalls for the return of a successful promise from that AJAX request.
 
 - After the backend data is updated successfully and this is information is processed by the frontend reducer, only then is the correlating elements of DOM repainted and the drag/drop action successfully complete.
 

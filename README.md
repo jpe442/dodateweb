@@ -7,7 +7,7 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
 [//]: # (Link to live site)
-##### Experience DoDate live here at [dodate.io](https://jpe442.github.io/dodateweb/#/)
+##### Experience DoDate live here at [dodate.io](http://www.dodate.io)
 ---
 [![Travis](https://img.shields.io/badge/React-JS-blue.svg?colorB=00d9ff)]()
 [![Wercker](https://img.shields.io/badge/React-Native-brightgreen.svg?colorB=f5f5f5)]()

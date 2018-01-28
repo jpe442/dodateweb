@@ -97,6 +97,10 @@ Independently hosted backend serves data for both the web and mobile application
 ---
 ### &#9729; DoDate's Google Calendar Event Sync Cycle &#9729;
 ---
+- A user clicks the **Sync to Google Calendar** cloud icon button triggering an AJAX request to Google's OAuth2.0 authorization cycle.
+
+- 
+
 
 
 [//]: # (Discuss challenges faced and my solutions to those challenges)

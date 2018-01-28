@@ -81,7 +81,7 @@ Independently hosted backend serves data for both the web and mobile application
 ## Key Features
 ---
 ### &#8734; DoDate's Drag/Drop Redux Loop using React DnD &#8734;
-
+---
 - A user dragging a todo sees a transluscent screenshot of the todo component being moved throughout the UI and not the component itself. The actual component stays in place in the DOM at this point. 
 
 - A user attempting to drop a todo on the client-side frontend initiates an action that, if completed, changes the state of the frontend such that the backend database would need to be updated to stay consistent with the new frontend state. 
@@ -95,10 +95,8 @@ Independently hosted backend serves data for both the web and mobile application
 - So, whenever the todo moves its location on the calendar, its time data is guaranteed to be up-to-date on the backend. The user safely logs out without losing precious planning work.
 
 ---
-
 ### &#9729; DoDate's Google Calendar Event Sync Cycle &#9729;
-
-
+---
 
 
 [//]: # (Discuss challenges faced and my solutions to those challenges)

@@ -42,7 +42,7 @@ DoDate's primary frontend is built in [ReactJS](https://reactjs.org/) using [Jav
 
 &#9733;React with Redux&#9733;
 
-- React components arranged and interelated according to [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) enforce a unidirectional flow of information ensuring that backend data stays in sync with the frontend state of the client application at all times. 
+- React components are arranged and interelated according to [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) enforce a unidirectional flow of information ensuring that backend data stays in sync with the frontend state of the client application at all times. 
 
 &#9733;React DnD&#9733;
 
@@ -82,13 +82,13 @@ Independently hosted backend serves data for both the web and mobile application
 ---
 ### &#8734; DoDate's Drag/Drop Redux Loop using React DnD &#8734;
 ---
-- A user dragging a todo sees a transluscent screenshot of the todo component being moved throughout the UI and not the component itself. The actual component stays in place in the DOM at this point. 
+- A user dragging a todo sees a transluscent screenshot of the todo component being moved throughout the UI and not the component itself. The actual todo component stays in place in the DOM at this point. 
 
 - A user attempting to drop a todo on the client-side frontend initiates an action that, if completed, changes the state of the frontend such that the backend database would need to be updated to stay consistent with the new frontend state. 
 
 - For this reason, when the drop action is initiated by the user, an AJAX call requests that the backend update be attempted first, while the drop action stalls for the return of a successful promise from the AJAX request.
 
-- After the backend data is updated successfully and this is information is processed by the frontend reducer, only then is the relevant elements of DOM refreshed and the drag/drop action successfully complete.
+- After the backend data is updated successfully and this information is processed by the frontend reducer, only then is the relevant elements of DOM refreshed and the drag/drop action successfully complete.
 
 - If the backend update in not successful, the drop action fails to complete and the todo component stays in its original, dragged-from, location in the DOM.
 

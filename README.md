@@ -97,11 +97,15 @@ Independently hosted backend serves data for both the web and mobile application
 ---
 ### &#9729; DoDate's Google Calendar Event Sync Cycle &#9729;
 ---
-- A user clicks the **Sync as Google Calendar Event** cloud-upload icon button triggering an AJAX request that initiates Google's OAuth 2.0 authentication/authorization cycle.
+- A user clicks the **Sync as Google Calendar Event** cloud-upload icon button in the **Edit Todo** modal, which triggers an AJAX request initiating Google's OAuth 2.0 authentication/authorization cycle.
 
-  - Google's OAuth 2.0 cycle begins as the AJAX request for an access token results in a redirect to the Google OAuth 2.0 
+  - Google's OAuth 2.0 cycle begins as the AJAX request for an access token so the client application can access the user's Google Calendar data.
   
-  - This first 
+  - This results in a redirect to the Google OAuth 2.0 prompting the user to consent to DoDate's access to the user's Google Calendar data.
+  
+  - Once signed in to Google successfully, the client is redirected back to DoDate which an authorization code.
+  
+  - 
 
 
 

@@ -69,6 +69,8 @@ One independently hosted backend serves data for both the web and mobile applica
 
 &#9733;*Ruby on Rails*&#9733;
 
+- Routes and server-side authorization cycle managed by Rails via Ruby's BCrypt gem for salting users' passwords to be securely stored in the database alongside Ruby's SecureRandom module for secure session token management.
+
 - 
 
 
@@ -85,11 +87,11 @@ One independently hosted backend serves data for both the web and mobile applica
 
 - For this reason, when the drop action is initiated by the user, an AJAX call requests the update on the backend to be attempted first while the drop action stalls until the return of a successful promise from that AJAX request.
 
-- After the backend data is updated successfully and this is information is processed by the frontend reducer, only then is the frontend state updated and the drag/drop action successfully complete.
+- After the backend data is updated successfully and this is information is processed by the frontend reducer, only then is the correlating elements of DOM repainted and the drag/drop action successfully complete.
 
-- If the backend update in not successful, the drop action fails to complete and the todo component stays in its original, dragged-from, location.
+- If the backend update in not successful, the drop action fails to complete and the todo component stays in its original, dragged-from, location in the DOM.
 
-- So, whenever the todo moves its location on the calendar, its timeslot is guaranteed to be up-to-date on the backend. The user safely logs out without losing precious planning work.
+- So, whenever the todo moves its location on the calendar, its time data is guaranteed to be up-to-date on the backend. The user safely logs out without losing precious planning work.
 
 
 

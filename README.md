@@ -61,7 +61,7 @@ DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, and C
 
 ### Backend Server Side
 
-One independently hosted backend serves data for both the web and mobile applications. Ruby on Rails application server routes external requests to lightweight PostgreSQL database and returns customized JSON data constructed using the Ruby's jbuilder gem for optimized frontend stateshape.
+Independently hosted backend serves data for both the web and mobile applications. Ruby on Rails application server routes external requests to lightweight PostgreSQL database and returns customized JSON data constructed using the Ruby's jbuilder gem for optimized frontend stateshape.
 
 &#9733;*PostgreSQL*&#9733;
 

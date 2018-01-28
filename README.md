@@ -37,7 +37,7 @@ DoDate is a Kanban-inspired todo productivity solution whereby users create unsc
 
 #### Web
   
-DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, and CSS3. DoDate leverages the React-Redux and React Drag and Drop module dependencies to foster FLUX's front-to-back-to-front data-flow architecture. Custom Material UI components complete the modern UI/UX with industry-standard essential features.
+DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, and CSS3. DoDate leverages the React-Redux and React Drag and Drop module dependencies to foster FLUX's front-to-back-to-front data-flow architecture. Custom Material UI components complete the modern UI/UX with industry-standard ergonomic features.
 
 &#9733;*React with Redux*&#9733;
 
@@ -61,7 +61,17 @@ DoDate's primary frontend is built in ReactJS using JavaScript ES6, HTML5, and C
 
 ### Backend Server Side
 
+One independently hosted backend serves data for both the web and mobile applications. Ruby on Rails application server routes external requests to lightweight PostgreSQL database and returns customized JSON data constructed using the Ruby's jbuilder gem for optimized frontend stateshape.
+
 &#9733;*PostgreSQL*&#9733;
+
+- Two tables, one consisting of user data, the other todo data, compose a lightweight database indexed by users and by todos-by-user for less costly SQL querying.
+
+&#9733;*Ruby on Rails*&#9733;
+
+- 
+
+
 
 
 [//]: # (Deep delving into 2-3 features that show off your technical abilities and mastery of concepts/language)

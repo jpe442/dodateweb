@@ -125,13 +125,6 @@ Independently hosted backend serves data for both the web and mobile application
 [//]: # (Discuss challenges faced and my solutions to those challenges)
 
 
-[//]: # (- (a) the current day of the week of the todo, say it's `'M'` for Monday))
-   - (b) the start time and duration of the todo, 
- and 
-   - (c) the current date-time, e.g `2018-01-28T19:31:56.550Z`
- and using (a-c) determines the starting date-time string in ISO form, e.g. `'2018-01-28T19:31:56.550Z'`
-   Using (a-c) determines the *date* 
-
 [//]: # (Code snippets that show off your best code)
 
 

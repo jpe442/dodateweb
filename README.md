@@ -25,6 +25,7 @@
 
 [//]: # (Brief explanation of what the app is and does)
 ## Do&#10150;Doing&#10150;Done
+---
 
 DoDate is a Kanban-inspired todo productivity solution whereby users create unscheduled todos in a list (do...), distribute them accross a one-week calendar (doing...), and finally mark them as complete to move them off the calendar to another list to resuse or delete later (done!). Utilizing the latest frontend technologies - *Redux, ReactJS, React Native, React DnD, and Material UI* - DoDate epidomizes the modern single-page-app (SPA).
 
@@ -34,7 +35,7 @@ DoDate is a Kanban-inspired todo productivity solution whereby users create unsc
 ## Technologies from Front to Back
 ---
 ### Frontends: Web & Mobile
-
+---
 #### Web
   
 DoDate's primary frontend is built in ReactJS using [JavaScript](https://www.javascript.com/) [ES6](http://es6-features.org/#Constants), [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5), and [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3). DoDate leverages the [React-Redux](https://github.com/reactjs/redux/blob/master/README.md) and [React DnD drag and drop](https://github.com/react-dnd/react-dnd) module dependencies to implement [FLUX's front-to-back-to-front data-flow architecture](https://facebook.github.io/flux/) so that frontend state stays consistent with backend data. Custom Material UI components complete the modern UI/UX with industry-standard ergonomic features.
@@ -58,9 +59,9 @@ DoDate's primary frontend is built in ReactJS using [JavaScript](https://www.jav
 - This feature is still being developed and we hope to make a version available soon. 
 
 - The frontend is built in React Native using the React Native Redux module for unidirectional FLUX information architecture and React Native Material UI for modern styling consistent with web application.
-
+---
 ### Backend Server Side
-
+---
 Independently hosted backend serves data for both the web and mobile applications. Ruby on Rails application server routes external requests to lightweight PostgreSQL database and returns customized JSON data constructed using the Ruby's jbuilder gem for optimized frontend stateshape.
 
 &#9733;Ruby on Rails&#9733;
@@ -76,10 +77,7 @@ Independently hosted backend serves data for both the web and mobile application
 - Two tables, one consisting of user data, the other todo data, compose a simple [PostgreSQL](https://www.postgresql.org/) database indexed both by users and by todos-by-user for less costly SQL querying.
 
 ---
-
 [//]: # (Deep delving into 2-3 features that show off your technical abilities and mastery of concepts/language)
-
-
 ## Key Features
 ---
 ### &#8734; **DoDate's Drag/Drop Redux Loop using React DnD** &#8734;

@@ -71,7 +71,7 @@ Independently hosted backend serves data for both the web and mobile application
 
 - Routes and server-side authorization cycle managed by Rails via Ruby's BCrypt gem for salting users' passwords to be securely stored in the database alongside Ruby's SecureRandom module for secure session token management.
 
-
+---
 
 
 [//]: # (Deep delving into 2-3 features that show off your technical abilities and mastery of concepts/language)

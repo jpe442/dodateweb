@@ -101,7 +101,7 @@ Independently hosted backend serves data for both the web and mobile application
 
   *Granting DoDate Authorization to Access Users' Google Calendar*
 
-  - Google's OAuth 2.0 cycle begins as the AJAX request for an access token so the client application can access the user's Google Calendar data.
+  - Google's OAuth 2.0 cycle begins with the AJAX request for an access token for the client application to access the user's Google Calendar data.
   
   - As a result, the user is redirected to the Google OAuth 2.0 API to authorize consent for DoDate to access to the user's Google Calendar data.
   
@@ -125,7 +125,7 @@ Independently hosted backend serves data for both the web and mobile application
 [//]: # (Discuss challenges faced and my solutions to those challenges)
 
 
-- (a) the current day of the week of the todo, say it's `'M'` for Monday
+[//]: # (- (a) the current day of the week of the todo, say it's `'M'` for Monday))
    - (b) the start time and duration of the todo, 
  and 
    - (c) the current date-time, e.g `2018-01-28T19:31:56.550Z`

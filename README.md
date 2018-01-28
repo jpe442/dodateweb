@@ -27,7 +27,7 @@
 ## Do&#10150;Doing&#10150;Done
 ---
 
-DoDate is a Kanban-inspired todo productivity solution whereby users create unscheduled todos in a list (do...), distribute them accross a one-week calendar (doing...), and finally mark them as complete to move them off the calendar to another list to resuse or delete later (done!). Utilizing the latest frontend technologies - *Redux, ReactJS, React Native, React DnD, and Material UI* - DoDate epidomizes the modern single-page-app (SPA).
+DoDate is a Kanban-inspired todo productivity solution whereby users create unscheduled todos in a list (do...), distribute them accross a one-week calendar (doing...), and finally mark them as complete - moving them off the calendar to another list to resuse or delete later (done!). Utilizing the latest frontend technologies - *Redux, ReactJS, React Native, React DnD, and Material UI* - DoDate epidomizes the modern single-page-app (SPA).
 
 ---
 [//]: # (Discussion of technologies used)
@@ -99,13 +99,17 @@ Independently hosted backend serves data for both the web and mobile application
 ---
 - A user clicks the **Sync as Google Calendar Event** cloud-upload icon button in the **Edit Todo** modal, which triggers an AJAX request initiating Google's OAuth 2.0 authentication/authorization cycle.
 
+  *Granting DoDate Authorization to Access Users' Google Calendar*
+
   - Google's OAuth 2.0 cycle begins as the AJAX request for an access token so the client application can access the user's Google Calendar data.
   
-  - This results in a redirect to the Google OAuth 2.0 prompting the user to consent to DoDate's access to the user's Google Calendar data.
+  - As a result, the user is redirected to the Google OAuth 2.0 API to authorize consent for DoDate to access to the user's Google Calendar data.
   
-  - Once signed in to Google successfully, the client is redirected back to DoDate which an authorization code.
+  - Once signed in to Google successfully, the client is then redirected back to DoDate with an access token embedded in the redirect URI.
   
-  - 
+  - The access token is extracted, stored as parameters, then finally validated using another AJAX request to Google OAuth 2.0 API.
+  
+  - Given a successful validation, 
 
 
 

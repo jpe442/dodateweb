@@ -109,11 +109,18 @@ Independently hosted backend serves data for both the web and mobile application
   
   - The access token is extracted, stored as parameters, then finally validated using another AJAX request to Google OAuth 2.0 API.
   
-  - Given a successful validation, the authorization parameters are stored in `localStorage` cache to be used to make a `'POST'` `event` AJAX request to Google Calendar API.
-  
-  -
+  - Given a successful validation, the authorization parameters are stored in `localStorage` cache to be used to in making a `POST` `event` AJAX request to Google Calendar API.
  
- - With the parameters stored, when the user clicks **Sync as Google Calendar Event** the `localStorage` is accessed to retrieve the authorization parameters and send the `'POST'` `event` request to Google Calendar.
+ - With the parameters stored, when the user clicks **Sync as Google Calendar Event**, an `event` JSON object that Google Calendar API expects is constructed using an algorithm that takes:
+  - (a) the current day of the week of the todo, say it's `'M'` for Monday
+  - (b) the start time and duration of the todo, 
+ and 
+  - (c) the current time
+  
+  with (a-c) determines the *date* 
+
+ - `localStorage` is accessed and the stored authorization parameters are appended to send the `POST` `event` request to Google Calendar API.
+ 
 
 
 

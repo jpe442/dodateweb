@@ -118,9 +118,12 @@ Independently hosted backend serves data for both the web and mobile application
 ---
 ### &#128187; DoDate's Extreme Single Page UI
 ---
-- Unscheduled todos are collected in a pop-out menu component on the left part of the page.
+- Unscheduled todos are rendered in a pop-out menu component on the left part of the page.
 
-- From the left pop-out menu unscheduled todos can be distributed across the Monday-Friday work-week primary calendar by dragging and dropping them in the time slot 
+- From the left pop-out menu drawer unscheduled todos are distributed across the Monday-Friday workweek calendar by dragging and dropping them in the desired time slot. 
+
+- Dragging a todo over the **Weekend** button on the bottom of the workweek calendar triggers the bottom menu drawer to open, exposing the weekend calendar.
+---
 
 
 [//]: # (Discuss challenges faced and my solutions to those challenges)

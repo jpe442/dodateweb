@@ -123,7 +123,7 @@ Independently hosted backend serves data for both the web and mobile application
 
   *Granting DoDate Authorization to Access Users' Google Calendar*
 
-  - Google's OAuth 2.0 cycle begins with the AJAX request for an access token for the client application to access the user's Google Calendar data.
+  - [Google's OAuth 2.0](https://developers.google.com/identity/protocols/OAuth2) cycle begins with the AJAX request for an access token for the client application to access the user's Google Calendar data.
   
   - As a result, the user is redirected to the Google OAuth 2.0 API to authorize consent for DoDate to access to the user's Google Calendar data.
   
@@ -142,11 +142,24 @@ Independently hosted backend serves data for both the web and mobile application
 ---
 ### <a name="ui"></a> &#128187;  DoDate's Extreme Single Page UI
 ---
-- Unscheduled todos are rendered in a pop-out menu component on the left part of the page upon creation.
 
+DoDate flexes it's Single Page Application muscles to the max. There is only one page after logging in 
+
+#### Do...
+- A left pop-out menu drawer is opened when the user hovers or drags over the slim hidden HTML element running up the left side of the workweek calendar. 
+
+- Clicking a standard Material floating action "+" button calls up the 'Create New Todo' Material dialog form to create a new unscheduled todo.
+
+- Unscheduled todos are rendered in the left menu drawer component.
+
+#### Doing...
 - From the left pop-out menu drawer unscheduled todos are distributed across the Monday-Friday workweek calendar by dragging and dropping them in the desired time slot. 
 
-- Dragging a todo over the **Weekend** button on the bottom of the workweek calendar triggers the bottom menu drawer to open, exposing the weekend calendar; dragging a todo from the weekend calendar over the **Drag to Workweek** button closes the bottom drawer so the todo can be placed upon the workweek calendar. 
+- Dragging a todo over the **Weekend** button on the bottom of the workweek calendar triggers the bottom menu drawer to pop open from the bottom of the screen, exposing the weekend calendar; dragging a todo from the weekend calendar over the **Drag to Workweek** button closes the bottom drawer so the todo can be placed upon the workweek calendar. 
+
+- 
+#### Done.
+
 
 [Back to Table of Contents](#contents)
 

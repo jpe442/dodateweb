@@ -24,6 +24,7 @@
 ---
 ## Contents
 - [Summary](#intro)
+- [Technologies: From Front to Back](#tech)
 
 [//]: # (Brief explanation of what the app is and does)
 ## <a name="intro"></a> Do &#10150; Doing &#10150; Done

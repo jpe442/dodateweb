@@ -26,8 +26,13 @@
 - [Do, Doing, Done...](#intro)
 - [Technologies: From Front to Back](#tech)
   - [Frontends: Web & Mobile](#frontends)
-    - [Web]
-
+    - [Web](#web)
+    - [Mobile](#mobile)
+  - [Backend Server Side](#backend)
+- [DoDate's Drag/Drop Redux Loop using React DnD](#droploop)
+- [DoDate's Google Calendar Event Sync Cycle](#sync)
+- [DoDate's Extreme Single Page UI](#ui)
+    
 [//]: # (Brief explanation of what the app is and does)
 ## <a name="intro"></a> Do &#10150; Doing &#10150; Done
 ---
@@ -57,7 +62,7 @@ DoDate's primary frontend is built in [ReactJS](https://reactjs.org/) using [Jav
 
 - Customized prestyled [Material UI](http://www.material-ui.com/#/) React components provide many familiar industry-standard UI/UX styling features created and proliferated by Google. 
 
-#### Mobile 
+#### <a name="mobile"></a>Mobile 
 
 [![Wercker](https://img.shields.io/badge/Coming-Soon-yellowgreen.svg)]()
 
@@ -65,7 +70,7 @@ DoDate's primary frontend is built in [ReactJS](https://reactjs.org/) using [Jav
 
 - The frontend is built in [React Native](https://facebook.github.io/react-native/) using [Redux](https://github.com/reactjs/react-redux) module for unidirectional FLUX information architecture and [React Native Material UI components](https://github.com/xotahal/react-native-material-ui) for modern styling consistent with web application.
 ---
-### Backend Server Side
+### <a name="backend"></a> Backend Server Side
 ---
 Independently hosted backend serves data for both the web and mobile applications. Ruby on Rails application server routes external requests to lightweight PostgreSQL database and returns customized JSON data constructed using the Ruby's jbuilder gem for optimized frontend stateshape.
 
@@ -85,7 +90,7 @@ Independently hosted backend serves data for both the web and mobile application
 [//]: # (Deep delving into 2-3 features that show off your technical abilities and mastery of concepts/language)
 ## Key Features
 ---
-### &#8734;  DoDate's Drag/Drop Redux Loop using React DnD
+### <a name="droploop"></a>&#8734;  DoDate's Drag/Drop Redux Loop using React DnD
 ---
 - A user dragging a todo sees a transluscent screenshot of the todo component being moved throughout the UI and not the component itself. The actual todo component stays in place in the DOM at this point. 
 
@@ -100,7 +105,7 @@ Independently hosted backend serves data for both the web and mobile application
 - So, whenever the todo moves its location on the calendar, its time data is guaranteed to be up-to-date on the backend. The user safely logs out without losing precious planning work.
 
 ---
-### &#9729;  DoDate's Google Calendar Event Sync Cycle
+### <a name="sync"></a>&#9729;  DoDate's Google Calendar Event Sync Cycle
 ---
 - A user clicks the **Sync as Google Calendar Event** cloud-button in the **Edit Todo** modal, which triggers an AJAX request for a Google Calendar API access token and initiates Google's OAuth 2.0 authentication/authorization cycle.
 
@@ -121,7 +126,7 @@ Independently hosted backend serves data for both the web and mobile application
  - The event object and the stored authorization parameters `localStorage` are then used to construct and send the `POST` `event` request to Google Calendar API.
 
 ---
-### &#128187;  DoDate's Extreme Single Page UI
+### <a name="ui"></a> &#128187;  DoDate's Extreme Single Page UI
 ---
 - Unscheduled todos are rendered in a pop-out menu component on the left part of the page upon creation.
 

@@ -22,9 +22,11 @@
 
 ##### React JS/Redux | React Native/Redux | React-DnD | JavaScript | PostgresSQL | Ruby on Rails | HTML5 | CSS3 | Material-UI
 ---
+## Contents
+- [Summary](#intro)
 
 [//]: # (Brief explanation of what the app is and does)
-## Do &#10150; Doing &#10150; Done
+## <a name="intro"></a> Do &#10150; Doing &#10150; Done
 ---
 
 DoDate is a Kanban-inspired todo productivity solution whereby users create unscheduled todos in a list (do...), distribute them accross a one-week calendar (doing...), and finally mark them as complete - moving them off the calendar to another list to resuse or delete later (done!). Utilizing the latest frontend technologies - *Redux, ReactJS, React Native, React DnD, and Material UI* - DoDate epidomizes the modern single-page-app (SPA).
@@ -32,7 +34,7 @@ DoDate is a Kanban-inspired todo productivity solution whereby users create unsc
 ---
 [//]: # (Discussion of technologies used)
 
-## Technologies from Front to Back
+## <a name="tech"></a>Technologies from Front to Back
 ---
 ### Frontends: Web & Mobile
 ---

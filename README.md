@@ -23,8 +23,10 @@
 ##### React JS/Redux | React Native/Redux | React-DnD | JavaScript | PostgresSQL | Ruby on Rails | HTML5 | CSS3 | Material-UI
 ---
 ## Contents
-- [Summary](#intro)
+- [Do, Doing, Done...](#intro)
 - [Technologies: From Front to Back](#tech)
+  - [Frontends: Web & Mobile](#frontends)
+    - [Web]
 
 [//]: # (Brief explanation of what the app is and does)
 ## <a name="intro"></a> Do &#10150; Doing &#10150; Done
@@ -37,9 +39,9 @@ DoDate is a Kanban-inspired todo productivity solution whereby users create unsc
 
 ## <a name="tech"></a>Technologies from Front to Back
 ---
-### Frontends: Web & Mobile
+### <a name="frontends"></a>Frontends: Web & Mobile 
 ---
-#### Web
+#### <a name="web"></a>Web
   
 DoDate's primary frontend is built in [ReactJS](https://reactjs.org/) using [JavaScript](https://www.javascript.com/) [ES6](http://es6-features.org/#Constants), [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5), and [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3). DoDate leverages the [React-Redux](https://github.com/reactjs/redux/blob/master/README.md) and [React DnD drag and drop](https://github.com/react-dnd/react-dnd) module dependencies to implement [FLUX's front-to-back-to-front data-flow architecture](https://facebook.github.io/flux/) so that frontend state stays consistent with backend data. Custom Material UI components complete the modern UI/UX with industry-standard ergonomic features.
 

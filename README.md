@@ -146,7 +146,7 @@ Independently hosted backend serves data for both the web and mobile application
 
 - From the left pop-out menu drawer unscheduled todos are distributed across the Monday-Friday workweek calendar by dragging and dropping them in the desired time slot. 
 
-- Dragging a todo over the **Weekend** button on the bottom of the workweek calendar triggers the bottom menu drawer to open, exposing the weekend calendar; dragging a todo from the weekend calendar over the **Drag to Workweek** button closes the bottom drawer and the todo can be placed upon the workweek calendar. 
+- Dragging a todo over the **Weekend** button on the bottom of the workweek calendar triggers the bottom menu drawer to open, exposing the weekend calendar; dragging a todo from the weekend calendar over the **Drag to Workweek** button closes the bottom drawer so the todo can be placed upon the workweek calendar. 
 
 [Back to Table of Contents](#contents)
 

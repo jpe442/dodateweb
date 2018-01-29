@@ -115,12 +115,10 @@ Independently hosted backend serves data for both the web and mobile application
    
  - The event object and the stored authorization parameters `localStorage` are then used to construct and send the `POST` `event` request to Google Calendar API.
 
- ---
+---
 ### 	&#128187; DoDate's Extreme Single Page UI
-
+---
 - 
-
-
 
 
 [//]: # (Discuss challenges faced and my solutions to those challenges)

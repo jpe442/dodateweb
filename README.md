@@ -143,7 +143,7 @@ Independently hosted backend serves data for both the web and mobile application
 ### <a name="ui"></a> &#128187;  DoDate's Extreme Single Page UI
 ---
 
-DoDate renders only one page after logging in, but this single page leverage reactive hidden menu components to extend the workspace without redirecting or fully rerending in normal workflow.
+DoDate renders only one page after logging in, but this single page leverages pop-out hidden menu components to extend the workspace without redirecting or fully rerending during primary workflow.
 
 #### Do...
 - A left pop-out menu drawer is opened when the user hovers or drags over the slim hidden HTML element running up the left side of the workweek calendar. 
@@ -159,6 +159,7 @@ DoDate renders only one page after logging in, but this single page leverage rea
 
 - 
 #### Done.
+- Clikcing the check completion box in the todo component seemlessly moves the 
 
 
 [Back to Table of Contents](#contents)

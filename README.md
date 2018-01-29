@@ -80,7 +80,7 @@ Independently hosted backend serves data for both the web and mobile application
 [//]: # (Deep delving into 2-3 features that show off your technical abilities and mastery of concepts/language)
 ## Key Features
 ---
-### &#8734; DoDate's Drag/Drop Redux Loop using React DnD &#8734;
+### &#8734; DoDate's Drag/Drop Redux Loop using React DnD
 ---
 - A user dragging a todo sees a transluscent screenshot of the todo component being moved throughout the UI and not the component itself. The actual todo component stays in place in the DOM at this point. 
 
@@ -95,7 +95,7 @@ Independently hosted backend serves data for both the web and mobile application
 - So, whenever the todo moves its location on the calendar, its time data is guaranteed to be up-to-date on the backend. The user safely logs out without losing precious planning work.
 
 ---
-### &#9729; DoDate's Google Calendar Event Sync Cycle &#9729;
+### &#9729; DoDate's Google Calendar Event Sync Cycle
 ---
 - A user clicks the **Sync as Google Calendar Event** cloud-button in the **Edit Todo** modal, which triggers an AJAX request for a Google Calendar API access token and initiates Google's OAuth 2.0 authentication/authorization cycle.
 
@@ -116,10 +116,9 @@ Independently hosted backend serves data for both the web and mobile application
  - The event object and the stored authorization parameters `localStorage` are then used to construct and send the `POST` `event` request to Google Calendar API.
 
  ---
-### 	&#128432; DoDate's Extreme Single Page UI &#128432;
----
+### 	&#128187; DoDate's Extreme Single Page UI
 
-
+- 
 
 
 

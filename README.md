@@ -79,15 +79,15 @@ DoDate's primary frontend is built in [ReactJS](https://reactjs.org/) using [Jav
 ---
 ### <a name="backend"></a> Backend Server Side
 ---
-Independently hosted backend serves data for both the web and mobile applications. Ruby on Rails application server routes external requests to lightweight PostgreSQL database and returns customized JSON data constructed using the Ruby's jbuilder gem for optimized frontend stateshape.
+Independently hosted backend serves data for both the web and mobile applications. Ruby on Rails application server routes external requests to lightweight [PostgreSQL](https://www.postgresql.org/) database and returns customized JSON data constructed using the Ruby's [jbuilder gem](https://rubygems.org/gems/jbuilder) for optimized frontend stateshape.
 
 &#9733; Ruby on Rails
 
-- Restful routes and server-side authorization cycle managed by Rails via Ruby's BCrypt gem for salting users' passwords and securely storing them in the database alongside Ruby's SecureRandom module for secure session token management.
+- Restful routes and server-side authorization cycle managed by Rails via Ruby's [BCrypt gem](https://rubygems.org/gems/bcrypt/versions/3.1.11) for salting users' passwords and securely storing them in the database alongside Ruby's SecureRandom module for secure session token management.
 
-- Rack middleware configured to accept CORS requests from frontend clients' AJAX requests using Rack CORS gem.
+- Rack middleware configured to accept CORS requests from frontend clients' AJAX requests using [Rack CORS gem](https://rubygems.org/gems/rack-cors).
 
-- State shape normalized using jbuilder gem to optimal frontend stateshape from JSON response.
+- State shape normalized using [jbuilder gem](https://rubygems.org/gems/jbuilder) to optimal frontend stateshape from JSON response.
 
 &#9733; PostgreSQL
 

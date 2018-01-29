@@ -64,7 +64,7 @@ DoDate's primary frontend is built in [ReactJS](https://reactjs.org/) using [Jav
 
 &#9733; Material UI
 
-- Customized prestyled [Material UI](http://www.material-ui.com/#/) React components provide many familiar industry-standard UI/UX styling features created and proliferated by Google. 
+- Customized prestyled [Material UI](http://www.material-ui.com/#/) React components provide many familiar industry-standard UI/UX styling features created and proliferated by Google.
 
 #### <a name="mobile"></a>Mobile 
 
@@ -73,6 +73,9 @@ DoDate's primary frontend is built in [ReactJS](https://reactjs.org/) using [Jav
 - This feature is still being developed and we hope to make a version available soon. 
 
 - The frontend is built in [React Native](https://facebook.github.io/react-native/) using [Redux](https://github.com/reactjs/react-redux) module for unidirectional FLUX information architecture and [React Native Material UI components](https://github.com/xotahal/react-native-material-ui) for modern styling consistent with web application.
+
+[Back to Table of Contents](#contents)
+
 ---
 ### <a name="backend"></a> Backend Server Side
 ---
@@ -91,6 +94,9 @@ Independently hosted backend serves data for both the web and mobile application
 - Two tables, one consisting of user data, the other todo data, compose a simple [PostgreSQL](https://www.postgresql.org/) database indexed both by users and by todos-by-user for less costly SQL querying.
 
 ---
+
+[Back to Table of Contents](#contents)
+
 [//]: # (Deep delving into 2-3 features that show off your technical abilities and mastery of concepts/language)
 ## Key Features
 ---
@@ -107,6 +113,8 @@ Independently hosted backend serves data for both the web and mobile application
 - If the backend update in not successful, the drop action fails to complete and the todo component stays in its original, dragged-from, location in the DOM.
 
 - So, whenever the todo moves its location on the calendar, its time data is guaranteed to be up-to-date on the backend. The user safely logs out without losing precious planning work.
+
+[Back to Table of Contents](#contents)
 
 ---
 ### <a name="sync"></a>&#9729;  DoDate's Google Calendar Event Sync Cycle
@@ -129,6 +137,8 @@ Independently hosted backend serves data for both the web and mobile application
    
  - The event object and the stored authorization parameters `localStorage` are then used to construct and send the `POST` `event` request to Google Calendar API.
 
+[Back to Table of Contents](#contents)
+
 ---
 ### <a name="ui"></a> &#128187;  DoDate's Extreme Single Page UI
 ---
@@ -138,7 +148,8 @@ Independently hosted backend serves data for both the web and mobile application
 
 - Dragging a todo over the **Weekend** button on the bottom of the workweek calendar triggers the bottom menu drawer to open, exposing the weekend calendar; dragging a todo from the weekend calendar over the **Drag to Workweek** button closes the bottom drawer and the todo can be placed upon the workweek calendar. 
 
-- 
+[Back to Table of Contents](#contents)
+
 ---
 
 

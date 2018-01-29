@@ -32,7 +32,9 @@
 - [DoDate's Drag/Drop Redux Loop using React DnD](#droploop)
 - [DoDate's Google Calendar Event Sync Cycle](#sync)
 - [DoDate's Extreme Single Page UI](#ui)
-    
+
+---
+
 [//]: # (Brief explanation of what the app is and does)
 ## <a name="intro"></a> Do &#10150; Doing &#10150; Done
 ---

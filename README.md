@@ -143,7 +143,7 @@ Independently hosted backend serves data for both the web and mobile application
 ### <a name="ui"></a> &#128187;  DoDate's Extreme Single Page UI
 ---
 
-DoDate flexes it's Single Page Application muscles to the max. There is only one page after logging in 
+DoDate renders only one page after logging in, but this single page leverage reactive hidden menu components to extend the workspace without redirecting or fully rerending in normal workflow.
 
 #### Do...
 - A left pop-out menu drawer is opened when the user hovers or drags over the slim hidden HTML element running up the left side of the workweek calendar. 
@@ -164,7 +164,6 @@ DoDate flexes it's Single Page Application muscles to the max. There is only one
 [Back to Table of Contents](#contents)
 
 ---
-
 
 [//]: # (Discuss challenges faced and my solutions to those challenges)
 

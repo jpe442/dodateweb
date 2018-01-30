@@ -40,7 +40,7 @@
 ---
 
 DoDate is a Kanban-inspired todo productivity solution whereby users create unscheduled todos in a list (do...), distribute them accross a one-week calendar (doing...), and finally mark them as complete - moving them off the calendar to another list to resuse or delete later (done!). Utilizing the latest frontend technologies - *Redux, ReactJS, React Native, React DnD, and Material UI* - DoDate epidomizes the modern single-page-app (SPA).
-
+<br>
 [Back to Table of Contents](#contents)
 
 ---
@@ -73,7 +73,7 @@ DoDate's primary frontend is built in [ReactJS](https://reactjs.org/) using [Jav
 - This feature is still being developed and we hope to make a version available soon. 
 
 - The frontend is built in [React Native](https://facebook.github.io/react-native/) using [Redux](https://github.com/reactjs/react-redux) module for unidirectional FLUX information architecture and [React Native Material UI components](https://github.com/xotahal/react-native-material-ui) for modern styling consistent with web application.
-
+<br>
 [Back to Table of Contents](#contents)
 
 ---
@@ -92,7 +92,7 @@ Independently hosted backend serves data for both the web and mobile application
 &#9733; PostgreSQL
 
 - Two tables, one consisting of user data, the other todo data, compose a simple [PostgreSQL](https://www.postgresql.org/) database indexed both by users and by todos-by-user for less costly SQL querying.
-
+<br>
 [Back to Table of Contents](#contents)
 
 ---
@@ -113,7 +113,7 @@ Independently hosted backend serves data for both the web and mobile application
 - If the backend update in not successful, the drop action fails to complete and the todo component stays in its original, dragged-from, location in the DOM.
 
 - So, whenever the todo moves its location on the calendar, its time data is guaranteed to be up-to-date on the backend. The user safely logs out without losing precious planning work.
-
+<br>
 [Back to Table of Contents](#contents)
 
 ---
@@ -157,12 +157,12 @@ DoDate renders only one page after logging in, but this single page leverages po
 
 - Dragging a todo over the **Weekend** button on the bottom of the workweek calendar triggers the bottom menu drawer to pop open from the bottom of the screen, exposing the weekend calendar; dragging a todo from the weekend calendar over the **Drag to Workweek** button closes the bottom drawer so the todo can be placed upon the workweek calendar. 
 
-- 
 #### Done.
 - Clicking the check completion box	&#9744; in the todo component seemlessly moves the the todo to the right menu drawer.
 
 - The *Right Menu Drawer* pops open and extends to the left as the cursor hovers over the slim hidden HTML element running up the left side of the workweek calendar.
 <br>
+
 [Back to Table of Contents](#contents)
 
 ---

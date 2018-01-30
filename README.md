@@ -185,17 +185,17 @@ export const convertToSync = (todo) => {
   } else if (dayNow < todoDay) {
   
     // since the current day is prior in the week than the current day (e.g. Thursday, Saturday),
-      // we conclude the date of the event being scheduled is the next matching weekday day (e.g. Saturday)
-      // and figure the event date by adding the difference of the current day from the todo day to the date now
+      // the event day must be the next matching weekday day (e.g. Saturday) and figure the event date
+      // by adding the date now to the difference of the current day subtracted from the todo day to the date now
       
     todoDate = (todoDay - dayNow) + dateNow
   } else if (dayNow > todoDay) {
   
     // since the day of the todo is prior in the week than the current day (e.g. Monday, Tuesday) and
-    // we can assume a user is not trying to schedule a todo in the past
+    // we can assume a user is not trying to schedule an event in the past
       // the date of the event must be the next matching weekday date (e.g. Monday the 22)
-      // so we first add 7 to the current date, then subtract the difference of the todo day from the current 
-      // day ((2-1 for Tuesday - Monday) to get the numerical date of the todo
+      // so we add 7 to the current date, then subtract the difference of the todo day subtracted from the current 
+      // day ((2-1 = 1 for Tuesday - Monday) to get the numerical date of the todo
       
     todoDate = dateNow + 7 - (dayNow - todoDay)
   }

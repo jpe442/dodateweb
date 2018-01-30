@@ -93,9 +93,9 @@ Independently hosted backend serves data for both the web and mobile application
 
 - Two tables, one consisting of user data, the other todo data, compose a simple [PostgreSQL](https://www.postgresql.org/) database indexed both by users and by todos-by-user for less costly SQL querying.
 
----
-
 [Back to Table of Contents](#contents)
+
+---
 
 [//]: # (Deep delving into 2-3 features that show off your technical abilities and mastery of concepts/language)
 ## Key Features

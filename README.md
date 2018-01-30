@@ -89,7 +89,7 @@ Independently hosted backend serves data for both the web and mobile application
 
 &#9733; Ruby on Rails
 
-- Restful routes and server-side authorization cycle managed by Rails via Ruby's [BCrypt gem](https://rubygems.org/gems/bcrypt/versions/3.1.11) for salting users' passwords and securely storing them in the database alongside Ruby's SecureRandom module for secure session token management.
+- Restful routes and server-side authorization cycle managed by Rails via Ruby's [BCrypt gem](https://rubygems.org/gems/bcrypt/versions/3.1.11) for salting users' passwords and securely storing them in the database alongside Ruby's [SecureRandom module](http://ruby-doc.org/stdlib-1.9.3/libdoc/securerandom/rdoc/SecureRandom.html) for secure session token management.
 
 - Rack middleware configured to accept CORS requests from frontend clients' AJAX requests using [Rack CORS gem](https://rubygems.org/gems/rack-cors).
 

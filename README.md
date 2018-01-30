@@ -119,7 +119,7 @@ Independently hosted backend serves data for both the web and mobile application
 ---
 ### <a name="sync"></a>&#9729;  DoDate's Google Calendar Event Sync Cycle
 ---
-- A user clicks the **Sync as Google Calendar Event** cloud-button in the **Edit Todo** modal, which triggers an AJAX request for a Google Calendar API access token and initiates Google's OAuth 2.0 authentication/authorization cycle.
+- A user clicks the **Sync as Google Calendar Event** cloud-button in the *Edit Todo* modal, which triggers an AJAX request for a Google Calendar API access token and initiates Google's OAuth 2.0 authentication/authorization cycle.
 
   *Granting DoDate Authorization to Access Users' Google Calendar*
 
@@ -136,7 +136,7 @@ Independently hosted backend serves data for both the web and mobile application
  - With the parameters stored, when the user clicks **Sync as Google Calendar Event**, an `event` JSON object that Google Calendar API expects is constructed using an algorithm that takes the todo information in conjunction with the current time and returns an `event` object compatible with Google Calendar API.
    
  - The event object and the stored authorization parameters `localStorage` are then used to construct and send the `POST` `event` request to Google Calendar API.
-
+<br>
 [Back to Table of Contents](#contents)
 
 ---
@@ -146,22 +146,23 @@ Independently hosted backend serves data for both the web and mobile application
 DoDate renders only one page after logging in, but this single page leverages pop-out hidden menu components to extend the workspace without redirecting or fully rerending during primary workflow.
 
 #### Do...
-- A left pop-out menu drawer is opened when the user hovers or drags over the slim hidden HTML element running up the left side of the workweek calendar. 
+- *The Left Menu Drawer* pops open and extends to the right as the cursor hovers over the slim hidden HTML element running up the left side of the *Workweek Calendar*. 
 
-- Clicking a standard Material floating action **+** button calls up the *Create New Todo* Material dialog form to create a new unscheduled todo.
+- Clicking a standard Material floating action **+** button at the top of the left menu drawer calls up the *Create New Todo* Material dialog form to create a new unscheduled todo.
 
-- All unscheduled todos are first rendered in the left menu drawer component below the .
+- All unscheduled todos are first rendered in the *The Left Menu Drawer* component below the **+** button.
 
 #### Doing...
-- From the left pop-out menu drawer unscheduled todos are distributed across the Monday-Friday workweek calendar by dragging and dropping them in the desired time slot. 
+- From the left pop-out menu drawer unscheduled todos are distributed across the Monday-Friday *Workweek Calendar* by dragging and dropping them in the desired time slot(s). 
 
 - Dragging a todo over the **Weekend** button on the bottom of the workweek calendar triggers the bottom menu drawer to pop open from the bottom of the screen, exposing the weekend calendar; dragging a todo from the weekend calendar over the **Drag to Workweek** button closes the bottom drawer so the todo can be placed upon the workweek calendar. 
 
 - 
 #### Done.
-- Clikcing the check completion box in the todo component seemlessly moves the 
+- Clicking the check completion box	&#9744; in the todo component seemlessly moves the the todo to the right menu drawer.
 
-
+- The *Right Menu Drawer* pops open and extends to the left as the cursor hovers over the slim hidden HTML element running up the left side of the workweek calendar.
+<br>
 [Back to Table of Contents](#contents)
 
 ---

@@ -155,11 +155,11 @@ Independently hosted backend serves data for both the web and mobile application
 DoDate renders only one page after logging in, but this single page leverages pop-out hidden menu components to extend the workspace without redirecting or fully rerending during primary workflow.
 
 #### Do...
-- *The Left Menu Drawer* pops open and extends to the right as the cursor hovers over the slim hidden HTML element running up the left side of the *Workweek Calendar*. 
+- The *Left Menu Drawer* pops open and extends to the right as the cursor hovers over the slim hidden HTML element running up the left side of the *Workweek Calendar*. 
 
 - Clicking the Material **+** floating action button at the top of the left menu drawer calls up the *Create New Todo* Material dialog form to create a new unscheduled todo.
 
-- All unscheduled todos are first rendered in the *The Left Menu Drawer* component below the **+** button.
+- All unscheduled todos are first rendered in the *Left Menu Drawer* component below the **+** button.
 
 #### Doing...
 - From the left pop-out menu drawer unscheduled todos are distributed across the Monday-Friday *Workweek Calendar* by dragging and dropping them in the desired time slot(s). 

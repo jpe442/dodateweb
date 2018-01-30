@@ -204,7 +204,7 @@ export const convertToSync = (todo) => {
   
   newTodoDate.setDate(todoDate);
     
-  // construct start datTime string
+  // construct start dateTime string
   
   newStartDateTime = new Date(newTodoDate.toJSON())
   newStartDateTime.setHours(todo.time_slot, 0, 0)
@@ -269,6 +269,9 @@ DoDate renders only one page after logging in, but this single page leverages po
 
 [//]: # (Discuss challenges faced and my solutions to those challenges)
 
+## <a name="challenges"></a>Development Challenges
+---
+DoDate's central focus is the upcoming seven days. As a result, DoDate's database does not currently keep track of the *date* of todos. Google Cal is preferred for longer term planning at this point. 
 
 [//]: # (Code snippets that show off your best code)
 

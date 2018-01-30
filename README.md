@@ -9,6 +9,8 @@
 [//]: # (Link to live site)
 ##### Experience DoDate live here at [dodate.io](http://www.dodate.io)
 ---
+## <a name="stack"></a>
+
 [![Travis](https://img.shields.io/badge/React-JS-blue.svg?colorB=00d9ff)]()
 [![Wercker](https://img.shields.io/badge/React-Native-brightgreen.svg?colorB=f5f5f5)]()
 [![Wercker](https://img.shields.io/badge/React-DnD-yellow.svg?colorB=0071d8)]()
@@ -23,6 +25,7 @@
 ##### React JS/Redux | React Native/Redux | React-DnD | JavaScript | PostgresSQL | Ruby on Rails | HTML5 | CSS3 | Material-UI
 ---
 ## <a name="contents"></a>Contents
+- [Stack](#stack)
 - [Do, Doing, Done...](#intro)
 - [Technologies: From Front to Back](#tech)
   - [Frontends: Web & Mobile](#frontends)
@@ -41,6 +44,7 @@
 
 DoDate is a Kanban-inspired todo productivity solution whereby users create unscheduled todos in a list (do...), distribute them accross a one-week calendar (doing...), and finally mark them as complete - moving them off the calendar to another list to resuse or delete later (done!). Utilizing the latest frontend technologies - *Redux, ReactJS, React Native, React DnD, and Material UI* - DoDate epidomizes the modern single-page-app (SPA).
 <br>
+
 [Back to Table of Contents](#contents)
 
 ---
@@ -74,6 +78,7 @@ DoDate's primary frontend is built in [ReactJS](https://reactjs.org/) using [Jav
 
 - The frontend is built in [React Native](https://facebook.github.io/react-native/) using [Redux](https://github.com/reactjs/react-redux) module for unidirectional FLUX information architecture and [React Native Material UI components](https://github.com/xotahal/react-native-material-ui) for modern styling consistent with web application.
 <br>
+
 [Back to Table of Contents](#contents)
 
 ---
@@ -93,6 +98,7 @@ Independently hosted backend serves data for both the web and mobile application
 
 - Two tables, one consisting of user data, the other todo data, compose a simple [PostgreSQL](https://www.postgresql.org/) database indexed both by users and by todos-by-user for less costly SQL querying.
 <br>
+
 [Back to Table of Contents](#contents)
 
 ---
@@ -114,6 +120,7 @@ Independently hosted backend serves data for both the web and mobile application
 
 - So, whenever the todo moves its location on the calendar, its time data is guaranteed to be up-to-date on the backend. The user safely logs out without losing precious planning work.
 <br>
+
 [Back to Table of Contents](#contents)
 
 ---
@@ -137,6 +144,7 @@ Independently hosted backend serves data for both the web and mobile application
    
  - The event object and the stored authorization parameters `localStorage` are then used to construct and send the `POST` `event` request to Google Calendar API.
 <br>
+
 [Back to Table of Contents](#contents)
 
 ---

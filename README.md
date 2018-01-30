@@ -143,12 +143,12 @@ Independently hosted backend serves data for both the web and mobile application
  
  - With the parameters stored, when the user clicks **Sync as Google Calendar Event**, an `event` JSON object that Google Calendar API expects is constructed using an algorithm that takes the todo information in conjunction with the current time and returns an `event` object compatible with Google Calendar API.
  
-```
+```javascript
 
 export const convertToSync = (todo) => {
   
-  // create simole helper method to convert from DoDate workflow_pos (e.g. 'M') to Date-
-  // object-compatible integer for representing day
+  // create simple helper method to convert from DoDate workflow_pos (e.g. 'M') to Date-
+  // object-compatible integer for representing day (i.e. 1)
 
   const dayToNumConvert = (workflow_pos) => {
     let converter = { 'M': 1, 'T': 2, 'W': 3, 'TH': 4, 'F': 5, 'ST': 6, 'SN': 7 }

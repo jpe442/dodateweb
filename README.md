@@ -181,10 +181,12 @@ export const convertToSync = (todo) => {
       // the date of the Google Cal event must be today's date
     todoDate = dateNow
   } else if (dayNow < todoDay) {
+  
     // since the current day is prior in the week than the current day (e.g. Thursday, Saturday),
       // we conclude the date of the event being scheduled is the next matching weekday day (e.g. Saturday)
       // and figure the event date for Google Cal by adding the difference of the current day from the todo day 
       // to the date now
+      
     todoDate = (todoDay - dayNow) + dateNow
   } else if (dayNow > todoDay) {
     // since the day of the todo is prior in the week than the current day (e.g. Monday, Tuesday) and
@@ -195,19 +197,25 @@ export const convertToSync = (todo) => {
       // of the date arithmetic (in this case a total of 6 days from the current date or the upcoming Monday)
     todoDate = dateNow + 7 - (dayNow - todoDay)
   }
-   // set new TodoDate object to resulting todoDate from conditional logic above
+  
+  // set new TodoDate object to resulting todoDate from conditional logic above
   newTodoDate.setDate(todoDate);
   // set new start Date object to new todo start time
   // point the start time string at the JSON ISO string extracted from the start Date object
+  
   newStartDateTime = new Date(newTodoDate.toJSON())
   newStartDateTime.setHours(todo.time_slot, 0, 0)
   startString = newStartDateTime.toJSON();
+  
   //set end string in the same manner as start string
+  
   newEndDateTime = new Date(newStartDateTime.toJSON());
   newEndDateTime.setHours(todo.time_slot + 1, 0, 0);
   endString = newEndDateTime.toJSON();
-  // construct the event object for Google Cal event insertion using the start/end strings and the
-  // todo task for the summar
+  
+  // construct the event object for Google Cal event insertion using the start/end dateTime strings and the
+  // todo task for the summary attribute
+  
   let event = { 
             'start': { 
                   'dateTime': startString

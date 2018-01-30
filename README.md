@@ -36,7 +36,9 @@
   - [DoDate's Drag/Drop Redux Loop using React DnD](#droploop)
   - [DoDate's Google Calendar Event Sync Cycle](#sync)
   - [DoDate's Extreme Single Page UI](#ui)
-
+- [Challenges](#challenges)
+  - Syncing a todo as an `event` to Google Calendar API
+  - `convertToSync()`(#challenges)
 ---
 
 [//]: # (Brief explanation of what the app is and does)

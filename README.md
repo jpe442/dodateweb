@@ -148,9 +148,9 @@ DoDate renders only one page after logging in, but this single page leverages po
 #### Do...
 - A left pop-out menu drawer is opened when the user hovers or drags over the slim hidden HTML element running up the left side of the workweek calendar. 
 
-- Clicking a standard Material floating action "+" button calls up the 'Create New Todo' Material dialog form to create a new unscheduled todo.
+- Clicking a standard Material floating action **+** button calls up the *Create New Todo* Material dialog form to create a new unscheduled todo.
 
-- Unscheduled todos are rendered in the left menu drawer component.
+- All unscheduled todos are first rendered in the left menu drawer component below the .
 
 #### Doing...
 - From the left pop-out menu drawer unscheduled todos are distributed across the Monday-Friday workweek calendar by dragging and dropping them in the desired time slot. 

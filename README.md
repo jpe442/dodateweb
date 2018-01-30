@@ -25,7 +25,7 @@
 ##### React JS/Redux | React Native/Redux | React-DnD | JavaScript | PostgresSQL | Ruby on Rails | HTML5 | CSS3 | Material-UI
 ---
 ## <a name="contents"></a>Contents
-- [Stack](#stack)
+- [Technology Stack](#stack)
 - [Do, Doing, Done...](#intro)
 - [Technologies: From Front to Back](#tech)
   - [Frontends: Web & Mobile](#frontends)

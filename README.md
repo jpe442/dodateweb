@@ -143,6 +143,49 @@ Independently hosted backend serves data for both the web and mobile application
  
  - With the parameters stored, when the user clicks **Sync as Google Calendar Event**, an `event` JSON object that Google Calendar API expects is constructed using an algorithm that takes the todo information in conjunction with the current time and returns an `event` object compatible with Google Calendar API.
  
+ - The event object and the stored authorization parameters `localStorage` are then used to construct and send the `POST` `event` request to Google Calendar API.
+<br>
+
+[Back to Table of Contents](#contents)
+
+---
+### <a name="ui"></a> &#128187;  DoDate's Extreme Single Page UI
+---
+
+DoDate renders only one page after logging in, but this single page leverages pop-out hidden menu components to extend the workspace without redirecting or fully rerending during primary workflow.
+
+#### Do...
+- The *Left Menu Drawer* pops open and extends to the right as the cursor hovers over the slim hidden HTML element running up the left side of the *Workweek Calendar*. 
+
+- Clicking the Material **+** floating action button at the top of the left menu drawer calls up the *Create New Todo* Material dialog form to create a new unscheduled todo.
+
+- All unscheduled todos are first rendered in the *Left Menu Drawer* component below the **+** button.
+
+#### Doing...
+- From the left pop-out menu drawer unscheduled todos are distributed across the Monday-Friday *Workweek Calendar* by dragging and dropping them in the desired time slot(s). 
+
+- Dragging a todo over the **Weekend** button on the bottom of the workweek calendar triggers the bottom menu drawer to pop open from the bottom of the screen, exposing the weekend calendar; dragging a todo from the weekend calendar over the **Drag to Workweek** button closes the bottom drawer so the todo can be placed upon the workweek calendar. 
+
+- Double cliking a todo calls up its *Edit Todo* dialog form for editing the todo.
+
+#### Done.
+- Clicking the check completion box	&#9744; of the todo component seemlessly sends the the todo to the *Right Menu Drawer*.
+
+- The *Right Menu Drawer* pops open and extends to the left as the cursor hovers over the slim hidden HTML element running up the right side of the workweek calendar.
+<br>
+
+[Back to Table of Contents](#contents)
+
+---
+
+[//]: # (Discuss challenges faced and my solutions to those challenges)
+
+## <a name="challenges"></a>Development Challenges
+---
+DoDate's central focus is the upcoming seven days. As a result, DoDate's database does not currently keep track of the *date* of todos. Google Calendar is preferred for longer term planning at this point. One sophisticated aspect of functionality is syncing a todo to Google Calendar API as an event. However, because todos do not have an associated date, the intended date 
+
+[//]: # (Code snippets that show off your best code)
+
 ```javascript
 
 export const convertToSync = (todo) => {
@@ -232,47 +275,4 @@ export const convertToSync = (todo) => {
 }
 ```
    
- - The event object and the stored authorization parameters `localStorage` are then used to construct and send the `POST` `event` request to Google Calendar API.
-<br>
-
-[Back to Table of Contents](#contents)
-
----
-### <a name="ui"></a> &#128187;  DoDate's Extreme Single Page UI
----
-
-DoDate renders only one page after logging in, but this single page leverages pop-out hidden menu components to extend the workspace without redirecting or fully rerending during primary workflow.
-
-#### Do...
-- The *Left Menu Drawer* pops open and extends to the right as the cursor hovers over the slim hidden HTML element running up the left side of the *Workweek Calendar*. 
-
-- Clicking the Material **+** floating action button at the top of the left menu drawer calls up the *Create New Todo* Material dialog form to create a new unscheduled todo.
-
-- All unscheduled todos are first rendered in the *Left Menu Drawer* component below the **+** button.
-
-#### Doing...
-- From the left pop-out menu drawer unscheduled todos are distributed across the Monday-Friday *Workweek Calendar* by dragging and dropping them in the desired time slot(s). 
-
-- Dragging a todo over the **Weekend** button on the bottom of the workweek calendar triggers the bottom menu drawer to pop open from the bottom of the screen, exposing the weekend calendar; dragging a todo from the weekend calendar over the **Drag to Workweek** button closes the bottom drawer so the todo can be placed upon the workweek calendar. 
-
-- Double cliking a todo calls up its *Edit Todo* dialog form for editing the todo.
-
-#### Done.
-- Clicking the check completion box	&#9744; of the todo component seemlessly sends the the todo to the *Right Menu Drawer*.
-
-- The *Right Menu Drawer* pops open and extends to the left as the cursor hovers over the slim hidden HTML element running up the right side of the workweek calendar.
-<br>
-
-[Back to Table of Contents](#contents)
-
----
-
-[//]: # (Discuss challenges faced and my solutions to those challenges)
-
-## <a name="challenges"></a>Development Challenges
----
-DoDate's central focus is the upcoming seven days. As a result, DoDate's database does not currently keep track of the *date* of todos. Google Cal is preferred for longer term planning at this point. 
-
-[//]: # (Code snippets that show off your best code)
-
 

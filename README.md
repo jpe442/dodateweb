@@ -169,7 +169,7 @@ DoDate renders only one page after logging in, but this single page leverages po
 - Double cliking a todo calls up its *Edit Todo* dialog form for editing the todo.
 
 #### Done.
-- Clicking the check completion box	&#9744; of the todo component seemlessly sends the the todo to the right menu drawer.
+- Clicking the check completion box	&#9744; of the todo component seemlessly sends the the todo to the *Right Menu Drawer*.
 
 - The *Right Menu Drawer* pops open and extends to the left as the cursor hovers over the slim hidden HTML element running up the right side of the workweek calendar.
 <br>

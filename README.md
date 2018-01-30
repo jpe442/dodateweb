@@ -166,6 +166,8 @@ DoDate renders only one page after logging in, but this single page leverages po
 
 - Dragging a todo over the **Weekend** button on the bottom of the workweek calendar triggers the bottom menu drawer to pop open from the bottom of the screen, exposing the weekend calendar; dragging a todo from the weekend calendar over the **Drag to Workweek** button closes the bottom drawer so the todo can be placed upon the workweek calendar. 
 
+- Double cliking a todo calls up its *Edit Todo* dialog form for editing the todo.
+
 #### Done.
 - Clicking the check completion box	&#9744; of the todo component seemlessly sends the the todo to the right menu drawer.
 

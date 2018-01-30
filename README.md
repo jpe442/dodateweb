@@ -169,7 +169,7 @@ DoDate renders only one page after logging in, but this single page leverages po
 #### Done.
 - Clicking the check completion box	&#9744; of the todo component seemlessly sends the the todo to the right menu drawer.
 
-- The *Right Menu Drawer* pops open and extends to the left as the cursor hovers over the slim hidden HTML element running up the left side of the workweek calendar.
+- The *Right Menu Drawer* pops open and extends to the left as the cursor hovers over the slim hidden HTML element running up the right side of the workweek calendar.
 <br>
 
 [Back to Table of Contents](#contents)

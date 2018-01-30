@@ -182,7 +182,7 @@ DoDate renders only one page after logging in, but this single page leverages po
 
 ## <a name="challenges"></a>Development Challenges
 ---
-DoDate's central focus is the upcoming seven days. As a result, DoDate's database does not currently keep track of the *date* of todos. Google Calendar is preferred for longer term planning at this point. One sophisticated aspect of functionality is syncing a todo to Google Calendar API as an event. However, because todos do not have an associated date, the intended date must be inferred using the actual date and the day of the todo being synced.
+DoDate's central focus is the upcoming seven days. As a result, DoDate's database does not currently keep track of the *date* of todos. Google Calendar is preferred for longer term planning at this point. One sophisticated aspect of functionality is syncing a todo to Google Calendar API as an `event` object requiring an ISO formatted `dateTime` start time and end time strings. However, because todos do not have an associated date, the intended date for the two `dateTime` strings must be inferred using only the actual date and the day of the todo being synced. Once the date
 
 [//]: # (Code snippets that show off your best code)
 

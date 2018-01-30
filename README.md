@@ -32,9 +32,10 @@
     - [Web](#web)
     - [Mobile](#mobile)
   - [Backend Server Side](#backend)
-- [DoDate's Drag/Drop Redux Loop using React DnD](#droploop)
-- [DoDate's Google Calendar Event Sync Cycle](#sync)
-- [DoDate's Extreme Single Page UI](#ui)
+- [Key Features](#keyfeatures)
+  - [DoDate's Drag/Drop Redux Loop using React DnD](#droploop)
+  - [DoDate's Google Calendar Event Sync Cycle](#sync)
+  - [DoDate's Extreme Single Page UI](#ui)
 
 ---
 
@@ -104,7 +105,7 @@ Independently hosted backend serves data for both the web and mobile application
 ---
 
 [//]: # (Deep delving into 2-3 features that show off your technical abilities and mastery of concepts/language)
-## Key Features
+## <a name="keyfeatures"></a>Key Features
 ---
 ### <a name="droploop"></a>&#8734;  DoDate's Drag/Drop Redux Loop using React DnD
 ---

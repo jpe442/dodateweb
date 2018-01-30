@@ -37,8 +37,7 @@
   - [DoDate's Google Calendar Event Sync Cycle](#sync)
   - [DoDate's Extreme Single Page UI](#ui)
 - [Challenges](#challenges)
-  - Syncing a todo as an `event` to Google Calendar API
-  - `convertToSync()`(#challenges)
+  - [`convertToSync()`](#challenges): syncing a todo as an `event` to Google Calendar API
 ---
 
 [//]: # (Brief explanation of what the app is and does)

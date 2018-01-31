@@ -70,7 +70,7 @@ DoDate's primary frontend is built in [ReactJS](https://reactjs.org/) using [Jav
 
 &#9733; Material UI
 
-- Customized prestyled [Material UI](http://www.material-ui.com/#/) React components provide many familiar industry-standard UI/UX styling features created and proliferated by Google.
+- Customized prestyled [Material UI](http://www.material-ui.com/#/) React components provide many familiar industry-standard UI/UX styling features created and proliferated by [Google](https://www.google.com).
 
 #### <a name="mobile"></a>Mobile 
 

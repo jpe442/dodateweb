@@ -183,7 +183,9 @@ DoDate renders only one page after logging in, but this single page leverages po
 
 ## <a name="challenges"></a>Development Challenges
 ---
-DoDate's central focus is the upcoming seven days. As a result, DoDate's database does not currently keep track of the *date* of todos. Google Calendar is preferred for longer term planning at this point. One sophisticated aspect of functionality is syncing a todo to Google Calendar API as an `event` object requiring an ISO formatted `dateTime` start time and end time strings. However, because todos do not have an associated date, the intended date for the two `dateTime` strings must be inferred using only the current date and the day of the todo being synced. This is done by using seeing if the current day is Then two new `Date` objects are created  
+DoDate's central focus is the upcoming seven days. As a result, DoDate's database does not currently keep track of the *date* of todos. Google Calendar is preferred for longer term planning. One desired aspect of functionality is syncing a todo to Google Calendar API as an `event` object. Constructing  requires ISO formatted `dateTime` start time and end time strings. However, because todos do not have an associated date, the intended date for the two `dateTime` strings must be inferred using only the current date and the day of the todo being synced. 
+
+To do this, first compare the current day of the week with the day of the week of the todo. If the day of the week is the same for both (e.g. Tuesday), then the date of the event is the current date (e.g. Tuesday the 21st). If the current day of the week (e.g. Tuesday) is earlier in the week than the day of the week of the todo (e.g. Thursday), then the date of the event is the current date (21st) plus the difference of the two days (21 + (4 - 2), or 23). Since we cannot schedule in the past, if the day of the week of the todo (Monday) is earlier in the week than the current day (Tuesday), then the date of the event is the current date (21st) plus a week minus the difference of the two days (21 + 7 - (2 - 1), or 27). 
 
 [//]: # (Code snippets that show off your best code)
 

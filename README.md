@@ -189,6 +189,7 @@ DoDate's central focus is the upcoming seven days. As a result, DoDate's databas
 
 [//]: # (Code snippets that show off your best code)
 
+<a name="convert"></a>
 
 `convertToSync()` solves this problem by first comparing the todo day of the week to the current day of the week. Since DoDate is only concerned with the next seven days, it can be determined the intended date of a todo with simple math and use of JavaScripts `Date` object.
 

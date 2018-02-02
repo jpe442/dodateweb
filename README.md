@@ -183,101 +183,97 @@ DoDate renders only one page after logging in, but this single page leverages po
 
 ## <a name="challenges"></a>Development Challenges
 ---
-DoDate's central focus is the upcoming seven days. As a result, DoDate's database does not currently keep track of the *date* of todos. Google Calendar is preferred for longer term planning. One desired aspect of functionality is syncing a todo to Google Calendar API as an `event` object. Constructing  requires ISO formatted `dateTime` start time and end time strings. However, because todos do not have an associated date, the intended date for the two `dateTime` strings must be inferred using only the current date and the day of the todo being synced. 
+---
 
-To do this, first compare the current day of the week with the day of the week of the todo. If the day of the week is the same for both (e.g. Tuesday), then the date of the event is the current date (e.g. Tuesday the 21st). If the current day of the week (e.g. Tuesday) is earlier in the week than the day of the week of the todo (e.g. Thursday), then the date of the event is the current date (21st) plus the difference of the two days (21 + (4 - 2), or 23). Since we cannot schedule in the past, if the day of the week of the todo (Monday) is earlier in the week than the current day (Tuesday), then the date of the event is the current date (21st) plus a week minus the difference of the two days (21 + 7 - (2 - 1), or 27). 
+DoDate's central focus is the upcoming seven days. As a result, DoDate's database does not currently keep track of the date of todos. Google Calendar is preferred for longer term planning. One desired aspect of functionality is syncing a todo to Google Calendar API as an event object. Constructing requires ISO formatted dateTime start time and end time strings. However, because todos do not have an associated date, the intended date for the two dateTime strings must be inferred using only the current date and the day of the todo being synced.
 
 [//]: # (Code snippets that show off your best code)
 
-```javascript
+
+`convertToSync()` solves this problem by first comparing the todo day of the week to the current day of the week. Since DoDate is only concerned with the next seven days, it can be determined the intended date of a todo with simple math and use of JavaScripts `Date` object.
+
+First, the day of the today, `todoDay`, is figured using a simple converter. This makes the day of the week comparable as an integer. Then other constants for the current day/date and the todo start time, as well as variables to be further determined, are declared.
+
+````javascript
 
 export const convertToSync = (todo) => {
   
-  // create simple helper method to convert from DoDate workflow_pos (e.g. 'M') to Date-
-  // object-compatible integer for representing day (i.e. 1)
+  let converter = { 'M': 1, 'T': 2, 'W': 3, 'TH': 4, 
+                      'F': 5, 'ST': 6, 'SN': 7 }
 
-  const dayToNumConvert = (workflow_pos) => {
-    let converter = { 'M': 1, 'T': 2, 'W': 3, 'TH': 4, 'F': 5, 'ST': 6, 'SN': 7 }
+  const todoDay = converter[todo.workflow_pos]
 
-    return converter[workflow_pos]
-  }
-  
-  // delcare constants
-
-  const dateTimeNow = new Date(); 
+  const dateTimeNow = new Date();
   const dayNow = dateTimeNow.getDay();
-  const dateNow = dateTimeNow.getDate(); 
-  const todoDay = dayToNumConvert(todo.workflow_pos); 
-  const todoStart = todo.time_slot; 
+  const dateNow = dateTimeNow.getDate();
+  const todoStart = todo.time_slot;
 
-  const dateTimeNowJSON = dateTimeNow.toJSON(); 
+  const dateTimeNowJSON = dateTimeNow.toJSON();
 
-  // declare variables
+  let todoDate;
+  let newTodoDate = Date.new();
 
-  let todoDate; 
-  let newTodoDate = Date.new(); 
+  let newStartDateTime;
+  let newEndDateTime;
+  let startString;
+  let endString;
 
-  let newStartDateTime; 
-  let newEndDateTime; 
-  let startString; 
-  let endString; 
-  
+````
+Now we compare the current day of the week, `dayNow` with the day of the week of the todo, `todoDay`. If the day of the week is the same for both (e.g. Tuesday), then the date of the event, `todoDate`, must be the current date, `dayNow` (e.g. Tuesday the 21st).
+
+If `dayNow` (e.g. Tuesday) is earlier in the week than `todoDay` (e.g. Thursday), then `todoDate`is the current date (21st), `dateNow`, plus the difference of the two days (21 + (4 - 2), or 23).
+
+Since we cannot schedule in the past, if `todoDay` (e.g. Monday) is earlier in the week than the current day (Tuesday), then `todoDate` is the next date with of that day (i.e. the next Monday), which can be determined by taking the `dateNow` (21) plus a week of days minus the difference of the two days (21 + 7 - (2 - 1), or 27). 
+
+````javascript
+
   if (dayNow === todoDay) {
-  
-    // since the day of the todo is the current day,
-      // the date of the Google Cal event must be today's date
-      
+
     todoDate = dateNow
+
   } else if (dayNow < todoDay) {
-  
-    // since the current day is prior in the week than the current day (e.g. Thursday, Saturday),
-      // the event day must be the next matching weekday day (e.g. Saturday) and figure the event date
-      // by adding the date now to the difference of the current day subtracted from the todo day to the date now
-      
+
     todoDate = (todoDay - dayNow) + dateNow
+
   } else if (dayNow > todoDay) {
-  
-    // since the day of the todo is prior in the week than the current day (e.g. Monday, Tuesday) and
-    // we can assume a user is not trying to schedule an event in the past
-      // the date of the event must be the next matching weekday date (e.g. Monday the 22)
-      // so we add 7 to the current date, then subtract the difference of the todo day subtracted from the current 
-      // day ((2-1 = 1 for Tuesday - Monday) to get the numerical date of the todo
-      
+
     todoDate = dateNow + 7 - (dayNow - todoDay)
+
   }
-  
-  // set new TodoDate object to resulting todoDate from conditional logic above
-  
+
+````
+
+The newly determined date, `todoDate`, is set as the date for a new `Date` object, which is in turn used to create two other `Date` objects with the same date. One of these is set to the start time of the todo, `todoStart`, the other to the end time. The `toJSON()` function of the `Date` object is then used to pull the ISO compatible date time strings needed to create the Google `event`.
+
+````javascript
+
   newTodoDate.setDate(todoDate);
-    
+
   // construct start dateTime string
-  
+
   newStartDateTime = new Date(newTodoDate.toJSON())
-  newStartDateTime.setHours(todo.time_slot, 0, 0)
+  newStartDateTime.setHours(todoStart, 0, 0)
   startString = newStartDateTime.toJSON();
-    
+
   // construct end dateTime string
-  
+
   newEndDateTime = new Date(newStartDateTime.toJSON());
-  newEndDateTime.setHours(todo.time_slot + 1, 0, 0);
+  newEndDateTime.setHours(todoStart + 1, 0, 0);
   endString = newEndDateTime.toJSON();
-  
-  // use the string to construct the event object for Google Cal event insertion using the todo task as the summary attribute
-  
-  let event = { 
-            'start': { 
+
+  let event = {
+            'start': {
                   'dateTime': startString
-                  }, 
-            'end': { 
+                  },
+            'end': {
                   'dateTime': endString
-                  }, 
-            'summary': todo.task 
+                  },
+            'summary': todo.task
           }
 
   return event
 }
-```
+````
 <br>
 
-[Back to Table of Contents](#contents) 
-
+[Back to Table of Contents](#contents)

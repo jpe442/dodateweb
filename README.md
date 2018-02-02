@@ -144,7 +144,7 @@ Independently hosted backend serves data for both the web and mobile application
  
  - With the parameters stored, when the user clicks **Sync as Google Calendar Event**, an `event` JSON object that Google Calendar API expects is constructed using an algorithm, [`convertToSync()`](#challenges) that takes the todo information in conjunction with the current time and returns an `event` object compatible with Google Calendar API.
  
- - The event object and the stored authorization parameters `localStorage` are then used to construct and send the `POST` `event` request to Google Calendar API.
+ - The event object and the stored authorization parameters in `localStorage` are then used to construct and send the `POST` `event` request to Google Calendar API.
 <br>
 
 [Back to Table of Contents](#contents)

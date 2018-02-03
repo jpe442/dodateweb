@@ -62,7 +62,7 @@ DoDate's primary frontend is built in [ReactJS](https://reactjs.org/) using [Jav
 
 &#9733; React with Redux
 
-- React components are arranged and interelated according to [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) enforce a unidirectional flow of information ensuring that backend data stays in sync with the frontend state of the client application at all times. 
+- React components are arranged and interelated according to [FLUX](https://facebook.github.io/flux/) architecture using [Redux](https://github.com/reactjs/redux/blob/master/README.md) enforce a unidirectional flow of information ensuring that the database store is updated before a database-related change in frontend state is processed. This way, backend data and frontend state stay in sync. 
 
 &#9733; React DnD
 

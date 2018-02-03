@@ -1,6 +1,5 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
-// import DialogActions from 'material-ui/Dialog'
 import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -28,14 +27,11 @@ class Login extends React.Component {
     e.preventDefault(e);
     this.props.login(this.state)
       .then(() => this.props.clearSessionErrors())
-     
-      // .then(() => this.props.clearSessionErrors())
   };
 
   handleCancel(e) {
     console.log("here is clearSessionErrors")
-    // console.log(this.props.clearSessionErrors)
-    // e.preventDefault(e);
+
     console.log(this.props)
     this.props.handleClose();
     this.props.clearSessionErrors();
@@ -65,7 +61,6 @@ class Login extends React.Component {
                 }}
       />,
       <RaisedButton
-        // className="login-modal-cancel-btn"
         label="Cancel"
         primary={true}
         onClick={this.handleCancel}
@@ -79,13 +74,11 @@ class Login extends React.Component {
     ];
     return (
       <div className="session-form">
-        {/* <h2 className="loginmsg">Do Date</h2> */}
         <div
         className="login-text-fields">
         <TextField
           hintText="Please enter an email address..."
           floatingLabelText="User Email"
-          // errorText="This field is required"
           onChange={this.handleInput('email')} />
 
         <br />

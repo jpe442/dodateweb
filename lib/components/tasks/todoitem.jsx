@@ -165,39 +165,6 @@ class TodoItem extends React.Component {
 
             }}
           />
-
-      {/* <Dialog
-        title="View/Update Todo"
-        modal={false}
-        overlayStyle={{ display: 'none' }}
-        style={{
-
-          width: '100%',
-          height: '100%',
-          zIndex: 1500,
-
-        }}
-        bodyStyle = {{height: '100%'}}
-        titleStyle = {{
-          paddingTop: '3%',
-          padding: '1%',
-          fontSize: '80%',
-          position: 'relative',
-          left: '7%',
-          top: '20%'
-        }}
-   
-        onRequestClose = { this.props.toggleTodoEditModal }
-        open = { this.props.openTodoEditModal }
-      >
-        <EditTodoForm
-          todo={this.props.todoInEdit}
-          moveTask={this.props.moveTask}
-          currentUser={this.props.currentUser}
-          updateTodo={this.props.updateTodo}
-          deleteTodo={this.props.deleteTodo}
-          toggleTodoEditModal={this.props.toggleTodoEditModal} />
-      </Dialog > */}
       </div>
       )
   }

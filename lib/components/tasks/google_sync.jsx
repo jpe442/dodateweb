@@ -7,67 +7,7 @@ export default class SyncButton extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  // /* Validate the access token received on the query string. */
-  // exchangeOAuth2Token(params) {
-  //   var oauth2Endpoint = 'https://www.googleapis.com/oauth2/v3/tokeninfo';
-  //   if (params['access_token']) {
-  //     var xhr = new XMLHttpRequest();
-  //     xhr.open('POST', oauth2Endpoint + '?access_token=' + params['access_token']);
-  //     xhr.onreadystatechange = function (e) {
-  //       var response = JSON.parse(xhr.response);
-  //       // Verify that the 'aud' property in the response matches YOUR_CLIENT_ID.
-  //       if (xhr.readyState == 4 &&
-  //         xhr.status == 200 &&
-  //         response['aud'] &&
-  //         response['aud'] == '591847328765-855vukh94icl3h11qkiqmt0j4lvg3auk.apps.googleusercontent.com') {
-  //         params['scope'] = response['scope'];
-  //         localStorage.setItem('oauth2-test-params', JSON.stringify(params));
-  //         // if (params['state'] == 'sync') {
-  //         //     handleSync();
-  //         // }
-  //       } else if (xhr.readyState == 4) {
-  //         console.log('There was an error processing the token, another ' +
-  //           'response was returned, or the token was invalid.')
-  //       }
-  //     };
-  //     xhr.send(null);
-  //   }
-  // }
-
-  // oauth2SignIn() {
-  //   // Google's OAuth 2.0 endpoint for requesting an access token
-  //   let oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
-  //   // Create <form> element to submit parameters to OAuth 2.0 endpoint.
-  //   let form = document.createElement('form');
-  //   form.setAttribute('method', 'GET'); // Send as a GET request.
-  //   form.setAttribute('action', oauth2Endpoint);
-
-  //   // Parameters to pass to OAuth 2.0 endpoint.
-  //   let params = {
-  //     'client_id': '591847328765-855vukh94icl3h11qkiqmt0j4lvg3auk.apps.googleusercontent.com',
-  //     'redirect_uri': 'https://jpe442.github.io/dodateweb/',
-  //     'response_type': 'token',
-  //     'scope': 'https://www.googleapis.com/auth/calendar',
-  //     'include_granted_scopes': 'true',
-  //     'state': 'sync',
-  //     'prompt': 'select_account'
-  //   };
-
-  //   // Add form parameters as hidden input values.
-  //   for (var p in params) {
-  //     var input = document.createElement('input');
-  //     input.setAttribute('type', 'hidden');
-  //     input.setAttribute('name', p);
-  //     input.setAttribute('value', params[p]);
-  //     form.appendChild(input);
-  //   }
-
-  //   // Add form to page and submit it to open the OAuth 2.0 endpoint.
-  //   document.body.appendChild(form);
-  //   form.submit();
-  // }
-
+  
   render() {
     var todo = this.props.todo;
     var smallIcon = {
@@ -76,7 +16,7 @@ export default class SyncButton extends React.Component {
     }
     var queryString = location.hash.substring(1);
     // Parse query string to see if page request is coming from OAuth 2.0 server.
-    var params = {};
+    var params = {};  
 
     var regex = /([^&=]+)=([^&]*)/g, m;
 

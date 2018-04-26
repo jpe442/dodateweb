@@ -12,7 +12,6 @@ class Login extends React.Component {
       email: "",
       password: "",
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     // this.handleGuest = this.handleGuest.bind(this);
@@ -21,22 +20,17 @@ class Login extends React.Component {
   handleInput(type) {
     return (e) => {
       this.setState({ [type]: e.target.value });
-    }
+    };
   }
 
   handleSubmit(e) {
     e.preventDefault(e);
     this.props.login(this.state)
-      .then(() => this.props.clearSessionErrors())
-     
-      // .then(() => this.props.clearSessionErrors())
-  };
+      .then(() => this.props.clearSessionErrors());
+  }
 
   handleCancel(e) {
-    console.log("here is clearSessionErrors")
-    // console.log(this.props.clearSessionErrors)
     // e.preventDefault(e);
-    console.log(this.props)
     this.props.handleClose();
     this.props.clearSessionErrors();
   }
@@ -46,27 +40,30 @@ class Login extends React.Component {
   //   this.state = {
   //     username: "guest",
   //     password: "guestpassword"
-  //   }
+  //   };
   //   this.props.login(this.state)
   //     .then(() => this.props.toggleLoginModal())
   //     .then(() => this.props.clearSessionErrors())
   //     .then(() => this.props.history.push('/homepage'));
-  // };
+  // }
 
   render() {
     const actions = [
       <RaisedButton
         label="Submit"
+        key={'submit'}
         primary={true}
         onClick={this.handleSubmit}
-        style={{position: 'absolute',
-                right: '26%',
-                bottom: '26%'
-                }}
+        style={{
+          position: 'absolute',
+          right: '26%',
+          bottom: '26%'
+        }}
       />,
       <RaisedButton
         // className="login-modal-cancel-btn"
         label="Cancel"
+        key={'cancel'}
         primary={true}
         onClick={this.handleCancel}
         style={{
@@ -75,38 +72,38 @@ class Login extends React.Component {
           bottom: '26%'
         }}
       />,
-     
     ];
+
     return (
       <div className="session-form">
-        {/* <h2 className="loginmsg">Do Date</h2> */}
-        <div
-        className="login-text-fields">
-        <TextField
-          hintText="Please enter an email address..."
-          floatingLabelText="User Email"
-          // errorText="This field is required"
-          onChange={this.handleInput('email')} />
-
-        <br />
-        <TextField
-          hintText="Password Field"
-          floatingLabelText="Password"
-          type="password"
-          onChange={this.handleInput('password')} 
-        /><br />
+        <div className="login-text-fields">
+          <TextField
+            hintText="Please enter an email address..."
+            floatingLabelText="User Email"
+            // errorText="This field is required"
+            onChange={this.handleInput('email')} 
+          />
+          <br />
+          <TextField
+            hintText="Password Field"
+            floatingLabelText="Password"
+            type="password"
+            onChange={this.handleInput('password')} 
+          />
+          <br />
         </div>
         {actions}
         <ul className="session-report">
           {
             this.props.autherrors.map((error, idx) => (
-              <li key={idx} className="session-errors">{error}
+              <li key={idx} className="session-errors">
+                {error}
               </li>
             ))
           }
         </ul>
       </div>
-    )
+    );
   }
 }
 

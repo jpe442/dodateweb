@@ -4,9 +4,9 @@ import Button from 'material-ui/Dialog';
 import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import WorkFlowDropdown from './workflow_pos_drop'
-import CategoryDropdown from './category_drop'  
-import ETCDropdown from './etc_drop'
+import WorkFlowDropdown from './workflow_pos_drop';
+import CategoryDropdown from './category_drop';
+import ETCDropdown from './etc_drop';
 import Delete from 'material-ui/svg-icons/action/delete';
 import FileFolder from 'material-ui/svg-icons/file/folder';
 import SyncButton from './google_sync';
@@ -14,7 +14,6 @@ import SyncButton from './google_sync';
 class EditTodoForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       id: this.props.todo.id,
       task: this.props.todo.task,
@@ -24,13 +23,12 @@ class EditTodoForm extends React.Component {
       tag: this.props.todo.tag,
       user_id: this.props.currentUser.id,
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleUnschedule = this.handleUnschedule.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
-  };
+  }
 
   moveTask(itemId, workflowPos, timeSlot) {
     let moveTodo = {
@@ -41,13 +39,12 @@ class EditTodoForm extends React.Component {
       notes: this.props.todo.notes,
       etc: this.props.todo.etc,
       user_id: this.props.currentUser.id
-    }
-
-    this.props.updateTodo(this.props.currentUser.id, moveTodo)
+    };
+    this.props.updateTodo(this.props.currentUser.id, moveTodo);
   }
 
   handleCancel() {
-    this.props.toggleTodoEditModal(this.props.todo)
+    this.props.toggleTodoEditModal(this.props.todo);
   }
 
   handleSubmit(e) {
@@ -55,21 +52,21 @@ class EditTodoForm extends React.Component {
     const todo = Object.assign({}, this.state);
     this.props.updateTodo(this.state.user_id, todo);
     this.props.toggleTodoEditModal(todo);
-  };
+  }
 
   handleUnschedule() {
-    this.moveTask(this.props.todo.id, 'unscheduled')
+    this.moveTask(this.props.todo.id, 'unscheduled');
     this.props.toggleTodoEditModal(this.props.todo);
   }
 
   handleInput(type, value) {
     if (value) {
-      this.setState({ [type]: value })
+      this.setState({ [type]: value });
     }
     return (e) => {
       this.setState({ [type]: e.target.value });
-    }
-  };
+    };
+  }
 
   handleDelete() {
     const todo = Object.assign({}, this.state);
@@ -78,15 +75,14 @@ class EditTodoForm extends React.Component {
   }
 
   render() {
-    console.log(this.props.todo)
     const smallIcon = {
       width: 36,
       height: 36,
-    }
-
+    };
     const actions = [
       <RaisedButton
         label="Update"
+        key={'updateBtn'}
         primary={true}
         onClick={this.handleSubmit}
         style={{
@@ -97,6 +93,7 @@ class EditTodoForm extends React.Component {
       />,
       <RaisedButton
         label="Cancel"
+        key={'cancelEditBtn'}
         primary={true}
         onClick={this.handleCancel}
         style={{
@@ -106,26 +103,27 @@ class EditTodoForm extends React.Component {
         }}
       />,
       <IconButton 
+        key={'editDeleteBtn'}
         tooltip="Delete Todo"
         tooltipPosition="top-center"
         onClick={this.handleDelete}
         iconStyle={smallIcon}
         touch={false}
-       
         style={{
-            position: 'absolute',
-            display: 'flex',
-            justifyContents: 'center',
-            right: '4%',
-            bottom: '8%',
-          }}
+          position: 'absolute',
+          display: 'flex',
+          justifyContents: 'center',
+          right: '4%',
+          bottom: '8%',
+        }}
       >
         <Delete />
       </IconButton>,
       <SyncButton
+        key={'editSyncBtn'}
         todo={this.props.todo}
         currentUser={this.props.currentUser}
-        />
+      />
     ];
     const { task, notes, etc, workflow_pos, tag } = this.state;
  
@@ -147,7 +145,6 @@ class EditTodoForm extends React.Component {
           className="notes-field"
           value={notes}
           onChange={this.handleInput('notes')}
-
           hintText="Enter any necessary notes here... (optional)"
           floatingLabelText="Notes"
           multiLine={true}
@@ -157,8 +154,8 @@ class EditTodoForm extends React.Component {
             top: '25%',
             left: '5%'
           }}
-        /><br />
-      
+        />
+        <br />
         <h3 className="category-drop-title">Category</h3>
         <CategoryDropdown
           handleInput={this.handleInput}
@@ -176,7 +173,6 @@ class EditTodoForm extends React.Component {
           onClick={this.handleUnschedule}
           iconStyle={smallIcon}
           touch={false}
-
           style={{
             position: 'absolute',
             display: 'flex',
@@ -187,11 +183,9 @@ class EditTodoForm extends React.Component {
         >
           <FileFolder />
         </IconButton>
-
         {actions}
-
       </div>
-    )
+    );
   }
 }
 

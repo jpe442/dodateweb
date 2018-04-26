@@ -3,9 +3,9 @@ import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import WorkFlowDropdown from './workflow_pos_drop'
-import CategoryDropdown from './category_drop'
-import ETCDropdown from './etc_drop'
+import WorkFlowDropdown from './workflow_pos_drop';
+import CategoryDropdown from './category_drop';
+import ETCDropdown from './etc_drop';
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -20,36 +20,29 @@ class TodoForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
-  };
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     const todo = Object.assign({}, this.state);
     this.props.createTodo(this.state.user_id, todo);
     this.props.toggleTodoCreateModal();
-  };
+  }
 
   handleInput(type, value) {
-
     if (value) {
-      this.setState({[type]: value})
-    };
-
+      this.setState({[type]: value});
+    }
     return (e) => {
       this.setState({ [type]: e.target.value });
     };
-  };
-    // console.log(e)
-       
-    
-
+  }
 
   render() {
-
-    console.log("CREATE")
     const actions = [
       <RaisedButton
         label="Submit"
+        key={'submitCreateTask'}
         primary={true}
         onClick={this.handleSubmit}
         style={{
@@ -59,8 +52,8 @@ class TodoForm extends React.Component {
         }}
       />,
       <RaisedButton
-        // className="login-modal-cancel-btn"
         label="Cancel"
+        key={'cancelCreateTask'}
         primary={true}
         onClick={this.props.toggleTodoCreateModal}
         style={{
@@ -69,11 +62,9 @@ class TodoForm extends React.Component {
           bottom: '8%'
         }}
       />,
-
     ];
     const { task, notes, etc, workflow_pos, tag } = this.state;
-    // console.log("this below is what this slice of state is pointing at")
-    // console.log(this.state)
+
     return (
       <div className="todo-create">
         <TextField
@@ -81,11 +72,13 @@ class TodoForm extends React.Component {
           onChange={this.handleInput('task')}
           hintText="Enter the primary task here..."
           floatingLabelText="Task"
-          style={{position: 'relative',
-                  top: '0%',
-                  left: '5%'
+          style={{
+            position: 'relative',
+            top: '0%',
+            left: '5%'
           }}
-        /><br />
+        />
+        <br />
         <TextField
           className="notes-field"
           onChange={this.handleInput('notes')}
@@ -98,14 +91,16 @@ class TodoForm extends React.Component {
             top: '25%',
             left: '5%'
           }}
-        /><br />
+        />
+        <br />
         {/* <TextField
           className=""
           onChange={this.handleInput('etc')}
           value={60}
           hintText="Estimated Time to Completion"
           floatingLabelText="How long might it take?"
-        /><br /> */}
+        />
+        <br /> */}
         <h3 className="category-drop-title">Category</h3>
         <CategoryDropdown
           handleInput={this.handleInput}
@@ -126,36 +121,9 @@ class TodoForm extends React.Component {
           hintText="Status"
           floatingLabelText="Where in your workflow is this?"
         /><br /> */}
-
         {actions}
-
-        {/* <div className="new-form">
-          <h3>New Todo</h3>
-          <form onSubmit={this.handleSubmit}>
-            <label className="question-title-field">
-              <input
-                type="text"
-                placeholder="Your question here..."
-                value={title}
-                onChange={this.handleInput('task')}
-              />
-            </label>
-            <label className="question-body-field">
-              <input
-                type="text"
-                placeholder="Additional context here..."
-                value={body}
-                onChange={this.handleInput('body')}
-              />
-            </label>
-            <button
-              className="question-form-submit-btn"
-              onClick={this.handleSubmit}>Submit</button>
-          </form>
-
-        </div> */}
       </div>
-    )
+    );
   }
 }
 

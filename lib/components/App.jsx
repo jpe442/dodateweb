@@ -10,7 +10,6 @@ import {cyan200, cyan400,
 } from 'material-ui/styles/colors';
 import NavBarContainer from './navbar/navbar_container';
 import HomePageContainer from './home/home_page_container';
-import Splash from './splash/splash';
 import SplashContainer from './splash/splash_container';
 
 const muiTheme = getMuiTheme({
@@ -28,7 +27,6 @@ const muiTheme = getMuiTheme({
 });
 
 const App = () => {
-
   return (
     <MuiThemeProvider muiTheme={muiTheme}>
       <div>

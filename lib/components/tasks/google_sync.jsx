@@ -172,29 +172,25 @@ export default class SyncButton extends React.Component {
       }
     }
 
-
     return (
-    <div>   
-      <IconButton
-        tooltip="Sync As Google Calendar Event"
-        tooltipPosition="top-center"
-        onClick={handleSync}
-        iconStyle={smallIcon}
-        touch={false}
-
-        style={{
-          position: 'absolute',
-          display: 'flex',
-          justifyContents: 'center',
-          right: '4%',
-          bottom: '40%',
-      }}
-    >
-      <UploadIcon />
-    </IconButton>
-    </div>)
-
+      <div>   
+        <IconButton
+          tooltip="Sync As Google Calendar Event"
+          tooltipPosition="top-center"
+          onClick={handleSync}
+          iconStyle={smallIcon}
+          touch={false}
+          style={{
+            position: 'absolute',
+            display: 'flex',
+            justifyContents: 'center',
+            right: '4%',
+            bottom: '40%',
+          }}
+        >
+          <UploadIcon />
+        </IconButton>
+      </div>
+    )
   }
-
-
 }

@@ -5,12 +5,12 @@ import { DropTarget } from 'react-dnd';
 // import { moveTask } from ''
 
 const moveTask = (item, workflowPos, timeSlot) => {
-  item.moveTask(item.id, workflowPos, timeSlot)
-}
+  item.moveTask(item.id, workflowPos, timeSlot);
+};
 
 const slotTarget = {
   drop(props, monitor) {
-    moveTask(monitor.getItem(), props.workflowpos, props.timeslot)
+    moveTask(monitor.getItem(), props.workflowpos, props.timeslot);
   }
 };
 
@@ -25,20 +25,23 @@ function collect(connect, monitor) {
 }
 
 class HourSlot extends React.Component {
-
-  
   render() {
-    const { workflowpos, timeslot, connectDropTarget, isOver, item} = this.props;
+    const { 
+      workflowpos, timeslot, connectDropTarget, isOver, item
+    } = this.props;
     // const black = (x + y) % 2 === 1;
     const itemHover = isOver && item ? item.id : null;
+
     return connectDropTarget(
-      <div style={{
-        position: 'relative',
-        width: '100%',
-        height: '8.333333%',
-        fontsize: 16
-      }}>
-     <div>{this.props.children}</div>
+      <div 
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: '8.333333%',
+          fontsize: 16
+        }}
+      >
+        <div>{this.props.children}</div>
         {isOver &&
           <div style={{
             position: 'absolute',

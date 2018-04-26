@@ -4,7 +4,6 @@ import DialogActions from 'material-ui/Dialog';
 import Button from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-// import { clearSessionErrors } from '../../actions/session_actions';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -13,7 +12,6 @@ class Signup extends React.Component {
       email: "",
       password: "",
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     // this.handleGuest = this.handleGuest.bind(this);
@@ -30,19 +28,13 @@ class Signup extends React.Component {
     this.props.signup(this.state)
       .then(() => this.props.clearSessionErrors())
       // .then(this.props.handleClose())
-        .then(() => this.props.ownProps.history.push('/homepage'))
-
-    // .then(() => this.props.clearSes  sionErrors())
+        .then(() => this.props.ownProps.history.push('/homepage'));
   }
 
   handleCancel(e) {
-   
     // e.preventDefault(e);
-      console.log(this.props.handleClose)
-      this.props.handleClose();
-      this.props.clearSessionErrors();
-
-
+    this.props.handleClose();
+    this.props.clearSessionErrors();
   }
 
   // handleGuest(e) {
@@ -59,9 +51,9 @@ class Signup extends React.Component {
 
   render() {
     const actions = [
-      
       <RaisedButton
         label="Submit"
+        key={'submitSignup'}
         primary={true}
         onClick={this.handleSubmit}
         style={{
@@ -70,8 +62,9 @@ class Signup extends React.Component {
           bottom: '26%'
         }}
       />,
-        <RaisedButton
+      <RaisedButton
         label="Cancel"
+        key={'cancelSignup'}
         primary={true}
         onClick={this.handleCancel}
         style={{
@@ -79,53 +72,31 @@ class Signup extends React.Component {
           right: '10%',
           bottom: '26%'
         }}
-      />, 
-      
+      />,
     ];
     return (
       <div className="session-form">
-        <div
-          className="login-text-fields">
-        <TextField
-          hintText="Please enter an email address..."
-          floatingLabelText="User Email"
-          onChange={this.handleInput('email')} />
-
-        <br />
-        <TextField
-          hintText="Password Field"
-          floatingLabelText="Password"
-          type="password"
-          onChange={this.handleInput('password')}
-        /><br />
+        <div className="login-text-fields">
+          <TextField
+            hintText="Please enter an email address..."
+            floatingLabelText="User Email"
+            onChange={this.handleInput('email')}
+          />
+          <br />
+          <TextField
+            hintText="Password Field"
+            floatingLabelText="Password"
+            type="password"
+            onChange={this.handleInput('password')}
+          />
+          <br />
         </div>
         {actions}
-
-        {/* <h2 className="loginmsg">Do Date</h2>
-        <form onSubmit={this.handleSubmit}>
-          {actions}
-          <label className="username-session">Username:
-          <input
-              className="username-input"
-              type="text"
-              onChange={this.handleInput('email')} /></label>
-
-          <label className="password-login">Password:
-
-          <input
-              className="signup-password-input"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput('password')} />
-          </label>
-          {/* <div className="session-submit" onClick={this.handleSubmit}>Enter</div> */}
-          {/* <div className="session-guest" onClick={this.handleGuest}>Guest</div> */}
-
-        {/* </form> */}
         <ul className="session-report">
           {
             this.props.autherrors.map((error, idx) => (
-              <li key={idx} className="session-errors">{error}
+              <li key={idx} className="session-errors">
+                {error}
               </li>
             ))
           }

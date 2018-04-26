@@ -9,7 +9,6 @@ const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
   todos: state.todos,
   openTodoCreateModal: state.ui.openTodoCreateModal,
-  
 });
 
 const mapDispatchToProps = (dispatch) => ({

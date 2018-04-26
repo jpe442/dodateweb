@@ -9,21 +9,18 @@ import MenuItem from 'material-ui/MenuItem';
 // };
 
 export default class WorkFlowDropdown extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = { value: 'unscheduled' };
-    this.handleChange = this.handleChange.bind(this)
-    this.handleInput = this.props.handleInput.bind(this)
-
+    this.handleChange = this.handleChange.bind(this);
+    this.handleInput = this.props.handleInput.bind(this);
   }
 
   handleChange(event, index, value) {
-    console.log()
-    console.log(value)
+    console.log(value);
     this.setState({ value });
     // console.log(this.props.handleInput)
-    this.props.handleInput('workflow_pos', value)
+    this.props.handleInput('workflow_pos', value);
   } 
 
   render() {
@@ -33,10 +30,11 @@ export default class WorkFlowDropdown extends React.Component {
           value={this.state.value} 
           onChange={this.handleChange} 
           style={{
-              position: 'absolute', 
-              top: '65%',
-              left: '65%'
-                  }}>
+            position: 'absolute', 
+            top: '65%',
+            left: '65%'
+          }}
+        >
           <MenuItem value={'unscheduled'} primaryText="Unscheduled" />
           <MenuItem value={'M'} primaryText="Monday" />
           <MenuItem value={'T'} primaryText="Tuesday" />

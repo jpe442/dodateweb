@@ -9,24 +9,20 @@ import MenuItem from 'material-ui/MenuItem';
 // };
 
 export default class ETCDropdown extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = { value: 60 };
-    this.handleChange = this.handleChange.bind(this)
-    this.handleInput = this.props.handleInput.bind(this)
-
+    this.handleChange = this.handleChange.bind(this);
+    this.handleInput = this.props.handleInput.bind(this);
   }
 
   handleChange(event, index, value) {
-    console.log()
-    console.log(value)
+    console.log(value);
     this.setState({ value });
-    this.props.handleInput('tag', value)
+    this.props.handleInput('tag', value);
   }
 
   render() {
-
     return (
       <div>
         <DropDownMenu
@@ -36,7 +32,8 @@ export default class ETCDropdown extends React.Component {
             position: 'absolute',
             top: '65%',
             left: '44%'
-          }}>
+          }}
+        >
           <MenuItem value={this.state.value} primaryText="60" />
           {/* <MenuItem value={} primaryText="" />
           <MenuItem value={} primaryText="" />
